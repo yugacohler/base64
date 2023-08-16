@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 // The interface for Base64.
 interface IBase64 {
 
-  ////////// STRUCTS //////////
+  ////////// STRUCTS AND ENUMS //////////
 
   // A struct representing a single team in the Tournament.
   struct Team {
@@ -13,6 +13,21 @@ interface IBase64 {
 
     // The name of the team.
     string name;
+  }
+
+  // An enum representing the state of the Tournament pool.
+  enum State {
+    // The Tournament pool is closed.
+    Closed,
+
+    // The Tournament pool is accepting entries.
+    AcceptingEntries,
+
+    // The Tournament is in progress and the pool is no longer accepting entries.
+    InProgress,
+    
+    // The Tournament has concluded.
+    Finished
   }
 
   ////////// PUBLIC APIS //////////
@@ -33,4 +48,7 @@ interface IBase64 {
 
   // Gets an entry for a given address.
   function getEntry(address addr) external view returns (uint256[][] memory);
+
+  // Gets the state of the Tournament pool.
+  function getState() external view returns (State);
 }
