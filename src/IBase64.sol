@@ -1,0 +1,28 @@
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.13;
+
+// The interface for Base64.
+interface IBase64 {
+
+  ////////// STRUCTS //////////
+
+  // A struct representing a single team in the Tournament.
+  struct Team {
+    // The ID of the team.
+    uint256 id;
+
+    // The name of the team.
+    string name;
+  }
+
+  ////////// PUBLIC APIS //////////
+
+  // Returns the current state of the Tournament bracket. The first array index corresponds to 
+  // the round number of the tournament. The second array index corresponds to the team number,
+  // from top to bottom on the left, and then top to bottom on the right. The array contains the
+  // team ID.
+  function getBracket() external view returns (uint256[][] memory);
+
+  // Returns the team for the given team ID.
+  function getTeam(uint256 teamId) external view returns (Team memory);  
+}
