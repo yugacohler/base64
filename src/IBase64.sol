@@ -24,5 +24,10 @@ interface IBase64 {
   function getBracket() external view returns (uint256[][] memory);
 
   // Returns the team for the given team ID.
-  function getTeam(uint256 teamId) external view returns (Team memory);  
+  function getTeam(uint256 teamId) external view returns (Team memory);
+
+  // Submits an entry to the Tournament pool. The entry must consist of N-1 rounds, where N
+  // is the number of rounds in the Tournament. The entry must also pay the entry fee.
+  // An address may submit at most one entry.
+  function submitEntry(uint256[] memory entry) external;  
 }
