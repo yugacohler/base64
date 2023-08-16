@@ -15,6 +15,18 @@ interface IBase64 {
     string name;
   }
 
+  // A struct representing a participant in the Tournament pool.
+  struct Participant {
+    // The address of the participant.
+    address addr;
+
+    // The points the participant has earned.
+    uint256 points;
+
+    // The payout the participant has earned at the end of the Tournament, in Wei.
+    uint256 payout;
+  }
+
   // An enum representing the state of the Tournament pool.
   enum State {
     // The Tournament pool is closed.
@@ -46,9 +58,13 @@ interface IBase64 {
   // An address may submit at most one entry.
   function submitEntry(uint256[][] memory entry) external;
 
-  // Gets an entry for a given address.
+  // Returns an entry for a given address.
   function getEntry(address addr) external view returns (uint256[][] memory);
 
-  // Gets the state of the Tournament pool.
+  // Returns the state of the Tournament pool.
   function getState() external view returns (State);
+
+  // Returns the winners of the Tournament pool. Only callable when the Tournament
+  // is in the Finished state.
+  function getWinners() external view returns (Participant[] memory);
 }
