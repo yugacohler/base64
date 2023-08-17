@@ -148,4 +148,9 @@ contract Base64 is IBase64, Owned {
         require(entry[i].length == numTeams, "INVALID_NUM_TEAMS");
     }
   }
+
+  ////////// ADMIN APIS //////////
+  
+  // Advances the state of Base64.
+  function advance() external onlyOwner {}
 }
