@@ -167,6 +167,14 @@ contract Base64Test is Test {
     b.submitEntry{value: 0.01 ether}(entry);
   }
 
+  function testSubmitEntry_alreadySubmitted() public {
+    b.submitEntry{value: 0.01 ether}(entry);
+
+    vm.expectRevert("ALREADY_SUBMITTED");
+
+    b.submitEntry{value: 0.01 ether}(entry);
+  }
+
   function testSubmitEntry_noFee() public {
     vm.expectRevert("INVALID_ENTRY_FEE");
 

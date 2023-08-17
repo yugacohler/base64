@@ -71,6 +71,7 @@ contract Base64 is IBase64, Owned {
 
   function submitEntry(uint256[][] memory entry) override payable external {
     require(msg.value >= ENTRY_FEE, "INVALID_ENTRY_FEE");
+    require(entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
     validateEntry(entry);
 
     entries[msg.sender] = entry;
