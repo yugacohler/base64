@@ -9,11 +9,21 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 // Unit tests for Base64.
 contract Base64Test is Test {
   Base64 b;
-  uint256[][] e;
+
+  uint256[][] entry1;
+
+  address participant1;
+  address participant2;
   
 
   // Fallback function for this contract.
   receive() external payable {}
+
+  // Modifier for tests that are invoked by a participant.
+  modifier asParticipant() {
+    vm.prank(participant1);
+    _;
+  }
 
   function setUp() public {
     uint32[] memory teamIDs = new uint32[](8);
@@ -33,21 +43,23 @@ contract Base64Test is Test {
 
     b = new Base64(teamIDs, teamNames);
 
-    e = new uint256[][](3);
-    e[0] = new uint256[](4);
-    e[1] = new uint256[](2);
-    e[2] = new uint256[](1);
+    participant1 = address(0x420);
 
-    e[0][0] = 1;
-    e[0][1] = 3;
-    e[0][2] = 5;
-    e[0][3] = 7;
-    e[1][0] = 1;
-    e[1][1] = 5;
-    e[2][0] = 1;
+    entry1 = new uint256[][](3);
+    entry1[0] = new uint256[](4);
+    entry1[1] = new uint256[](2);
+    entry1[2] = new uint256[](1);
+
+    entry1[0][0] = 1;
+    entry1[0][1] = 3;
+    entry1[0][2] = 5;
+    entry1[0][3] = 7;
+    entry1[1][0] = 1;
+    entry1[1][1] = 5;
+    entry1[2][0] = 1;
 
     // Fund the addresses needed.
-    vm.deal(address(this), 1 ether);
+    vm.deal(address(participant1), 1 ether);
     vm.deal(address(0x1337), 1 ether);
   }
 
@@ -140,7 +152,7 @@ contract Base64Test is Test {
     new Base64(invalidTeamIDs, invalidTeamNames);
   }
 
-  function testGetBracket_initial() public {
+  function testGetBracket_initial() public asParticipant {
     uint256[][] memory bracket = b.getBracket();
 
     assertEq(bracket.length, 4);
@@ -160,35 +172,37 @@ contract Base64Test is Test {
     assertEq(bracket[3].length, 0);
   }
 
-  function testGetTeam() public {
+  function testGetTeam() public asParticipant {
     Base64.Team memory team = b.getTeam(1);
 
     assertEq(team.id, 1);
     assertEq(team.name, "Brian");
   }
 
-  function testGetTeam_notFound() public {
+  function testGetTeam_notFound() public asParticipant {
     vm.expectRevert("TEAM_NOT_FOUND");
 
     b.getTeam(9);
   }
 
-  function testSubmitEntry() public {
-    b.submitEntry{value: 0.01 ether}(e);
+  function testSubmitEntry() public asParticipant {
+    b.submitEntry{value: 0.01 ether}(entry1);
   }
 
   function testSubmitEntry_alreadySubmitted() public {
-    b.submitEntry{value: 0.01 ether}(e);
+    vm.prank(participant1);
+    b.submitEntry{value: 0.01 ether}(entry1);
 
     vm.expectRevert("ALREADY_SUBMITTED");
 
-    b.submitEntry{value: 0.01 ether}(e);
+    vm.prank(participant1);
+    b.submitEntry{value: 0.01 ether}(entry1);
   }
 
-  function testSubmitEntry_noFee() public {
+  function testSubmitEntry_noFee() public asParticipant {
     vm.expectRevert("INVALID_ENTRY_FEE");
 
-    b.submitEntry(e);
+    b.submitEntry(entry1);
   }
 
   function testSubmitEntry_invalidNumRounds() public {
@@ -227,22 +241,22 @@ contract Base64Test is Test {
   }
 
   function testGetEntry() public {
-    b.submitEntry{value: 0.01 ether}(e);
+    b.submitEntry{value: 0.01 ether}(entry1);
 
     uint256[][] memory entry = b.getEntry(address(this));
 
-    assertEq(entry.length, e.length);
-    assertEq(entry[0].length, e[0].length);
-    assertEq(entry[1].length, e[1].length);
-    assertEq(entry[2].length, e[2].length);
+    assertEq(entry.length, entry1.length);
+    assertEq(entry[0].length, entry1[0].length);
+    assertEq(entry[1].length, entry1[1].length);
+    assertEq(entry[2].length, entry1[2].length);
 
-    assertEq(entry[0][0], e[0][0]);
-    assertEq(entry[0][1], e[0][1]);
-    assertEq(entry[0][2], e[0][2]);
-    assertEq(entry[0][3], e[0][3]);
-    assertEq(entry[1][0], e[1][0]);
-    assertEq(entry[1][1], e[1][1]);
-    assertEq(entry[2][0], e[2][0]);
+    assertEq(entry[0][0], entry1[0][0]);
+    assertEq(entry[0][1], entry1[0][1]);
+    assertEq(entry[0][2], entry1[0][2]);
+    assertEq(entry[0][3], entry1[0][3]);
+    assertEq(entry[1][0], entry1[1][0]);
+    assertEq(entry[1][1], entry1[1][1]);
+    assertEq(entry[2][0], entry1[2][0]);
   }
 
   function testGetEntry_notFound() public {
@@ -256,7 +270,7 @@ contract Base64Test is Test {
   }
 
   function testListParticipants() public {
-    b.submitEntry{value: 0.01 ether}(e);
+    b.submitEntry{value: 0.01 ether}(entry1);
 
     address[] memory participants = b.listParticipants();
 
@@ -279,7 +293,7 @@ contract Base64Test is Test {
   }
 
   function testTwoParticipants() public {
-    b.submitEntry{value: 0.01 ether}(e);
+    b.submitEntry{value: 0.01 ether}(entry1);
 
     // Submit another entry from address 0x1337.
     uint256[][] memory f = new uint256[][](3);
