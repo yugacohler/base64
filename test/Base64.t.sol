@@ -303,6 +303,14 @@ contract Base64Test is Test {
     assertTrue(participants[0].addr == address(this) || participants[0].addr == address(0x1337));
     assertTrue(participants[1].addr == address(this) || participants[1].addr == address(0x1337));
     assertEq(participants[0].points + participants[1].points, 4);
+
+    // Advance the round twice more. No errors.
+    b.advance();
+    b.advance();
+
+    // Expect a revert if we try to advance once more.
+    vm.expectRevert("TOURNAMENT_FINISHED");
+    b.advance();
   }
 
   function testCollectPayout() public {

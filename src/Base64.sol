@@ -35,7 +35,7 @@ contract Base64 is IBase64, Owned {
   // The number of rounds in the bracket.
   uint256 numRounds;
 
-  // The current round of the bracket.
+  // The current round of the bracket, 0 indexed.
   uint256 curRound = 0;
 
   // The number of points awarded for each match in the current round.
@@ -126,8 +126,12 @@ contract Base64 is IBase64, Owned {
 
   // Advances the state of Base64.
   function advance() external onlyOwner {
+    require(state != State.Finished, "TOURNAMENT_FINISHED");
+
     if (state == State.AcceptingEntries) {
       state = State.InProgress;
+      advanceRound();
+    } else if (state == State.InProgress) {
       advanceRound();
     }
   }
@@ -177,7 +181,6 @@ contract Base64 is IBase64, Owned {
     uint256 numWinners = bracket[curRound].length / 2;
 
     for (uint256 i = 0; i < numWinners; i++) {
-      emit LogDebug("Picking winner for round and match", curRound, i);
       uint256 winner = pickWinner(bracket[curRound][i * 2], bracket[curRound][(i * 2) + 1]);
       bracket[curRound + 1].push(winner);
     }
@@ -186,6 +189,10 @@ contract Base64 is IBase64, Owned {
 
     pointsPerMatch *= 2;
     curRound++;
+
+    if (curRound >= numRounds) {
+      state = State.Finished;
+    }
   }
 
   // Randomly picks a winner between two team IDs.
