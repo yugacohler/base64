@@ -56,7 +56,7 @@ interface IBase64 {
   // Submits an entry to the Tournament pool. The entry must consist of N-1 rounds, where N
   // is the number of rounds in the Tournament. The entry must also pay the entry fee.
   // An address may submit at most one entry.
-  function submitEntry(uint256[][] memory entry) external;
+  function submitEntry(uint256[][] memory entry) payable external;
 
   // Returns an entry for a given address.
   function getEntry(address addr) external view returns (uint256[][] memory);

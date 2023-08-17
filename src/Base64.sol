@@ -6,6 +6,11 @@ import {Owned} from "../lib/solmate/src/auth/Owned.sol";
 
 // Base64, a Smart Contract for Tournament-based pools.
 contract Base64 is IBase64, Owned {
+  ////////// CONSTANTS //////////
+  
+  // The entry fee.
+  uint256 public constant ENTRY_FEE = 0.01 ether;
+
   ////////// MEMBER VARIABLES //////////
 
   // The mapping from team ID to team.
@@ -13,6 +18,12 @@ contract Base64 is IBase64, Owned {
 
   // The current bracket.
   uint256[][] public bracket;
+
+  // The mapping from entrant addresses to entry.
+  mapping(address => uint256[][]) public entries;
+
+  // The number of rounds in the bracket.
+  uint256 public numRounds;
 
   ////////// CONSTRUCTOR //////////
 
@@ -33,6 +44,10 @@ contract Base64 is IBase64, Owned {
 
     while (teamsLeft >= 1) {
       bracket.push();
+      if (teamsLeft > 1) {
+        numRounds++;
+      }
+
       teamsLeft /= 2;
     }
 
@@ -50,12 +65,15 @@ contract Base64 is IBase64, Owned {
 
   function getTeam(uint256 teamId) override external view returns (Team memory) {
     require(teams[teamId].id != 0, "TEAM_NOT_FOUND");
-    
+
     return teams[teamId];
   }
 
-  function submitEntry(uint256[][] memory entry) override external {
-    require(false, "NOT_IMPLEMENTED");
+  function submitEntry(uint256[][] memory entry) override payable external {
+    require(msg.value >= ENTRY_FEE, "INVALID_ENTRY_FEE");
+    validateEntry(entry);
+
+    entries[msg.sender] = entry;
   }
 
   function getEntry(address addr) override external view returns (uint256[][] memory) {
@@ -95,5 +113,19 @@ contract Base64 is IBase64, Owned {
       }
 
       return true;
+  }
+
+  // Validates an entry. To save on gas, we just ensure the entry has the proper number
+  // of rounds and picks, without checking the team IDs.
+  function validateEntry(uint256[][] memory entry) private view {
+    require(entry.length == numRounds, "INVALID_NUM_ROUNDS");
+
+    uint256 numTeams = bracket[0].length;
+
+    for (uint32 i = 0; i < entry.length; i++) {
+        numTeams /= 2;
+
+        require(entry[i].length == numTeams, "INVALID_NUM_TEAMS");
+    }
   }
 }

@@ -7,6 +7,7 @@ import {Test} from "../lib/forge-std/src/Test.sol";
 // Unit tests for Base64.
 contract Base64Test is Test {
   Base64 b;
+  uint256[][] entry;
 
   function setUp() public {
     uint32[] memory teamIDs = new uint32[](8);
@@ -25,6 +26,19 @@ contract Base64Test is Test {
     teamNames[7] = "Will";
 
     b = new Base64(teamIDs, teamNames);
+
+    entry = new uint256[][](3);
+    entry[0] = new uint256[](4);
+    entry[1] = new uint256[](2);
+    entry[2] = new uint256[](1);
+
+    entry[0][0] = 1;
+    entry[0][1] = 3;
+    entry[0][2] = 5;
+    entry[0][3] = 7;
+    entry[1][0] = 1;
+    entry[1][1] = 5;
+    entry[2][0] = 1;
   }
 
   function testConstructor_tooShort() public {
@@ -147,5 +161,50 @@ contract Base64Test is Test {
     vm.expectRevert("TEAM_NOT_FOUND");
 
     b.getTeam(9);
+  }
+
+  function testSubmitEntry() public {
+    b.submitEntry{value: 0.01 ether}(entry);
+  }
+
+  function testSubmitEntry_noFee() public {
+    vm.expectRevert("INVALID_ENTRY_FEE");
+
+    b.submitEntry(entry);
+  }
+
+  function testSubmitEntry_invalidNumRounds() public {
+    uint256[][] memory invalidEntry = new uint256[][](2);
+    invalidEntry[0] = new uint256[](4);
+    invalidEntry[1] = new uint256[](1);
+
+    entry[0][0] = 1;
+    entry[0][1] = 3;
+    entry[0][2] = 5;
+    entry[0][3] = 7;
+    entry[1][0] = 1;
+
+    vm.expectRevert("INVALID_NUM_ROUNDS");
+
+    b.submitEntry{value: 0.01 ether}(invalidEntry);
+  }
+
+  function testSubmitEntry_invalidNumTeams() public {
+    uint256[][] memory invalidEntry = new uint256[][](3);
+    invalidEntry[0] = new uint256[](4);
+    entry[1] = new uint256[](3); // This needs to be 2.
+    entry[2] = new uint256[](1);
+
+    entry[0][0] = 1;
+    entry[0][1] = 3;
+    entry[0][2] = 5;
+    entry[0][3] = 7;
+    entry[1][0] = 1;
+    entry[1][1] = 5;
+    entry[2][0] = 1;
+
+    vm.expectRevert("INVALID_NUM_TEAMS");
+
+    b.submitEntry{value: 0.01 ether}(invalidEntry);
   }
 }
