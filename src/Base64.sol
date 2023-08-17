@@ -22,8 +22,11 @@ contract Base64 is IBase64, Owned {
   // The current bracket.
   uint256[][] public bracket;
 
-  // The mapping from entrant addresses to entry.
+  // The mapping from participant addresses to entry.
   mapping(address => uint256[][]) public entries;
+
+  // The list of participants.
+  Participant[] participants;
 
   // The number of rounds in the bracket.
   uint256 public numRounds;
@@ -78,6 +81,7 @@ contract Base64 is IBase64, Owned {
     validateEntry(entry);
 
     entries[msg.sender] = entry;
+    participants.push(Participant(msg.sender, 0, 0));
   }
 
   function getEntry(address addr) override external view returns (uint256[][] memory) {
@@ -91,7 +95,7 @@ contract Base64 is IBase64, Owned {
   }
 
   function getParticipants() override external view returns (Participant[] memory) {
-    require(false, "NOT_IMPLEMENTED");
+    return participants;
   }
   
   function collectPayout() override external {

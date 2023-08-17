@@ -245,4 +245,15 @@ contract Base64Test is Test {
   function testGetState() public {
     assertTrue(b.getState() == IBase64.State.AcceptingEntries);
   }
+
+  function testGetParticipants() public {
+    b.submitEntry{value: 0.01 ether}(e);
+
+    IBase64.Participant[] memory participants = b.getParticipants();
+
+    assertEq(participants.length, 1);
+    assertEq(participants[0].addr, address(this));
+    assertEq(participants[0].points, 0);
+    assertEq(participants[0].payout, 0);
+  }
 }
