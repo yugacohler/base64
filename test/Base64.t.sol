@@ -306,7 +306,17 @@ contract Base64Test is Test {
 
     // Advance the round twice more. No errors.
     b.advance();
+
+    uint256[][] memory bracket = b.getBracket(); 
+    assertEq(bracket[2].length, 2);
+    assertTrue(bracket[2][0] >= 1 && bracket[2][0] <= 4);
+    assertTrue(bracket[2][1] >= 5 && bracket[2][1] <= 8);
+
     b.advance();
+
+    bracket = b.getBracket();
+    assertEq(bracket[3].length, 1);
+    assertTrue(bracket[3][0] >= 1 && bracket[3][0] <= 8);
 
     // Expect a revert if we try to advance once more.
     vm.expectRevert("TOURNAMENT_FINISHED");
