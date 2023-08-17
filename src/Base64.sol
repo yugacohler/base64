@@ -3,10 +3,11 @@ pragma solidity ^0.8.13;
 
 import {IBase64} from "./IBase64.sol";
 import {Owned} from "../lib/solmate/src/auth/Owned.sol";
+import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
+import {console2} from "../lib/forge-std/src/console2.sol";
 
 // Base64, a Smart Contract for Tournament-based pools.
 contract Base64 is IBase64, Owned {
-  event LogDebug(string message, uint256 data1, uint256 data2);
   ////////// CONSTANTS //////////
   
   // The entry fee.
@@ -26,11 +27,11 @@ contract Base64 is IBase64, Owned {
   // The mapping from participant address to entry.
   mapping(address => uint256[][]) entries;
 
-  // The list of participants.
-  Participant[] participants;
-
   // The mapping from participant address to participant.
   mapping(address => Participant) participantMap;
+
+  // The list of participant addresses.
+  address[] participants;
 
   // The number of rounds in the bracket.
   uint256 numRounds;
@@ -97,8 +98,8 @@ contract Base64 is IBase64, Owned {
 
     Participant memory p = Participant(msg.sender, 0, 0);
 
-    participants.push(p);
     participantMap[msg.sender] = p;
+    participants.push(msg.sender);
   }
 
   function getEntry(address addr) override external view returns (uint256[][] memory) {
@@ -111,15 +112,23 @@ contract Base64 is IBase64, Owned {
     return state;
   }
 
-  function getParticipants() override external view returns (Participant[] memory) {
+  function listParticipants() override external view returns (address[] memory) {
     return participants;
+  }
+
+  function getParticipant(address addr) override external view returns (Participant memory) {
+    require(participantMap[addr].addr  != address(0), "PARTICIPANT_NOT_FOUND");
+
+    return participantMap[addr];
   }
   
   function collectPayout() override external {
     require(state == State.Finished, "TOURNAMENT_NOT_FINISHED");
-    require(participantMap[msg.sender].payout > 0, "NO_PAYOUT");
 
-    payable(msg.sender).transfer(participantMap[msg.sender].payout);
+    Participant memory p = participantMap[msg.sender];
+    require(p.addr  != address(0), "PARTICIPANT_NOT_FOUND");
+
+    SafeTransferLib.safeTransferETH(p.addr, p.payout);
   }
 
     ////////// ADMIN APIS //////////
@@ -191,6 +200,7 @@ contract Base64 is IBase64, Owned {
     curRound++;
 
     if (curRound >= numRounds) {
+      calculatePayouts();
       state = State.Finished;
     }
   }
@@ -211,14 +221,29 @@ contract Base64 is IBase64, Owned {
   // entries.
   function updatePoints() private {
     for (uint256 i = 0; i < participants.length; i++) {
-      uint256[][] memory entry = entries[participants[i].addr];
+      uint256[][] memory entry = entries[participants[i]];
 
       // Score the entry for the current round.
       for (uint256 j = 0; j < bracket[curRound + 1].length; j ++) {
         if (bracket[curRound + 1][j] == entry[curRound][j]) {
-          participants[i].points += pointsPerMatch;
+          participantMap[participants[i]].points += pointsPerMatch;
         }
       }
+    }
+  }
+
+  // Calculates the payout for each participant.
+  function calculatePayouts() private {
+    uint256 totalPoints = 0;
+
+    for (uint256 i = 0; i < participants.length; i++) {
+      totalPoints += participantMap[participants[i]].points;
+    }
+
+    for (uint256 i = 0; i < participants.length; i++) {
+      uint256 payout = (participantMap[participants[i]].points * address(this).balance) / totalPoints;
+      participantMap[participants[i]].payout = payout;
+      console2.log("Payout for participant", payout);
     }
   }  
 }

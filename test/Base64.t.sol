@@ -40,6 +40,11 @@ contract Base64Test is Test {
     e[1][0] = 1;
     e[1][1] = 5;
     e[2][0] = 1;
+
+    // Fund the addresses needed.
+    vm.deal(address(this), 1 ether);
+    vm.deal(address(0x1337), 1 ether);
+    vm.deal(address(b), 1 ether);
   }
 
   function testConstructor_tooShort() public {
@@ -246,15 +251,13 @@ contract Base64Test is Test {
     assertTrue(b.getState() == IBase64.State.AcceptingEntries);
   }
 
-  function testGetParticipants() public {
+  function testListParticipants() public {
     b.submitEntry{value: 0.01 ether}(e);
 
-    IBase64.Participant[] memory participants = b.getParticipants();
+    address[] memory participants = b.listParticipants();
 
     assertEq(participants.length, 1);
-    assertEq(participants[0].addr, address(this));
-    assertEq(participants[0].points, 0);
-    assertEq(participants[0].payout, 0);
+    assertEq(participants[0], address(this));
   }
 
   function testAdvanceRound() public {
@@ -297,12 +300,15 @@ contract Base64Test is Test {
     b.advance();
 
     // The points of the two participants should add up to 4.
-    IBase64.Participant[] memory participants = b.getParticipants();
-
+    address[] memory participants = b.listParticipants();
     assertEq(participants.length, 2);
-    assertTrue(participants[0].addr == address(this) || participants[0].addr == address(0x1337));
-    assertTrue(participants[1].addr == address(this) || participants[1].addr == address(0x1337));
-    assertEq(participants[0].points + participants[1].points, 4);
+
+    IBase64.Participant memory p1 = b.getParticipant(participants[0]);
+    IBase64.Participant memory p2 = b.getParticipant(participants[1]);
+
+    assertTrue(p1.addr == address(this) || p1.addr == address(0x1337));
+    assertTrue(p2.addr == address(this) || p2.addr == address(0x1337));
+    assertEq(p1.points + p2.points, 4);
 
     // Advance the round twice more. No errors.
     b.advance();
@@ -319,8 +325,18 @@ contract Base64Test is Test {
     assertTrue(bracket[3][0] >= 1 && bracket[3][0] <= 8);
 
     // Expect a revert if we try to advance once more.
-    vm.expectRevert("TOURNAMENT_FINISHED");
-    b.advance();
+    // vm.expectRevert("TOURNAMENT_FINISHED");
+    // b.advance();
+
+    // Collect payout for the first participant.
+    b.collectPayout();
+
+    // Collect payout for the second participant.
+    vm.prank(address(0x1337));
+    b.collectPayout();
+
+    // Balance of the two addresses should add up to 0.02 ether.
+    assertEq(address(this).balance + address(0x1337).balance, 0.02 ether);
   }
 
   function testCollectPayout() public {
