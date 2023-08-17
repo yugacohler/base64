@@ -11,7 +11,7 @@ contract Base64Test is Test {
   function setUp() public {
     uint32[] memory teamIDs = new uint32[](8);
     for (uint8 i = 0; i < teamIDs.length; i++) {
-      teamIDs[i] = i;
+      teamIDs[i] = i + 1;
     }
 
     string[] memory teamNames = new string[](8);
@@ -30,7 +30,7 @@ contract Base64Test is Test {
   function testConstructor_tooShort() public {
     uint32[] memory invalidTeamIDs = new uint32[](3);
     for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
-      invalidTeamIDs[i] = i;
+      invalidTeamIDs[i] = i + 1;
     }
 
     string[] memory invalidTeamNames = new string[](3);
@@ -46,7 +46,7 @@ contract Base64Test is Test {
   function testConstructor_notPowerOfTwo() public {
     uint32[] memory invalidTeamIDs = new uint32[](5);
     for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
-      invalidTeamIDs[i] = i;
+      invalidTeamIDs[i] = i + 1;
     }
 
     string[] memory invalidTeamNames = new string[](5);
@@ -64,7 +64,7 @@ contract Base64Test is Test {
   function testConstructor_notEnoughNames() public {
     uint32[] memory invalidTeamIDs = new uint32[](8);
     for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
-      invalidTeamIDs[i] = i;
+      invalidTeamIDs[i] = i + 1;
     }
 
     string[] memory invalidTeamNames = new string[](4);
@@ -81,6 +81,25 @@ contract Base64Test is Test {
   function testConstructor_duplicateTeamIDs() public {
     uint32[] memory invalidTeamIDs = new uint32[](4);
     for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
+      invalidTeamIDs[i] = i + 1;
+    }
+
+    invalidTeamIDs[1] = 0;
+
+    string[] memory invalidTeamNames = new string[](4);
+    invalidTeamNames[0] = "Brian";
+    invalidTeamNames[1] = "Greg";
+    invalidTeamNames[2] = "Alesia";
+    invalidTeamNames[3] = "Manish";
+
+    vm.expectRevert("INVALID_TEAM_IDS");
+
+    new Base64(invalidTeamIDs, invalidTeamNames);
+  }
+
+  function testConstructor_zeroValueID() public {
+    uint32[] memory invalidTeamIDs = new uint32[](4);
+    for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
       invalidTeamIDs[i] = i;
     }
 
@@ -92,7 +111,7 @@ contract Base64Test is Test {
     invalidTeamNames[2] = "Alesia";
     invalidTeamNames[3] = "Manish";
 
-    vm.expectRevert("DUPLICATE_TEAM_IDS");
+    vm.expectRevert("INVALID_TEAM_IDS");
 
     new Base64(invalidTeamIDs, invalidTeamNames);
   }
@@ -103,14 +122,14 @@ contract Base64Test is Test {
     assertEq(bracket.length, 4);
 
     assertEq(bracket[0].length, 8);
-    assertEq(bracket[0][0], 0);
-    assertEq(bracket[0][1], 1);
-    assertEq(bracket[0][2], 2);
-    assertEq(bracket[0][3], 3);
-    assertEq(bracket[0][4], 4);
-    assertEq(bracket[0][5], 5);
-    assertEq(bracket[0][6], 6);
-    assertEq(bracket[0][7], 7);
+    assertEq(bracket[0][0], 1);
+    assertEq(bracket[0][1], 2);
+    assertEq(bracket[0][2], 3);
+    assertEq(bracket[0][3], 4);
+    assertEq(bracket[0][4], 5);
+    assertEq(bracket[0][5], 6);
+    assertEq(bracket[0][6], 7);
+    assertEq(bracket[0][7], 8);
 
     assertEq(bracket[1].length, 0);
     assertEq(bracket[2].length, 0);

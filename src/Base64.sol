@@ -21,7 +21,7 @@ contract Base64 is IBase64, Owned {
   constructor(uint32[] memory teamIDs, string[] memory teamNames) Owned(msg.sender) {
     require(isPowerOfTwo(teamIDs.length), "INVALID_BRACKET_SIZE");
     require(teamIDs.length == teamNames.length, "INVALID_TEAM_DATA");
-    require(checkTeamIDs(teamIDs), "DUPLICATE_TEAM_IDS");
+    require(checkTeamIDs(teamIDs), "INVALID_TEAM_IDS");
 
     // Initialize the teams.
     for (uint256 i = 0; i < teamNames.length; i++) {
@@ -79,11 +79,14 @@ contract Base64 is IBase64, Owned {
       return x >= 4 && x <= 256 && (x & (x - 1)) == 0;
   }
 
-  // Returns true if the team IDs are unique.
+  // Returns true if the team IDs are unique and valid.
   function checkTeamIDs(uint32[] memory teamIDs) private pure returns (bool) {
-      for (uint8 i = 0; i < teamIDs.length; i++) {
-          for (uint8 j = i + 1; j < teamIDs.length; j++) {
+      for (uint256 i = 0; i < teamIDs.length; i++) {
+          for (uint256 j = i + 1; j < teamIDs.length; j++) {
               if (teamIDs[i] == teamIDs[j]) {
+                  return false;
+              } else if (teamIDs[i] == 0) {
+                  // Team IDs must be greater than 0.
                   return false;
               }
           }
