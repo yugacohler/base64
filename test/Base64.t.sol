@@ -21,8 +21,9 @@ contract Base64Test is Test {
 
   // Modifier for tests that are invoked by a participant.
   modifier asParticipant() {
-    vm.prank(participant1);
+    vm.startPrank(participant1);
     _;
+    vm.stopPrank();
   }
 
   function setUp() public {
@@ -205,7 +206,7 @@ contract Base64Test is Test {
     b.submitEntry(entry1);
   }
 
-  function testSubmitEntry_invalidNumRounds() public {
+  function testSubmitEntry_invalidNumRounds() public asParticipant {
     uint256[][] memory invalidEntry = new uint256[][](2);
     invalidEntry[0] = new uint256[](4);
     invalidEntry[1] = new uint256[](1);
@@ -221,7 +222,7 @@ contract Base64Test is Test {
     b.submitEntry{value: 0.01 ether}(invalidEntry);
   }
 
-  function testSubmitEntry_invalidNumTeams() public {
+  function testSubmitEntry_invalidNumTeams() public asParticipant {
     uint256[][] memory invalidEntry = new uint256[][](3);
     invalidEntry[0] = new uint256[](4);
     invalidEntry[1] = new uint256[](3); // This needs to be 2.
@@ -240,10 +241,10 @@ contract Base64Test is Test {
     b.submitEntry{value: 0.01 ether}(invalidEntry);
   }
 
-  function testGetEntry() public {
+  function testGetEntry() public asParticipant {
     b.submitEntry{value: 0.01 ether}(entry1);
 
-    uint256[][] memory entry = b.getEntry(address(this));
+    uint256[][] memory entry = b.getEntry(address(participant1));
 
     assertEq(entry.length, entry1.length);
     assertEq(entry[0].length, entry1[0].length);
@@ -259,13 +260,13 @@ contract Base64Test is Test {
     assertEq(entry[2][0], entry1[2][0]);
   }
 
-  function testGetEntry_notFound() public {
+  function testGetEntry_notFound() public asParticipant {
     vm.expectRevert("ENTRY_NOT_FOUND");
 
     b.getEntry(address(this));
   }
 
-  function testGetState() public {
+  function testGetState() public asParticipant {
     assertTrue(b.getState() == IBase64.State.AcceptingEntries);
   }
 
