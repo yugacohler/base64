@@ -256,4 +256,8 @@ contract Base64Test is Test {
     assertEq(participants[0].points, 0);
     assertEq(participants[0].payout, 0);
   }
+
+  function testCollectPayout() public {
+    // TODO: Need to advance tournament state before this can be implemented.
+  }
 }

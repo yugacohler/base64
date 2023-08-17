@@ -17,19 +17,22 @@ contract Base64 is IBase64, Owned {
   State state = State.AcceptingEntries;
 
   // The mapping from team ID to team.
-  mapping(uint256 => Team) public teams;
+  mapping(uint256 => Team) teams;
 
   // The current bracket.
-  uint256[][] public bracket;
+  uint256[][] bracket;
 
-  // The mapping from participant addresses to entry.
-  mapping(address => uint256[][]) public entries;
+  // The mapping from participant address to entry.
+  mapping(address => uint256[][]) entries;
 
   // The list of participants.
   Participant[] participants;
 
+  // The mapping from participant address to participant.
+  mapping(address => Participant) participantMap;
+
   // The number of rounds in the bracket.
-  uint256 public numRounds;
+  uint256 numRounds;
 
   ////////// CONSTRUCTOR //////////
 
@@ -81,7 +84,11 @@ contract Base64 is IBase64, Owned {
     validateEntry(entry);
 
     entries[msg.sender] = entry;
-    participants.push(Participant(msg.sender, 0, 0));
+
+    Participant memory p = Participant(msg.sender, 0, 0);
+
+    participants.push(p);
+    participantMap[msg.sender] = p;
   }
 
   function getEntry(address addr) override external view returns (uint256[][] memory) {
@@ -99,7 +106,10 @@ contract Base64 is IBase64, Owned {
   }
   
   function collectPayout() override external {
-    require(false, "NOT_IMPLEMENTED");
+    require(state == State.Finished, "TOURNAMENT_NOT_FINISHED");
+    require(participantMap[msg.sender].payout > 0, "NO_PAYOUT");
+
+    payable(msg.sender).transfer(participantMap[msg.sender].payout);
   }
 
   ////////// PRIVATE HELPERS //////////
