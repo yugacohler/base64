@@ -271,6 +271,40 @@ contract Base64Test is Test {
     assertTrue(bracket[1][3] == 7 || bracket[1][3] == 8);
   }
 
+  function testTwoParticipants() public {
+    b.submitEntry{value: 0.01 ether}(e);
+
+    // Submit another entry from address 0x1337.
+    uint256[][] memory f = new uint256[][](3);
+    f[0] = new uint256[](4);
+    f[1] = new uint256[](2);
+    f[2] = new uint256[](1);
+
+    // The opposite entry of the first entry.
+    f[0][0] = 2;
+    f[0][1] = 4;
+    f[0][2] = 6;
+    f[0][3] = 8;
+    f[1][0] = 2;
+    f[1][1] = 6;
+    f[2][0] = 2;
+
+    // Send the entry from 0x1337.
+    hoax(address(0x1337));
+    b.submitEntry{value: 0.01 ether}(f);
+
+    // Advance the round.
+    b.advance();
+
+    // The points of the two participants should add up to 4.
+    IBase64.Participant[] memory participants = b.getParticipants();
+
+    assertEq(participants.length, 2);
+    assertTrue(participants[0].addr == address(this) || participants[0].addr == address(0x1337));
+    assertTrue(participants[1].addr == address(this) || participants[1].addr == address(0x1337));
+    assertEq(participants[0].points + participants[1].points, 4);
+  }
+
   function testCollectPayout() public {
     // TODO: Need to advance tournament state before this can be implemented.
   }

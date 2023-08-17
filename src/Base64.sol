@@ -38,6 +38,9 @@ contract Base64 is IBase64, Owned {
   // The current round of the bracket.
   uint256 curRound = 0;
 
+  // The number of points awarded for each match in the current round.
+  uint256 pointsPerMatch = 1;
+
   // A nonce used for picking winners.
   uint256 nonce = 0;
 
@@ -179,6 +182,9 @@ contract Base64 is IBase64, Owned {
       bracket[curRound + 1].push(winner);
     }
 
+    updatePoints();
+
+    pointsPerMatch *= 2;
     curRound++;
   }
 
@@ -191,6 +197,21 @@ contract Base64 is IBase64, Owned {
       return teamID1;
     } else {
       return teamID2;
+    }
+  }
+
+  // Updates the participants' points according to the current bracket and the participants'
+  // entries.
+  function updatePoints() private {
+    for (uint256 i = 0; i < participants.length; i++) {
+      uint256[][] memory entry = entries[participants[i].addr];
+
+      // Score the entry for the current round.
+      for (uint256 j = 0; j < bracket[curRound + 1].length; j ++) {
+        if (bracket[curRound + 1][j] == entry[curRound][j]) {
+          participants[i].points += pointsPerMatch;
+        }
+      }
     }
   }  
 }
