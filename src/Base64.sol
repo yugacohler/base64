@@ -78,7 +78,9 @@ contract Base64 is IBase64, Owned {
   }
 
   function getEntry(address addr) override external view returns (uint256[][] memory) {
-    require(false, "NOT_IMPLEMENTED");
+    require(entries[addr].length > 0, "ENTRY_NOT_FOUND");
+
+    return entries[addr];
   }
 
   function getState() override external view returns (State) {
