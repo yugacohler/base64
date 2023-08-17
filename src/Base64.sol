@@ -90,7 +90,7 @@ contract Base64 is IBase64, Owned {
     return state;
   }
 
-  function getWinners() override external view returns (Participant[] memory) {
+  function getParticipants() override external view returns (Participant[] memory) {
     require(false, "NOT_IMPLEMENTED");
   }
   

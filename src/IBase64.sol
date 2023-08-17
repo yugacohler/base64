@@ -64,9 +64,8 @@ interface IBase64 {
   // Returns the state of the Tournament pool.
   function getState() external view returns (State);
 
-  // Returns the winners of the Tournament pool. Only callable when the Tournament
-  // is in the Finished state.
-  function getWinners() external view returns (Participant[] memory);
+  // Returns all of the participants in the Tournament pool.
+  function getParticipants() external view returns (Participant[] memory);
   
   // Collects the payout to a winner. Only callable when the Tournament is in the
   // Finished state and if the caller is a winner.
