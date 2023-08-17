@@ -32,21 +32,20 @@ contract Base64 is IBase64, Owned {
     uint256 teamsLeft = teamNames.length;
 
     while (teamsLeft >= 1) {
-      uint256[] memory round = new uint256[](teamsLeft);
-      bracket.push(round);
+      bracket.push();
       teamsLeft /= 2;
     }
 
     // Initialize the first round of the bracket.
     for (uint256 i = 0; i < teamNames.length; i++) {
-      bracket[0][i] = teamIDs[i];
+      bracket[0].push(teamIDs[i]);
     }    
   }
 
   ////////// PUBLIC APIS //////////
 
   function getBracket() override external view returns (uint256[][] memory) {
-    require(false, "NOT_IMPLEMENTED");
+    return bracket;
   }
 
   function getTeam(uint256 teamId) override external view returns (Team memory) {

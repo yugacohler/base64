@@ -96,4 +96,24 @@ contract Base64Test is Test {
 
     new Base64(invalidTeamIDs, invalidTeamNames);
   }
+
+  function testGetBracket_initial() public {
+    uint256[][] memory bracket = b.getBracket();
+
+    assertEq(bracket.length, 4);
+
+    assertEq(bracket[0].length, 8);
+    assertEq(bracket[0][0], 0);
+    assertEq(bracket[0][1], 1);
+    assertEq(bracket[0][2], 2);
+    assertEq(bracket[0][3], 3);
+    assertEq(bracket[0][4], 4);
+    assertEq(bracket[0][5], 5);
+    assertEq(bracket[0][6], 6);
+    assertEq(bracket[0][7], 7);
+
+    assertEq(bracket[1].length, 0);
+    assertEq(bracket[2].length, 0);
+    assertEq(bracket[3].length, 0);
+  }
 }
