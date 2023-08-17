@@ -61,5 +61,39 @@ contract Base64Test is Test {
     new Base64(invalidTeamIDs, invalidTeamNames);
   }
 
+  function testConstructor_notEnoughNames() public {
+    uint32[] memory invalidTeamIDs = new uint32[](8);
+    for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
+      invalidTeamIDs[i] = i;
+    }
 
+    string[] memory invalidTeamNames = new string[](4);
+    invalidTeamNames[0] = "Brian";
+    invalidTeamNames[1] = "Greg";
+    invalidTeamNames[2] = "Alesia";
+    invalidTeamNames[3] = "Manish";
+
+    vm.expectRevert("INVALID_TEAM_DATA");
+
+    new Base64(invalidTeamIDs, invalidTeamNames);
+  }
+
+  function testConstructor_duplicateTeamIDs() public {
+    uint32[] memory invalidTeamIDs = new uint32[](4);
+    for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
+      invalidTeamIDs[i] = i;
+    }
+
+    invalidTeamIDs[1] = 0;
+
+    string[] memory invalidTeamNames = new string[](4);
+    invalidTeamNames[0] = "Brian";
+    invalidTeamNames[1] = "Greg";
+    invalidTeamNames[2] = "Alesia";
+    invalidTeamNames[3] = "Manish";
+
+    vm.expectRevert("DUPLICATE_TEAM_IDS");
+
+    new Base64(invalidTeamIDs, invalidTeamNames);
+  }
 }
