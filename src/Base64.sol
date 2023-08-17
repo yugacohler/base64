@@ -2,9 +2,13 @@
 pragma solidity ^0.8.13;
 
 import {IBase64} from "./IBase64.sol";
+import {Owned} from "../lib/solmate/src/auth/Owned.sol";
 
 // Base64, a Smart Contract for Tournament-based pools.
-contract Base64 is IBase64 {
+contract Base64 is IBase64, Owned {
+  ////////// CONSTRUCTOR //////////
+  constructor() Owned(msg.sender) {}
+
   ////////// PUBLIC APIS //////////
 
   function getBracket() override external view returns (uint256[][] memory) {
