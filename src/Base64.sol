@@ -6,6 +6,7 @@ import {Owned} from "../lib/solmate/src/auth/Owned.sol";
 
 // Base64, a Smart Contract for Tournament-based pools.
 contract Base64 is IBase64, Owned {
+  event LogDebug(string message, uint256 data1, uint256 data2);
   ////////// CONSTANTS //////////
   
   // The entry fee.
@@ -33,6 +34,12 @@ contract Base64 is IBase64, Owned {
 
   // The number of rounds in the bracket.
   uint256 numRounds;
+
+  // The current round of the bracket.
+  uint256 curRound = 0;
+
+  // A nonce used for picking winners.
+  uint256 nonce = 0;
 
   ////////// CONSTRUCTOR //////////
 
@@ -112,6 +119,16 @@ contract Base64 is IBase64, Owned {
     payable(msg.sender).transfer(participantMap[msg.sender].payout);
   }
 
+    ////////// ADMIN APIS //////////
+
+  // Advances the state of Base64.
+  function advance() external onlyOwner {
+    if (state == State.AcceptingEntries) {
+      state = State.InProgress;
+      advanceRound();
+    }
+  }
+
   ////////// PRIVATE HELPERS //////////
 
   // Returns true if a number is a power of 2 greater than 4 and less than 256.
@@ -149,8 +166,31 @@ contract Base64 is IBase64, Owned {
     }
   }
 
-  ////////// ADMIN APIS //////////
-  
-  // Advances the state of Base64.
-  function advance() external onlyOwner {}
+  // Advances the bracket to the next round.
+  function advanceRound() private {
+    require(state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
+    require(curRound < numRounds, "TOURNAMENT_FINISHED");
+
+    uint256 numWinners = bracket[curRound].length / 2;
+
+    for (uint256 i = 0; i < numWinners; i++) {
+      emit LogDebug("Picking winner for round and match", curRound, i);
+      uint256 winner = pickWinner(bracket[curRound][i * 2], bracket[curRound][(i * 2) + 1]);
+      bracket[curRound + 1].push(winner);
+    }
+
+    curRound++;
+  }
+
+  // Randomly picks a winner between two team IDs.
+  function pickWinner(uint256 teamID1, uint256 teamID2) private returns (uint256) {
+    uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, nonce))) % 2;
+    nonce++;
+    
+    if (random == 0) {
+      return teamID1;
+    } else {
+      return teamID2;
+    }
+  }  
 }

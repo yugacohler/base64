@@ -257,6 +257,20 @@ contract Base64Test is Test {
     assertEq(participants[0].payout, 0);
   }
 
+  function testAdvanceRound() public {
+    b.advance();
+
+    assertTrue(b.getState() == IBase64.State.InProgress);
+
+    uint256[][] memory bracket = b.getBracket();
+
+    assertEq(bracket[1].length, 4);
+    assertTrue(bracket[1][0] == 1 || bracket[1][0] == 2);
+    assertTrue(bracket[1][1] == 3 || bracket[1][1] == 4);
+    assertTrue(bracket[1][2] == 5 || bracket[1][2] == 6);
+    assertTrue(bracket[1][3] == 7 || bracket[1][3] == 8);
+  }
+
   function testCollectPayout() public {
     // TODO: Need to advance tournament state before this can be implemented.
   }
