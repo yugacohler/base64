@@ -3,40 +3,38 @@ This is the repository for Base64, a smart contract for Tournament-based betting
 
 It is built using [Foundry](https://book.getfoundry.sh/).
 
-## Usage
-
-### Build
+## Build
 
 ```shell
 $ forge build
 ```
 
-### Test
+## Test
 
 ```shell
 $ forge test
 ```
 
-### Format
+## Format
 
 ```shell
 $ forge fmt
 ```
 
-### Gas Snapshots
+## Gas Snapshots
 
 ```shell
 $ forge snapshot
 ```
 
-### Start Local Ethereum Network
+## Start Local Ethereum Network
 Start a local Ethereum Network by running
 
 ```shell
 $ anvil
 ```
 
-### Deploy Base64
+## Deploy Base64
 The command below uses a default private key of Anvil and the Anvil RPC:
 
 ```shell
@@ -45,20 +43,10 @@ $ forge script script/Base64.s.sol:Base64Script --broadcast --verify --rpc-url h
 
 The output will display the contract address.
 
-### Call Base64
+## Call Base64
+
+### getBracket
 ```shell
 cast call <contract-address> "getBracket()(uint256[][])"
 ```
-### Cast
 
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
