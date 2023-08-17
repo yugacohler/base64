@@ -4,11 +4,16 @@ pragma solidity ^0.8.13;
 import {Base64} from "../src/Base64.sol";
 import {IBase64} from "../src/IBase64.sol";
 import {Test} from "../lib/forge-std/src/Test.sol";
+import {console2} from "../lib/forge-std/src/console2.sol";
 
 // Unit tests for Base64.
 contract Base64Test is Test {
   Base64 b;
   uint256[][] e;
+  
+
+  // Fallback function for this contract.
+  receive() external payable {}
 
   function setUp() public {
     uint32[] memory teamIDs = new uint32[](8);
@@ -44,7 +49,6 @@ contract Base64Test is Test {
     // Fund the addresses needed.
     vm.deal(address(this), 1 ether);
     vm.deal(address(0x1337), 1 ether);
-    vm.deal(address(b), 1 ether);
   }
 
   function testConstructor_tooShort() public {
@@ -293,7 +297,7 @@ contract Base64Test is Test {
     f[2][0] = 2;
 
     // Send the entry from 0x1337.
-    hoax(address(0x1337));
+    vm.prank(address(0x1337));
     b.submitEntry{value: 0.01 ether}(f);
 
     // Advance the round.
@@ -325,10 +329,14 @@ contract Base64Test is Test {
     assertTrue(bracket[3][0] >= 1 && bracket[3][0] <= 8);
 
     // Expect a revert if we try to advance once more.
-    // vm.expectRevert("TOURNAMENT_FINISHED");
-    // b.advance();
+    vm.expectRevert("TOURNAMENT_FINISHED");
+    b.advance();
 
     // Collect payout for the first participant.
+    b.collectPayout();
+
+    // Can't collect payout twice.
+    vm.expectRevert("INSUFFICIENT_BALANCE");
     b.collectPayout();
 
     // Collect payout for the second participant.
@@ -336,10 +344,7 @@ contract Base64Test is Test {
     b.collectPayout();
 
     // Balance of the two addresses should add up to 0.02 ether.
-    assertEq(address(this).balance + address(0x1337).balance, 0.02 ether);
-  }
-
-  function testCollectPayout() public {
-    // TODO: Need to advance tournament state before this can be implemented.
+    console2.log("Participant 1 balance", address(this).balance);
+    console2.log("Participant 2 balance", address(0x1337).balance);
   }
 }

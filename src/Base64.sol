@@ -8,6 +8,7 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 
 // Base64, a Smart Contract for Tournament-based pools.
 contract Base64 is IBase64, Owned {
+  using SafeTransferLib for address;
   ////////// CONSTANTS //////////
   
   // The entry fee.
@@ -128,7 +129,14 @@ contract Base64 is IBase64, Owned {
     Participant memory p = participantMap[msg.sender];
     require(p.addr  != address(0), "PARTICIPANT_NOT_FOUND");
 
-    SafeTransferLib.safeTransferETH(p.addr, p.payout);
+    console2.log("Contract balance", address(this).balance);
+    console2.log("Participant address", p.addr);
+    console2.log("Participant payout", p.payout);
+
+    require(p.payout <= address(this).balance, "INSUFFICIENT_BALANCE");
+    msg.sender.safeTransferETH(p.payout);
+    
+    p.payout = 0;
   }
 
     ////////// ADMIN APIS //////////
