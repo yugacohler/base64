@@ -13,6 +13,9 @@ contract Base64 is IBase64, Owned {
 
   ////////// MEMBER VARIABLES //////////
 
+  // The State of Base64.
+  State state = State.AcceptingEntries;
+
   // The mapping from team ID to team.
   mapping(uint256 => Team) public teams;
 
@@ -84,7 +87,7 @@ contract Base64 is IBase64, Owned {
   }
 
   function getState() override external view returns (State) {
-    require(false, "NOT_IMPLEMENTED");
+    return state;
   }
 
   function getWinners() override external view returns (Participant[] memory) {

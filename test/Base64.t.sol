@@ -2,6 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Base64} from "../src/Base64.sol";
+import {IBase64} from "../src/IBase64.sol";
 import {Test} from "../lib/forge-std/src/Test.sol";
 
 // Unit tests for Base64.
@@ -239,5 +240,9 @@ contract Base64Test is Test {
     vm.expectRevert("ENTRY_NOT_FOUND");
 
     b.getEntry(address(this));
+  }
+
+  function testGetState() public {
+    assertTrue(b.getState() == IBase64.State.AcceptingEntries);
   }
 }
