@@ -11,10 +11,7 @@ contract Base64Test is Test {
   Base64 b;
 
   uint256[][] entry1;
-
   address participant1;
-  address participant2;
-  
 
   // Fallback function for this contract.
   receive() external payable {}
@@ -59,9 +56,8 @@ contract Base64Test is Test {
     entry1[1][1] = 5;
     entry1[2][0] = 1;
 
-    // Fund the addresses needed.
+    // Fund the address needed.
     vm.deal(address(participant1), 1 ether);
-    vm.deal(address(0x1337), 1 ether);
   }
 
   function testConstructor_tooShort() public {
@@ -270,13 +266,13 @@ contract Base64Test is Test {
     assertTrue(b.getState() == IBase64.State.AcceptingEntries);
   }
 
-  function testListParticipants() public {
+  function testListParticipants() public asParticipant {
     b.submitEntry{value: 0.01 ether}(entry1);
 
     address[] memory participants = b.listParticipants();
 
     assertEq(participants.length, 1);
-    assertEq(participants[0], address(this));
+    assertEq(participants[0], address(participant1));
   }
 
   function testAdvanceRound() public {
@@ -293,27 +289,37 @@ contract Base64Test is Test {
     assertTrue(bracket[1][3] == 7 || bracket[1][3] == 8);
   }
 
+  function testAdvanceRound_notOwner() public asParticipant {
+    vm.expectRevert("UNAUTHORIZED");
+
+    b.advance();
+  }
+
   function testTwoParticipants() public {
+    vm.prank(participant1);
     b.submitEntry{value: 0.01 ether}(entry1);
 
     // Submit another entry from address 0x1337.
-    uint256[][] memory f = new uint256[][](3);
-    f[0] = new uint256[](4);
-    f[1] = new uint256[](2);
-    f[2] = new uint256[](1);
+    address participant2 = address(0x1337);
+    vm.deal(address(participant2), 1 ether);
+
+    uint256[][] memory entry2 = new uint256[][](3);
+    entry2[0] = new uint256[](4);
+    entry2[1] = new uint256[](2);
+    entry2[2] = new uint256[](1);
 
     // The opposite entry of the first entry.
-    f[0][0] = 2;
-    f[0][1] = 4;
-    f[0][2] = 6;
-    f[0][3] = 8;
-    f[1][0] = 2;
-    f[1][1] = 6;
-    f[2][0] = 2;
+    entry2[0][0] = 2;
+    entry2[0][1] = 4;
+    entry2[0][2] = 6;
+    entry2[0][3] = 8;
+    entry2[1][0] = 2;
+    entry2[1][1] = 6;
+    entry2[2][0] = 2;
 
     // Send the entry from 0x1337.
-    vm.prank(address(0x1337));
-    b.submitEntry{value: 0.01 ether}(f);
+    vm.prank(address(participant2));
+    b.submitEntry{value: 0.01 ether}(entry2);
 
     // Advance the round.
     b.advance();
@@ -325,8 +331,8 @@ contract Base64Test is Test {
     IBase64.Participant memory p1 = b.getParticipant(participants[0]);
     IBase64.Participant memory p2 = b.getParticipant(participants[1]);
 
-    assertTrue(p1.addr == address(this) || p1.addr == address(0x1337));
-    assertTrue(p2.addr == address(this) || p2.addr == address(0x1337));
+    assertTrue(p1.addr == address(participant1) || p1.addr == address(0x1337));
+    assertTrue(p2.addr == address(participant2) || p2.addr == address(0x1337));
     assertEq(p1.points + p2.points, 4);
 
     // Advance the round twice more. No errors.
@@ -348,18 +354,20 @@ contract Base64Test is Test {
     b.advance();
 
     // Collect payout for the first participant.
+    vm.prank(address(participant1));
     b.collectPayout();
 
     // Can't collect payout twice.
+    vm.prank(address(participant1));
     vm.expectRevert("INSUFFICIENT_BALANCE");
     b.collectPayout();
 
     // Collect payout for the second participant.
-    vm.prank(address(0x1337));
+    vm.prank(address(participant2));
     b.collectPayout();
 
     // Balance of the two addresses should add up to 0.02 ether.
-    console2.log("Participant 1 balance", address(this).balance);
-    console2.log("Participant 2 balance", address(0x1337).balance);
+    console2.log("Participant 1 balance", address(participant1).balance);
+    console2.log("Participant 2 balance", address(participant2).balance);
   }
 }
