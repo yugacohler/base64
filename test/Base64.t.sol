@@ -135,4 +135,17 @@ contract Base64Test is Test {
     assertEq(bracket[2].length, 0);
     assertEq(bracket[3].length, 0);
   }
+
+  function testGetTeam() public {
+    Base64.Team memory team = b.getTeam(1);
+
+    assertEq(team.id, 1);
+    assertEq(team.name, "Brian");
+  }
+
+  function testGetTeam_notFound() public {
+    vm.expectRevert("TEAM_NOT_FOUND");
+
+    b.getTeam(9);
+  }
 }

@@ -49,7 +49,9 @@ contract Base64 is IBase64, Owned {
   }
 
   function getTeam(uint256 teamId) override external view returns (Team memory) {
-    require(false, "NOT_IMPLEMENTED");
+    require(teams[teamId].id != 0, "TEAM_NOT_FOUND");
+    
+    return teams[teamId];
   }
 
   function submitEntry(uint256[][] memory entry) override external {
