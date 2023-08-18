@@ -25,8 +25,8 @@ interface IBase64 {
 
     // An enum representing the state of the Tournament pool.
     enum State
-    // The Tournament pool is accepting entries.
     {
+        // The Tournament pool is accepting entries.
         AcceptingEntries,
         // The Tournament is in progress and the pool is no longer accepting entries.
         InProgress,
