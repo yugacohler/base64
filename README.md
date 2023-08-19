@@ -69,3 +69,11 @@ cast send \
 ```shell
 cast call <contract-address> "listParticipants()(address[])"
 ```
+
+### advance
+```shell
+cast send --private-key <admin-private-key> \
+  --rpc-url "https://goerli.base.org/" \
+  --gas-limit 5000000 \
+  <contract-address> "advance()"
+```
