@@ -38,7 +38,9 @@ $ anvil
 The command below uses a default private key of Anvil and the Anvil RPC:
 
 ```shell
-$ forge script script/Base64.s.sol:Base64Script --broadcast --verify --rpc-url http://127.0.0.1:8545
+$ forge script script/Base64.s.sol:Base64Script \
+  --broadcast --verify --rpc-url "https://goerli.base.org/" \
+  --private-key <admin-private-key>
 ```
 
 The output will display the contract address.
