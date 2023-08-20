@@ -13,7 +13,7 @@ interface IBase64 {
         string name;
     }
 
-    // A struct representing a participant in the Tournament pool.
+    // A struct representing a participant in the Tournament prediction market.
     struct Participant {
         // The address of the participant.
         address addr;
@@ -23,12 +23,12 @@ interface IBase64 {
         uint256 payout;
     }
 
-    // An enum representing the state of the Tournament pool.
+    // An enum representing the state of the Tournament prediction market.
     enum State
     {
-        // The Tournament pool is accepting entries.
+        // The Tournament prediction market is accepting entries.
         AcceptingEntries,
-        // The Tournament is in progress and the pool is no longer accepting entries.
+        // The Tournament is in progress and the prediction market is no longer accepting entries.
         InProgress,
         // The Tournament has concluded.
         Finished
@@ -45,7 +45,7 @@ interface IBase64 {
     // Returns the team for the given team ID.
     function getTeam(uint256 teamId) external view returns (Team memory);
 
-    // Submits an entry to the Tournament pool. The entry must consist of N-1 rounds, where N
+    // Submits an entry to the Tournament prediction market. The entry must consist of N-1 rounds, where N
     // is the number of rounds in the Tournament. The entry must also pay the entry fee.
     // An address may submit at most one entry.
     function submitEntry(uint256[][] memory entry) external payable;
@@ -53,10 +53,10 @@ interface IBase64 {
     // Returns an entry for a given address.
     function getEntry(address addr) external view returns (uint256[][] memory);
 
-    // Returns the state of the Tournament pool.
+    // Returns the state of the Tournament prediction market.
     function getState() external view returns (State);
 
-    // Returns the addresses of the participants in the tournament pool.
+    // Returns the addresses of the participants in the tournament prediction market.
     function listParticipants() external view returns (address[] memory);
 
     // Returns the participant for the given address.

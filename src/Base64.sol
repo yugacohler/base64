@@ -15,7 +15,7 @@ import {console2} from "../lib/forge-std/src/console2.sol";
  * ╚═════╝░╚═╝░░╚═╝╚═════╝░╚══════╝░╚════╝░░░░░░╚═╝
  * 
  * 
- * A Smart Contract for Tournament-based pools.
+ * A Smart Contract for Tournament-based prediction markets.
  */
 contract Base64 is IBase64, Owned {
     using SafeTransferLib for address;

@@ -1,5 +1,5 @@
 # Base64
-This is the repository for Base64, a smart contract for Tournament-based betting pools.
+This is the repository for Base64, a smart contract for Tournament-based prediction markets.
 
 It is built using [Foundry](https://book.getfoundry.sh/).
 
