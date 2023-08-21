@@ -24,22 +24,22 @@ contract Base64Test is Test {
     }
 
     function setUp() public {
-        uint32[] memory teamIDs = new uint32[](8);
-        for (uint8 i = 0; i < teamIDs.length; i++) {
-            teamIDs[i] = i + 1;
+        uint32[] memory competitorIDs = new uint32[](8);
+        for (uint8 i = 0; i < competitorIDs.length; i++) {
+            competitorIDs[i] = i + 1;
         }
 
-        string[] memory teamNames = new string[](8);
-        teamNames[0] = "Brian";
-        teamNames[1] = "Greg";
-        teamNames[2] = "Alesia";
-        teamNames[3] = "Manish";
-        teamNames[4] = "LJ";
-        teamNames[5] = "Paul";
-        teamNames[6] = "Emilie";
-        teamNames[7] = "Will";
+        string[] memory competitorNames = new string[](8);
+        competitorNames[0] = "Brian";
+        competitorNames[1] = "Greg";
+        competitorNames[2] = "Alesia";
+        competitorNames[3] = "Manish";
+        competitorNames[4] = "LJ";
+        competitorNames[5] = "Paul";
+        competitorNames[6] = "Emilie";
+        competitorNames[7] = "Will";
 
-        b = new Base64(teamIDs, teamNames);
+        b = new Base64(competitorIDs, competitorNames);
 
         participant1 = address(0x420);
 
@@ -61,92 +61,92 @@ contract Base64Test is Test {
     }
 
     function testConstructor_tooShort() public {
-        uint32[] memory invalidTeamIDs = new uint32[](3);
-        for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
-            invalidTeamIDs[i] = i + 1;
+        uint32[] memory invalidCompetitorIDs = new uint32[](3);
+        for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
+            invalidCompetitorIDs[i] = i + 1;
         }
 
-        string[] memory invalidTeamNames = new string[](3);
-        invalidTeamNames[0] = "Brian";
-        invalidTeamNames[1] = "Greg";
-        invalidTeamNames[2] = "Alesia";
+        string[] memory invalidCompetitorNames = new string[](3);
+        invalidCompetitorNames[0] = "Brian";
+        invalidCompetitorNames[1] = "Greg";
+        invalidCompetitorNames[2] = "Alesia";
 
         vm.expectRevert("INVALID_BRACKET_SIZE");
 
-        new Base64(invalidTeamIDs, invalidTeamNames);
+        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
     }
 
     function testConstructor_notPowerOfTwo() public {
-        uint32[] memory invalidTeamIDs = new uint32[](5);
-        for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
-            invalidTeamIDs[i] = i + 1;
+        uint32[] memory invalidCompetitorIDs = new uint32[](5);
+        for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
+            invalidCompetitorIDs[i] = i + 1;
         }
 
-        string[] memory invalidTeamNames = new string[](5);
-        invalidTeamNames[0] = "Brian";
-        invalidTeamNames[1] = "Greg";
-        invalidTeamNames[2] = "Alesia";
-        invalidTeamNames[3] = "Manish";
-        invalidTeamNames[4] = "LJ";
+        string[] memory invalidCompetitorNames = new string[](5);
+        invalidCompetitorNames[0] = "Brian";
+        invalidCompetitorNames[1] = "Greg";
+        invalidCompetitorNames[2] = "Alesia";
+        invalidCompetitorNames[3] = "Manish";
+        invalidCompetitorNames[4] = "LJ";
 
         vm.expectRevert("INVALID_BRACKET_SIZE");
 
-        new Base64(invalidTeamIDs, invalidTeamNames);
+        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
     }
 
     function testConstructor_notEnoughNames() public {
-        uint32[] memory invalidTeamIDs = new uint32[](8);
-        for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
-            invalidTeamIDs[i] = i + 1;
+        uint32[] memory invalidCompetitorIDs = new uint32[](8);
+        for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
+            invalidCompetitorIDs[i] = i + 1;
         }
 
-        string[] memory invalidTeamNames = new string[](4);
-        invalidTeamNames[0] = "Brian";
-        invalidTeamNames[1] = "Greg";
-        invalidTeamNames[2] = "Alesia";
-        invalidTeamNames[3] = "Manish";
+        string[] memory invalidCompetitorNames = new string[](4);
+        invalidCompetitorNames[0] = "Brian";
+        invalidCompetitorNames[1] = "Greg";
+        invalidCompetitorNames[2] = "Alesia";
+        invalidCompetitorNames[3] = "Manish";
 
         vm.expectRevert("INVALID_TEAM_DATA");
 
-        new Base64(invalidTeamIDs, invalidTeamNames);
+        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
     }
 
-    function testConstructor_duplicateTeamIDs() public {
-        uint32[] memory invalidTeamIDs = new uint32[](4);
-        for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
-            invalidTeamIDs[i] = i + 1;
+    function testConstructor_duplicateCompetitorIDs() public {
+        uint32[] memory invalidCompetitorIDs = new uint32[](4);
+        for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
+            invalidCompetitorIDs[i] = i + 1;
         }
 
-        invalidTeamIDs[1] = 0;
+        invalidCompetitorIDs[1] = 0;
 
-        string[] memory invalidTeamNames = new string[](4);
-        invalidTeamNames[0] = "Brian";
-        invalidTeamNames[1] = "Greg";
-        invalidTeamNames[2] = "Alesia";
-        invalidTeamNames[3] = "Manish";
+        string[] memory invalidCompetitorNames = new string[](4);
+        invalidCompetitorNames[0] = "Brian";
+        invalidCompetitorNames[1] = "Greg";
+        invalidCompetitorNames[2] = "Alesia";
+        invalidCompetitorNames[3] = "Manish";
 
         vm.expectRevert("INVALID_TEAM_IDS");
 
-        new Base64(invalidTeamIDs, invalidTeamNames);
+        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
     }
 
     function testConstructor_zeroValueID() public {
-        uint32[] memory invalidTeamIDs = new uint32[](4);
-        for (uint8 i = 0; i < invalidTeamIDs.length; i++) {
-            invalidTeamIDs[i] = i;
+        uint32[] memory invalidCompetitorIDs = new uint32[](4);
+        for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
+            invalidCompetitorIDs[i] = i;
         }
 
-        invalidTeamIDs[1] = 0;
+        invalidCompetitorIDs[1] = 0;
 
-        string[] memory invalidTeamNames = new string[](4);
-        invalidTeamNames[0] = "Brian";
-        invalidTeamNames[1] = "Greg";
-        invalidTeamNames[2] = "Alesia";
-        invalidTeamNames[3] = "Manish";
+        string[] memory invalidCompetitorNames = new string[](4);
+        invalidCompetitorNames[0] = "Brian";
+        invalidCompetitorNames[1] = "Greg";
+        invalidCompetitorNames[2] = "Alesia";
+        invalidCompetitorNames[3] = "Manish";
 
         vm.expectRevert("INVALID_TEAM_IDS");
 
-        new Base64(invalidTeamIDs, invalidTeamNames);
+        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
     }
 
     function testGetBracket_initial() public asParticipant {
@@ -169,17 +169,17 @@ contract Base64Test is Test {
         assertEq(bracket[3].length, 0);
     }
 
-    function testGetTeam() public asParticipant {
-        Base64.Team memory team = b.getTeam(1);
+    function testGetCompetitor() public asParticipant {
+        Base64.Competitor memory competitor = b.getCompetitor(1);
 
-        assertEq(team.id, 1);
-        assertEq(team.name, "Brian");
+        assertEq(competitor.id, 1);
+        assertEq(competitor.name, "Brian");
     }
 
-    function testGetTeam_notFound() public asParticipant {
+    function testGetCompetitor_notFound() public asParticipant {
         vm.expectRevert("TEAM_NOT_FOUND");
 
-        b.getTeam(9);
+        b.getCompetitor(9);
     }
 
     function testSubmitEntry() public asParticipant {
@@ -218,7 +218,7 @@ contract Base64Test is Test {
         b.submitEntry{value: 0.01 ether}(invalidEntry);
     }
 
-    function testSubmitEntry_invalidNumTeams() public asParticipant {
+    function testSubmitEntry_invalidNumCompetitors() public asParticipant {
         uint256[][] memory invalidEntry = new uint256[][](3);
         invalidEntry[0] = new uint256[](4);
         invalidEntry[1] = new uint256[](3); // This needs to be 2.

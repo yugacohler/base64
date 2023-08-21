@@ -4,7 +4,6 @@ pragma solidity ^0.8.13;
 import {IBase64} from "./IBase64.sol";
 import {Owned} from "../lib/solmate/src/auth/Owned.sol";
 import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
-import {console2} from "../lib/forge-std/src/console2.sol";
 
 /**
  * ██████╗░░█████╗░░██████╗███████╗░█████╗░░░██╗██╗
@@ -30,8 +29,8 @@ contract Base64 is IBase64, Owned {
     // The State of Base64.
     State state = State.AcceptingEntries;
 
-    // The mapping from team ID to team.
-    mapping(uint256 => Team) teams;
+    // The mapping from competitor ID to competitor.
+    mapping(uint256 => Competitor) competitors;
 
     // The current bracket.
     uint256[][] bracket;
@@ -59,33 +58,33 @@ contract Base64 is IBase64, Owned {
 
     ////////// CONSTRUCTOR //////////
 
-    // Initializes the Base64 bracket with the given teams.
-    // The number of teams must be a power of two between 4 and 256 inclusive.
-    constructor(uint32[] memory teamIDs, string[] memory teamNames) Owned(msg.sender) {
-        require(isPowerOfTwo(teamIDs.length), "INVALID_BRACKET_SIZE");
-        require(teamIDs.length == teamNames.length, "INVALID_TEAM_DATA");
-        require(checkTeamIDs(teamIDs), "INVALID_TEAM_IDS");
+    // Initializes the Base64 bracket with the given competitors.
+    // The number of competitors must be a power of two between 4 and 256 inclusive.
+    constructor(uint32[] memory competitorIDs, string[] memory competitorNames) Owned(msg.sender) {
+        require(isPowerOfTwo(competitorIDs.length), "INVALID_BRACKET_SIZE");
+        require(competitorIDs.length == competitorNames.length, "INVALID_TEAM_DATA");
+        require(checkCompetitorIDs(competitorIDs), "INVALID_TEAM_IDS");
 
-        // Initialize the teams.
-        for (uint256 i = 0; i < teamNames.length; i++) {
-            teams[teamIDs[i]] = Team(teamIDs[i], teamNames[i]);
+        // Initialize the competitors.
+        for (uint256 i = 0; i < competitorNames.length; i++) {
+            competitors[competitorIDs[i]] = Competitor(competitorIDs[i], competitorNames[i]);
         }
 
         // Initialize the bracket.
-        uint256 teamsLeft = teamNames.length;
+        uint256 competitorsLeft = competitorNames.length;
 
-        while (teamsLeft >= 1) {
+        while (competitorsLeft >= 1) {
             bracket.push();
-            if (teamsLeft > 1) {
+            if (competitorsLeft > 1) {
                 numRounds++;
             }
 
-            teamsLeft /= 2;
+            competitorsLeft /= 2;
         }
 
         // Initialize the first round of the bracket.
-        for (uint256 i = 0; i < teamNames.length; i++) {
-            bracket[0].push(teamIDs[i]);
+        for (uint256 i = 0; i < competitorNames.length; i++) {
+            bracket[0].push(competitorIDs[i]);
         }
     }
 
@@ -95,10 +94,10 @@ contract Base64 is IBase64, Owned {
         return bracket;
     }
 
-    function getTeam(uint256 teamId) external view override returns (Team memory) {
-        require(teams[teamId].id != 0, "TEAM_NOT_FOUND");
+    function getCompetitor(uint256 competitorId) external view override returns (Competitor memory) {
+        require(competitors[competitorId].id != 0, "TEAM_NOT_FOUND");
 
-        return teams[teamId];
+        return competitors[competitorId];
     }
 
     function submitEntry(uint256[][] memory entry) external payable override {
@@ -140,10 +139,6 @@ contract Base64 is IBase64, Owned {
         Participant memory p = participantMap[msg.sender];
         require(p.addr != address(0), "PARTICIPANT_NOT_FOUND");
 
-        console2.log("Contract balance", address(this).balance);
-        console2.log("Participant address", p.addr);
-        console2.log("Participant payout", p.payout);
-
         require(p.payout <= address(this).balance, "INSUFFICIENT_BALANCE");
         msg.sender.safeTransferETH(p.payout);
 
@@ -171,14 +166,14 @@ contract Base64 is IBase64, Owned {
         return x >= 4 && x <= 256 && (x & (x - 1)) == 0;
     }
 
-    // Returns true if the team IDs are unique and valid.
-    function checkTeamIDs(uint32[] memory teamIDs) private pure returns (bool) {
-        for (uint256 i = 0; i < teamIDs.length; i++) {
-            for (uint256 j = i + 1; j < teamIDs.length; j++) {
-                if (teamIDs[i] == teamIDs[j]) {
+    // Returns true if the competitor IDs are unique and valid.
+    function checkCompetitorIDs(uint32[] memory competitorIDs) private pure returns (bool) {
+        for (uint256 i = 0; i < competitorIDs.length; i++) {
+            for (uint256 j = i + 1; j < competitorIDs.length; j++) {
+                if (competitorIDs[i] == competitorIDs[j]) {
                     return false;
-                } else if (teamIDs[i] == 0) {
-                    // Team IDs must be greater than 0.
+                } else if (competitorIDs[i] == 0) {
+                    // Competitor IDs must be greater than 0.
                     return false;
                 }
             }
@@ -188,16 +183,16 @@ contract Base64 is IBase64, Owned {
     }
 
     // Validates an entry. To save on gas, we just ensure the entry has the proper number
-    // of rounds and picks, without checking the team IDs.
+    // of rounds and picks, without checking the competitor IDs.
     function validateEntry(uint256[][] memory entry) private view {
         require(entry.length == numRounds, "INVALID_NUM_ROUNDS");
 
-        uint256 numTeams = bracket[0].length;
+        uint256 numCompetitors = bracket[0].length;
 
         for (uint32 i = 0; i < entry.length; i++) {
-            numTeams /= 2;
+            numCompetitors /= 2;
 
-            require(entry[i].length == numTeams, "INVALID_NUM_TEAMS");
+            require(entry[i].length == numCompetitors, "INVALID_NUM_TEAMS");
         }
     }
 
@@ -224,15 +219,15 @@ contract Base64 is IBase64, Owned {
         }
     }
 
-    // Randomly picks a winner between two team IDs.
-    function pickWinner(uint256 teamID1, uint256 teamID2) private returns (uint256) {
+    // Randomly picks a winner between two competitor IDs.
+    function pickWinner(uint256 competitorID1, uint256 competitorID2) private returns (uint256) {
         uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, nonce))) % 2;
         nonce++;
 
         if (random == 0) {
-            return teamID1;
+            return competitorID1;
         } else {
-            return teamID2;
+            return competitorID2;
         }
     }
 
@@ -262,7 +257,6 @@ contract Base64 is IBase64, Owned {
         for (uint256 i = 0; i < participants.length; i++) {
             uint256 payout = (participantMap[participants[i]].points * address(this).balance) / totalPoints;
             participantMap[participants[i]].payout = payout;
-            console2.log("Payout for participant", payout);
         }
     }
 }
