@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Script} from "../lib/forge-std/src/Script.sol";
-import {Base64} from "../src/Base64.sol";
+// import {Base64} from "../src/Base64.sol";
 
 contract Base64Script is Script {
     uint32[] teamIDs;
@@ -28,7 +28,7 @@ contract Base64Script is Script {
     function run() public {
         vm.startBroadcast();
 
-        new Base64(teamIDs, teamNames);
+        // new Base64(teamIDs, teamNames);
 
         vm.stopBroadcast();
     }

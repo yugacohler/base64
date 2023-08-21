@@ -5,12 +5,13 @@ pragma solidity ^0.8.13;
 interface IBase64 {
     ////////// STRUCTS AND ENUMS //////////
 
-    // A struct representing a single competitor in the Tournament.
+    // An interface representing a single competitor in the Tournament.
     struct Competitor {
         // The ID of the competitor.
         uint256 id;
-        // The name of the competitor.
-        string name;
+        
+        // The URI housing the metadata of the competitor.
+        string uri;
     }
 
     // A struct representing a participant in the Tournament prediction market.

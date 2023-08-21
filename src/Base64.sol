@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
+import {CompetitorProvider} from "./CompetitorProvider.sol";
 import {IBase64} from "./IBase64.sol";
 import {Owned} from "../lib/solmate/src/auth/Owned.sol";
 import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
@@ -29,8 +30,8 @@ contract Base64 is IBase64, Owned {
     // The State of Base64.
     State state = State.AcceptingEntries;
 
-    // The mapping from competitor ID to competitor.
-    mapping(uint256 => Competitor) competitors;
+    // The Competitor provider.
+    CompetitorProvider competitorProvider;
 
     // The current bracket.
     uint256[][] bracket;
@@ -60,18 +61,12 @@ contract Base64 is IBase64, Owned {
 
     // Initializes the Base64 bracket with the given competitors.
     // The number of competitors must be a power of two between 4 and 256 inclusive.
-    constructor(uint32[] memory competitorIDs, string[] memory competitorNames) Owned(msg.sender) {
-        require(isPowerOfTwo(competitorIDs.length), "INVALID_BRACKET_SIZE");
-        require(competitorIDs.length == competitorNames.length, "INVALID_TEAM_DATA");
-        require(checkCompetitorIDs(competitorIDs), "INVALID_TEAM_IDS");
-
-        // Initialize the competitors.
-        for (uint256 i = 0; i < competitorNames.length; i++) {
-            competitors[competitorIDs[i]] = Competitor(competitorIDs[i], competitorNames[i]);
-        }
+    constructor(address _competitorProvider) Owned(msg.sender) {
+        competitorProvider = CompetitorProvider(_competitorProvider);
 
         // Initialize the bracket.
-        uint256 competitorsLeft = competitorNames.length;
+        uint256[] memory competitorIDs = competitorProvider.listCompetitorIDs();
+        uint256 competitorsLeft = competitorIDs.length;
 
         while (competitorsLeft >= 1) {
             bracket.push();
@@ -83,7 +78,7 @@ contract Base64 is IBase64, Owned {
         }
 
         // Initialize the first round of the bracket.
-        for (uint256 i = 0; i < competitorNames.length; i++) {
+        for (uint256 i = 0; i < competitorIDs.length; i++) {
             bracket[0].push(competitorIDs[i]);
         }
     }
@@ -95,9 +90,7 @@ contract Base64 is IBase64, Owned {
     }
 
     function getCompetitor(uint256 competitorId) external view override returns (Competitor memory) {
-        require(competitors[competitorId].id != 0, "TEAM_NOT_FOUND");
-
-        return competitors[competitorId];
+        return competitorProvider.getCompetitor(competitorId);
     }
 
     function submitEntry(uint256[][] memory entry) external payable override {

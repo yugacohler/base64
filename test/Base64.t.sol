@@ -2,6 +2,8 @@
 pragma solidity ^0.8.13;
 
 import {Base64} from "../src/Base64.sol";
+import {CompetitorProvider} from "../src/CompetitorProvider.sol";
+import {StaticCompetitorProvider} from "../src/competitors/StaticCompetitorProvider.sol";
 import {IBase64} from "../src/IBase64.sol";
 import {Test} from "../lib/forge-std/src/Test.sol";
 import {console2} from "../lib/forge-std/src/console2.sol";
@@ -24,22 +26,24 @@ contract Base64Test is Test {
     }
 
     function setUp() public {
-        uint32[] memory competitorIDs = new uint32[](8);
+        uint256[] memory competitorIDs = new uint256[](8);
         for (uint8 i = 0; i < competitorIDs.length; i++) {
             competitorIDs[i] = i + 1;
         }
 
-        string[] memory competitorNames = new string[](8);
-        competitorNames[0] = "Brian";
-        competitorNames[1] = "Greg";
-        competitorNames[2] = "Alesia";
-        competitorNames[3] = "Manish";
-        competitorNames[4] = "LJ";
-        competitorNames[5] = "Paul";
-        competitorNames[6] = "Emilie";
-        competitorNames[7] = "Will";
+        string[] memory competitorURLs = new string[](8);
+        competitorURLs[0] = "Brian.com";
+        competitorURLs[1] = "Greg.com";
+        competitorURLs[2] = "Alesia.com";
+        competitorURLs[3] = "Manish.com";
+        competitorURLs[4] = "LJ.com";
+        competitorURLs[5] = "Paul.com";
+        competitorURLs[6] = "Emilie.com";
+        competitorURLs[7] = "Will.com";
 
-        b = new Base64(competitorIDs, competitorNames);
+        CompetitorProvider cp = new StaticCompetitorProvider(competitorIDs, competitorURLs);
+
+        b = new Base64(address(cp));
 
         participant1 = address(0x420);
 
@@ -61,92 +65,74 @@ contract Base64Test is Test {
     }
 
     function testConstructor_tooShort() public {
-        uint32[] memory invalidCompetitorIDs = new uint32[](3);
+        uint256[] memory invalidCompetitorIDs = new uint256[](3);
         for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
             invalidCompetitorIDs[i] = i + 1;
         }
 
-        string[] memory invalidCompetitorNames = new string[](3);
-        invalidCompetitorNames[0] = "Brian";
-        invalidCompetitorNames[1] = "Greg";
-        invalidCompetitorNames[2] = "Alesia";
+        string[] memory invalidCompetitorURLs = new string[](3);
+        invalidCompetitorURLs[0] = "Brian.com";
+        invalidCompetitorURLs[1] = "Greg.com";
+        invalidCompetitorURLs[2] = "Alesia.com";
 
-        vm.expectRevert("INVALID_BRACKET_SIZE");
+        vm.expectRevert("INVALID_NUM_IDS");
 
-        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
+        new StaticCompetitorProvider(invalidCompetitorIDs, invalidCompetitorURLs);
     }
 
-    function testConstructor_notPowerOfTwo() public {
-        uint32[] memory invalidCompetitorIDs = new uint32[](5);
+    function testConstructor_notEnoughURLs() public {
+        uint256[] memory invalidCompetitorIDs = new uint256[](8);
         for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
             invalidCompetitorIDs[i] = i + 1;
         }
 
-        string[] memory invalidCompetitorNames = new string[](5);
-        invalidCompetitorNames[0] = "Brian";
-        invalidCompetitorNames[1] = "Greg";
-        invalidCompetitorNames[2] = "Alesia";
-        invalidCompetitorNames[3] = "Manish";
-        invalidCompetitorNames[4] = "LJ";
+        string[] memory invalidCompetitorURLs = new string[](4);
+        invalidCompetitorURLs[0] = "Brian.com";
+        invalidCompetitorURLs[1] = "Greg.com";
+        invalidCompetitorURLs[2] = "Alesia.com";
+        invalidCompetitorURLs[3] = "Manish";
 
-        vm.expectRevert("INVALID_BRACKET_SIZE");
+        vm.expectRevert("INVALID_NUM_URIS");
 
-        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
-    }
-
-    function testConstructor_notEnoughNames() public {
-        uint32[] memory invalidCompetitorIDs = new uint32[](8);
-        for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
-            invalidCompetitorIDs[i] = i + 1;
-        }
-
-        string[] memory invalidCompetitorNames = new string[](4);
-        invalidCompetitorNames[0] = "Brian";
-        invalidCompetitorNames[1] = "Greg";
-        invalidCompetitorNames[2] = "Alesia";
-        invalidCompetitorNames[3] = "Manish";
-
-        vm.expectRevert("INVALID_TEAM_DATA");
-
-        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
+        new StaticCompetitorProvider(invalidCompetitorIDs, invalidCompetitorURLs);
     }
 
     function testConstructor_duplicateCompetitorIDs() public {
-        uint32[] memory invalidCompetitorIDs = new uint32[](4);
+        uint256[] memory invalidCompetitorIDs = new uint256[](4);
         for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
             invalidCompetitorIDs[i] = i + 1;
         }
 
-        invalidCompetitorIDs[1] = 0;
+        invalidCompetitorIDs[1] = 3;
 
-        string[] memory invalidCompetitorNames = new string[](4);
-        invalidCompetitorNames[0] = "Brian";
-        invalidCompetitorNames[1] = "Greg";
-        invalidCompetitorNames[2] = "Alesia";
-        invalidCompetitorNames[3] = "Manish";
+        string[] memory invalidCompetitorURLs = new string[](4);
+        invalidCompetitorURLs[0] = "Brian.com";
+        invalidCompetitorURLs[1] = "Greg.com";
+        invalidCompetitorURLs[2] = "Alesia.com";
+        invalidCompetitorURLs[3] = "Manish";
 
-        vm.expectRevert("INVALID_TEAM_IDS");
+        vm.expectRevert("DUPLICATE_IDS");
 
-        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
+        new StaticCompetitorProvider(invalidCompetitorIDs, invalidCompetitorURLs);
     }
 
     function testConstructor_zeroValueID() public {
-        uint32[] memory invalidCompetitorIDs = new uint32[](4);
+        uint256[] memory invalidCompetitorIDs = new uint256[](4);
         for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
             invalidCompetitorIDs[i] = i;
         }
 
         invalidCompetitorIDs[1] = 0;
 
-        string[] memory invalidCompetitorNames = new string[](4);
-        invalidCompetitorNames[0] = "Brian";
-        invalidCompetitorNames[1] = "Greg";
-        invalidCompetitorNames[2] = "Alesia";
-        invalidCompetitorNames[3] = "Manish";
+        string[] memory invalidCompetitorURLs = new string[](4);
+        invalidCompetitorURLs[0] = "Brian.com";
+        invalidCompetitorURLs[1] = "Greg.com";
+        invalidCompetitorURLs[2] = "Alesia.com";
+        invalidCompetitorURLs[3] = "Manish";
 
-        vm.expectRevert("INVALID_TEAM_IDS");
+        vm.expectRevert("ZERO_ID");
 
-        new Base64(invalidCompetitorIDs, invalidCompetitorNames);
+        new StaticCompetitorProvider(invalidCompetitorIDs, invalidCompetitorURLs);
     }
 
     function testGetBracket_initial() public asParticipant {
@@ -173,11 +159,11 @@ contract Base64Test is Test {
         Base64.Competitor memory competitor = b.getCompetitor(1);
 
         assertEq(competitor.id, 1);
-        assertEq(competitor.name, "Brian");
+        assertEq(competitor.uri, "Brian.com");
     }
 
     function testGetCompetitor_notFound() public asParticipant {
-        vm.expectRevert("TEAM_NOT_FOUND");
+        vm.expectRevert("INVALID_ID");
 
         b.getCompetitor(9);
     }
