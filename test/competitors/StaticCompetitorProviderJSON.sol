@@ -14,48 +14,48 @@ import {console2} from "../../lib/forge-std/src/Console2.sol";
 
 // Unit tests for a StaticCompetitorProvider with FriendTech JSON data.
 contract StaticFriendTechTournamentTest is Test {
-  StaticCompetitorProvider _s;
-  bytes _abiData;
+    StaticCompetitorProvider _s;
+    bytes _abiData;
 
-  function setUp() public {
-    string memory root = vm.projectRoot();
-    string memory path = string.concat(root, "/data/friendtech_08222023_parsed.json");
-    string memory json = vm.readFile(path);
+    function setUp() public {
+        string memory root = vm.projectRoot();
+        string memory path = string.concat(root, "/data/friendtech_08222023_parsed.json");
+        string memory json = vm.readFile(path);
 
-    _abiData = vm.parseJson(json);
-    Tournament.Competitor[] memory competitors = abi.decode(_abiData, (Tournament.Competitor[]));
+        _abiData = vm.parseJson(json);
+        Tournament.Competitor[] memory competitors = abi.decode(_abiData, (Tournament.Competitor[]));
 
-    uint256[] memory ids = new uint256[](competitors.length);
-    for (uint256 i = 0; i < competitors.length; i++) {
-      ids[i] = competitors[i].id;
+        uint256[] memory ids = new uint256[](competitors.length);
+        for (uint256 i = 0; i < competitors.length; i++) {
+            ids[i] = competitors[i].id;
+        }
+
+        string[] memory uris = new string[](competitors.length);
+        for (uint256 i = 0; i < competitors.length; i++) {
+            uris[i] = competitors[i].uri;
+        }
+
+        _s = new StaticCompetitorProvider(ids, uris);
     }
 
-    string[] memory uris = new string[](competitors.length);
-    for (uint256 i = 0; i < competitors.length; i++) {
-      uris[i] = competitors[i].uri;
+    function testListCompetitors() public {
+        Tournament.Competitor[] memory competitors = abi.decode(_abiData, (Tournament.Competitor[]));
+
+        uint256[] memory ids = _s.listCompetitorIDs();
+        assertEq(ids.length, competitors.length);
+
+        for (uint256 i = 0; i < ids.length; i++) {
+            assertEq(ids[i], competitors[i].id);
+        }
     }
 
-    _s = new StaticCompetitorProvider(ids, uris);
-  }
+    function testGetCompetitor() public {
+        Tournament.Competitor[] memory competitors = abi.decode(_abiData, (Tournament.Competitor[]));
 
-  function testListCompetitors() public {
-    Tournament.Competitor[] memory competitors = abi.decode(_abiData, (Tournament.Competitor[]));
-
-    uint256[] memory ids = _s.listCompetitorIDs();
-    assertEq(ids.length, competitors.length);
-
-    for (uint256 i = 0; i < ids.length; i++) {
-      assertEq(ids[i], competitors[i].id);
+        for (uint256 i = 0; i < competitors.length; i++) {
+            Tournament.Competitor memory c = _s.getCompetitor(competitors[i].id);
+            assertEq(c.id, competitors[i].id);
+            assertEq(c.uri, competitors[i].uri);
+        }
     }
-  }
-
-  function testGetCompetitor() public {
-    Tournament.Competitor[] memory competitors = abi.decode(_abiData, (Tournament.Competitor[]));
-
-    for (uint256 i = 0; i < competitors.length; i++) {
-      Tournament.Competitor memory c = _s.getCompetitor(competitors[i].id);
-      assertEq(c.id, competitors[i].id);
-      assertEq(c.uri, competitors[i].uri);
-    }
-  }
 }
