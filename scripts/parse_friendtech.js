@@ -28,12 +28,17 @@ fs.readFile(inputFilename, 'utf8', (err, data) => {
 
     // Map valid data to desired output format
     const outputData = validData.slice(0, 64).map(obj => {
-        const id = BigInt(obj.address).toString(10);
+        const id = BigInt(obj.address);
         const uri = `https://prod-api.kosetto.com/users/${obj.address}`;
         return { id, uri };
     });
 
-    fs.writeFile(outputFilename, JSON.stringify(outputData, null, 2), 'utf8', err => {
+    // Custom serialization for BigInt to number
+    const serializedOutput = '[' + outputData.map(item => {
+        return `{"id":${item.id},"uri":"${item.uri}"}`;
+    }).join(",") + ']';
+
+    fs.writeFile(outputFilename, serializedOutput, 'utf8', err => {
         if (err) {
             console.error('Error writing the file:', err);
             return;

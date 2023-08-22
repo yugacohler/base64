@@ -2,5 +2,6 @@
   libs = ["lib"]
   out = "out"
   src = "src"
+  fs_permissions = [{ access = "read", path = "./data"}]
 
   # See more config options https://github.com/foundry-rs/foundry/tree/master/config
