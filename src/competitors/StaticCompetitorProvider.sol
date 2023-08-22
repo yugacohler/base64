@@ -3,7 +3,6 @@ pragma solidity ^0.8.13;
 
 import {CompetitorProvider} from "../CompetitorProvider.sol";
 import {IBase64} from "../IBase64.sol";
-import {console2} from "../../lib/forge-std/src/console2.sol";
 
 // A competitor provider for static competitors.
 contract StaticCompetitorProvider is CompetitorProvider {
@@ -16,6 +15,7 @@ contract StaticCompetitorProvider is CompetitorProvider {
     mapping (uint256 => string) metadataURIs;
     
     ////////// CONSTRUCTOR //////////
+
     constructor(uint256[] memory _ids, string[] memory _uri) {
       require(_ids.length >= 4 && _ids.length <= 256, "INVALID_NUM_IDS");
       require(_uri.length == _ids.length, "INVALID_NUM_URIS");
@@ -23,7 +23,6 @@ contract StaticCompetitorProvider is CompetitorProvider {
       // Determine the relevant power of 2 for the number of competitors,
       // rather than doing expensive logarithm arithmetic.
       uint256 powerOfTwo = 4;
-
       
       if (_ids.length < 8) {
         powerOfTwo = 4;
