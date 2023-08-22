@@ -14,7 +14,5 @@ import {Tournament} from "../Tournament.sol";
 // are defined by an oracle.
 contract StaticOracleTournament is Tournament {
     ////////// CONSTRUCTOR //////////
-    constructor(StaticCompetitorProvider provider, OracleResultProvider oracle)
-        Tournament(provider, oracle)
-    {}
+    constructor(StaticCompetitorProvider provider, OracleResultProvider oracle) Tournament(provider, oracle) {}
 }
