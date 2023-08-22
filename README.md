@@ -36,6 +36,14 @@ $ anvil
 
 ## Deploy Base64
 
+### StaticFriendTechCompetitors
+forge script ./script/01_StaticFriendTechCompetitors.s.sol:StaticFriendTechCompetitors \
+  --broadcast --verify --rpc-url "https://goerli.base.org/" \
+  --private-key <owner-private-key> \
+  --verifier etherscan \
+  --verifier-url "https://api-goerli.basescan.org/api" \
+  --etherscan-api-key <etherscan-api-key>
+
 ### OracleResultProvider
 Use the address of the deployer in `oracle_result_provider.data`:
 
