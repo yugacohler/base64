@@ -20,9 +20,9 @@ contract FriendTechResultProvider is ResultProvider {
 
     ////////// CONSTRUCTOR //////////
 
-    constructor(address friendTechAddress, address friendTechCompetitorProviderAddress) {
-        _friendTech = FriendTech(friendTechAddress);
-        _friendTechCompetitorProvider = FriendTechCompetitorProvider(friendTechCompetitorProviderAddress);
+    constructor(FriendTech friendTech, FriendTechCompetitorProvider friendTechCompetitorProvider) {
+        _friendTech = FriendTech(friendTech);
+        _friendTechCompetitorProvider = friendTechCompetitorProvider;
     }
 
     ////////// PUBLIC APIS //////////
