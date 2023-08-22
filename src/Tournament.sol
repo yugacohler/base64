@@ -65,7 +65,7 @@ abstract contract Tournament is Owned {
     CompetitorProvider _competitorProvider;
 
     // The match result provider.
-    ResultProvider _resultProvider;
+    ResultProvider public resultProvider;
 
     // The current bracket.
     uint256[][] _bracket;
@@ -92,9 +92,9 @@ abstract contract Tournament is Owned {
 
     // Initializes the Base64 bracket with the given competitors.
     // The number of competitors must be a power of two between 4 and 256 inclusive.
-    constructor(CompetitorProvider competitorProvider, ResultProvider resultProvider) Owned(msg.sender) {
-        _competitorProvider = competitorProvider;
-        _resultProvider = resultProvider;
+    constructor(CompetitorProvider cp, ResultProvider rp) Owned(msg.sender) {
+        _competitorProvider = cp;
+        resultProvider = rp;
 
         // Initialize the bracket.
         uint256[] memory competitorIDs = _competitorProvider.listCompetitorIDs();
@@ -207,7 +207,7 @@ abstract contract Tournament is Owned {
 
         for (uint256 i = 0; i < numWinners; i++) {
             Tournament.Result memory result =
-                _resultProvider.getResult(_bracket[_curRound][i * 2], _bracket[_curRound][(i * 2) + 1]);
+                resultProvider.getResult(_bracket[_curRound][i * 2], _bracket[_curRound][(i * 2) + 1]);
             _bracket[_curRound + 1].push(result.winnerId);
         }
 

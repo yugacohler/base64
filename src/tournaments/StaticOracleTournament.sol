@@ -14,7 +14,7 @@ import {Tournament} from "../Tournament.sol";
 // are defined by an oracle.
 contract StaticOracleTournament is Tournament {
     ////////// CONSTRUCTOR //////////
-    constructor(uint256[] memory ids, string[] memory uris)
-        Tournament(new StaticCompetitorProvider(ids, uris), new OracleResultProvider(msg.sender))
+    constructor(uint256[] memory ids, string[] memory uris, OracleResultProvider oracle)
+        Tournament(new StaticCompetitorProvider(ids, uris), oracle)
     {}
 }

@@ -50,8 +50,8 @@ contract OracleResultProvider is ResultProvider, Owned {
         public
         onlyOwner
     {
-        require(winners.length == losers.length, "LENGTH_MISMATCH");
-        require(winners.length / 2 == metadata.length, "LENGTH_MISMATCH");
+        require(winners.length == losers.length, "COMPETITOR_MISMATCH");
+        require(winners.length == metadata.length, "METADATA_MISMATCH");
 
         for (uint256 i = 0; i < winners.length; i++) {
             uint256 smallerId = winners[i] < losers[i] ? winners[i] : losers[i];

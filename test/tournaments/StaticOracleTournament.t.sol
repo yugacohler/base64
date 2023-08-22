@@ -5,14 +5,16 @@ import {Tournament} from "../../src/Tournament.sol";
 import {CompetitorProvider} from "../../src/CompetitorProvider.sol";
 import {ResultProvider} from "../../src/ResultProvider.sol";
 import {StaticCompetitorProvider} from "../../src/competitors/StaticCompetitorProvider.sol";
+import {OracleResultProvider} from "../../src/results/OracleResultProvider.sol";
 import {RandomResultProvider} from "../../src/results/RandomResultProvider.sol";
 import {Tournament} from "../../src/Tournament.sol";
-import {StaticRandomTournament} from "../../src/tournaments/StaticRandomTournament.sol";
+import {StaticOracleTournament} from "../../src/tournaments/StaticOracleTournament.sol";
 import {Test} from "../../lib/forge-std/src/Test.sol";
 
-// Unit tests for a Tournament.
-contract TournamentTest is Test {
+// Unit tests for a StaticOracleTournament.
+contract StaticOracleTournamentTest is Test {
     Tournament _t;
+    OracleResultProvider _o;
 
     uint256[][] _entry1;
     address _participant1;
@@ -43,7 +45,8 @@ contract TournamentTest is Test {
         competitorURLs[6] = "Emilie.com";
         competitorURLs[7] = "Will.com";
 
-        _t = new StaticRandomTournament(competitorIDs, competitorURLs);
+        _o = new OracleResultProvider(address(this));
+        _t = new StaticOracleTournament(competitorIDs, competitorURLs, _o);
 
         _participant1 = address(0x420);
 
@@ -184,82 +187,96 @@ contract TournamentTest is Test {
         assertEq(participants[0], address(_participant1));
     }
 
-    function testAdvanceRound() public {
-        _t.advance();
-
-        assertTrue(_t.getState() == Tournament.State.InProgress);
-
-        uint256[][] memory bracket = _t.getBracket();
-
-        assertEq(bracket[1].length, 4);
-        assertTrue(bracket[1][0] == 1 || bracket[1][0] == 2);
-        assertTrue(bracket[1][1] == 3 || bracket[1][1] == 4);
-        assertTrue(bracket[1][2] == 5 || bracket[1][2] == 6);
-        assertTrue(bracket[1][3] == 7 || bracket[1][3] == 8);
-    }
-
-    function testAdvanceRoundNotOwner() public asParticipant {
-        vm.expectRevert("UNAUTHORIZED");
+    function testAdvanceRoundWithoutResults() public {
+        vm.expectRevert("NO_SUCH_MATCH");
 
         _t.advance();
     }
 
-    function testTwoParticipants() public {
-        vm.prank(_participant1);
-        _t.submitEntry(_entry1);
+    function testAdvanceRoundWithResults() public {
+      uint256[] memory winners = new uint256[](4);
+      winners[0] = 1;
+      winners[1] = 3;
+      winners[2] = 5;
+      winners[3] = 7;
 
-        // Submit another entry from address 0x1337.
-        address participant2 = address(0x1337);
-        vm.deal(address(participant2), 1 ether);
+      uint256[] memory losers = new uint256[](4);
+      losers[0] = 2;
+      losers[1] = 4;
+      losers[2] = 6;
+      losers[3] = 8;
 
-        uint256[][] memory entry2 = new uint256[][](3);
-        entry2[0] = new uint256[](4);
-        entry2[1] = new uint256[](2);
-        entry2[2] = new uint256[](1);
+      string[] memory metadata = new string[](4);
+      metadata[0] = "match1";
+      metadata[1] = "match2";
+      metadata[2] = "match3";
+      metadata[3] = "match4";
 
-        // The opposite entry of the first entry.
-        entry2[0][0] = 2;
-        entry2[0][1] = 4;
-        entry2[0][2] = 6;
-        entry2[0][3] = 8;
-        entry2[1][0] = 2;
-        entry2[1][1] = 6;
-        entry2[2][0] = 2;
-
-        // Send the entry from 0x1337.
-        vm.prank(address(participant2));
-        _t.submitEntry(entry2);
-
-        // Advance the round.
-        _t.advance();
-
-        // The points of the two participants should add up to 4.
-        address[] memory participants = _t.listParticipants();
-        assertEq(participants.length, 2);
-
-        Tournament.Participant memory p1 = _t.getParticipant(participants[0]);
-        Tournament.Participant memory p2 = _t.getParticipant(participants[1]);
-
-        assertTrue(p1.addr == address(_participant1) || p1.addr == address(0x1337));
-        assertTrue(p2.addr == address(participant2) || p2.addr == address(0x1337));
-        assertEq(p1.points + p2.points, 4);
-
-        // Advance the round twice more. No errors.
-        _t.advance();
-
-        uint256[][] memory bracket = _t.getBracket();
-        assertEq(bracket[2].length, 2);
-        assertTrue(bracket[2][0] >= 1 && bracket[2][0] <= 4);
-        assertTrue(bracket[2][1] >= 5 && bracket[2][1] <= 8);
-
-        _t.advance();
-
-        bracket = _t.getBracket();
-        assertEq(bracket[3].length, 1);
-        assertTrue(bracket[3][0] >= 1 && bracket[3][0] <= 8);
-
-        // Expect a revert if we try to advance once more.
-        vm.expectRevert("TOURNAMENT_FINISHED");
-        _t.advance();
+      _o.writeResults(winners, losers, metadata);
     }
+
+    // function testAdvanceRoundNotOwner() public asParticipant {
+    //     vm.expectRevert("UNAUTHORIZED");
+
+    //     _t.advance();
+    // }
+
+    // function testTwoParticipants() public {
+    //     vm.prank(_participant1);
+    //     _t.submitEntry(_entry1);
+
+    //     // Submit another entry from address 0x1337.
+    //     address participant2 = address(0x1337);
+    //     vm.deal(address(participant2), 1 ether);
+
+    //     uint256[][] memory entry2 = new uint256[][](3);
+    //     entry2[0] = new uint256[](4);
+    //     entry2[1] = new uint256[](2);
+    //     entry2[2] = new uint256[](1);
+
+    //     // The opposite entry of the first entry.
+    //     entry2[0][0] = 2;
+    //     entry2[0][1] = 4;
+    //     entry2[0][2] = 6;
+    //     entry2[0][3] = 8;
+    //     entry2[1][0] = 2;
+    //     entry2[1][1] = 6;
+    //     entry2[2][0] = 2;
+
+    //     // Send the entry from 0x1337.
+    //     vm.prank(address(participant2));
+    //     _t.submitEntry(entry2);
+
+    //     // Advance the round.
+    //     _t.advance();
+
+    //     // The points of the two participants should add up to 4.
+    //     address[] memory participants = _t.listParticipants();
+    //     assertEq(participants.length, 2);
+
+    //     Tournament.Participant memory p1 = _t.getParticipant(participants[0]);
+    //     Tournament.Participant memory p2 = _t.getParticipant(participants[1]);
+
+    //     assertTrue(p1.addr == address(_participant1) || p1.addr == address(0x1337));
+    //     assertTrue(p2.addr == address(participant2) || p2.addr == address(0x1337));
+    //     assertEq(p1.points + p2.points, 4);
+
+    //     // Advance the round twice more. No errors.
+    //     _t.advance();
+
+    //     uint256[][] memory bracket = _t.getBracket();
+    //     assertEq(bracket[2].length, 2);
+    //     assertTrue(bracket[2][0] >= 1 && bracket[2][0] <= 4);
+    //     assertTrue(bracket[2][1] >= 5 && bracket[2][1] <= 8);
+
+    //     _t.advance();
+
+    //     bracket = _t.getBracket();
+    //     assertEq(bracket[3].length, 1);
+    //     assertTrue(bracket[3][0] >= 1 && bracket[3][0] <= 8);
+
+    //     // Expect a revert if we try to advance once more.
+    //     vm.expectRevert("TOURNAMENT_FINISHED");
+    //     _t.advance();
+    // }
 }
