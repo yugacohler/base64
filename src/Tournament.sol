@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {CompetitorProvider} from "./CompetitorProvider.sol";
-import {IBase64} from "./IBase64.sol";
+import {ITournament} from "./ITournament.sol";
 import {Owned} from "../lib/solmate/src/auth/Owned.sol";
 import {ResultProvider} from "./ResultProvider.sol";
 import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
@@ -19,7 +19,7 @@ import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
  * A Smart Contract for Tournament-based prediction markets.
  * Right now, this is hard-coded to pick winners randomly.
  */
-contract Base64 is IBase64, Owned {
+contract Tournament is ITournament, Owned {
     using SafeTransferLib for address;
     ////////// CONSTANTS //////////
 
@@ -181,7 +181,7 @@ contract Base64 is IBase64, Owned {
       uint256 numWinners = _bracket[_curRound].length / 2;
 
       for (uint256 i = 0; i < numWinners; i++) {
-          IBase64.Result memory result = _resultProvider.getResult(
+          ITournament.Result memory result = _resultProvider.getResult(
               _bracket[_curRound][i * 2], _bracket[_curRound][(i * 2) + 1]);
           _bracket[_curRound + 1].push(result.winnerId);
       }

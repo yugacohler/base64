@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 import {FriendTech} from "./FriendTech.sol";
 import {FriendTechCompetitorProvider} from "../competitors/FriendTechCompetitorProvider.sol";
-import {IBase64} from "../IBase64.sol";
+import {ITournament} from "../ITournament.sol";
 import {ResultProvider} from "../ResultProvider.sol";
 import {Strings} from "../../lib/openzeppelin-contracts/contracts/utils/Strings.sol";
 
@@ -30,7 +30,7 @@ contract FriendTechResultProvider is ResultProvider {
 
   ////////// PUBLIC APIS //////////
 
-  function getResult(uint256 competitor1, uint256 competitor2) public view override returns (IBase64.Result memory) {
+  function getResult(uint256 competitor1, uint256 competitor2) public view override returns (ITournament.Result memory) {
     address address1 = _friendTechCompetitorProvider.addresses(competitor1);
     require(address1 != address(0), "INVALID_ID");
 
@@ -52,7 +52,7 @@ contract FriendTechResultProvider is ResultProvider {
       loser = competitor1;
     }
     
-    return IBase64.Result({
+    return ITournament.Result({
       winnerId: winner,
       loserId: loser,
       metadata: metadata

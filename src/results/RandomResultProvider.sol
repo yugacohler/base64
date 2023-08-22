@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {IBase64} from "../IBase64.sol";
+import {ITournament} from "../ITournament.sol";
 import {ResultProvider} from "../ResultProvider.sol";
 
 // A result provider that picks the result randomly.
@@ -13,7 +13,7 @@ contract RandomResultProvider is ResultProvider {
 
   ////////// PUBLIC APIS //////////
 
-  function getResult(uint256 competitor1, uint256 competitor2) external override returns (IBase64.Result memory) {
+  function getResult(uint256 competitor1, uint256 competitor2) external override returns (ITournament.Result memory) {
     uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, _nonce))) % 2;
     _nonce++;
 
@@ -28,7 +28,7 @@ contract RandomResultProvider is ResultProvider {
       loser = competitor1;
     }
     
-    return IBase64.Result({
+    return ITournament.Result({
       winnerId: winner,
       loserId: loser,
       metadata: ""

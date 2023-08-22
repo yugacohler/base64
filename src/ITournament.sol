@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-// The interface for Base64.
-interface IBase64 {
+// The interface for a Tournament.
+interface ITournament {
     ////////// STRUCTS AND ENUMS //////////
 
     // A struct representing a single competitor in the Tournament.
