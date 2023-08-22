@@ -7,7 +7,7 @@ import {ResultProvider} from "../src/ResultProvider.sol";
 import {StaticCompetitorProvider} from "../src/competitors/StaticCompetitorProvider.sol";
 import {RandomResultProvider} from "../src/results/RandomResultProvider.sol";
 import {Tournament} from "../src/Tournament.sol";
-import {StaticRandomTournament} from "../src/StaticRandomTournament.sol";
+import {StaticRandomTournament} from "../src/tournaments/StaticRandomTournament.sol";
 import {Test} from "../lib/forge-std/src/Test.sol";
 import {console2} from "../lib/forge-std/src/console2.sol";
 
