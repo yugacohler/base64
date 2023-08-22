@@ -8,38 +8,16 @@ import {IBase64} from "../IBase64.sol";
 contract StaticCompetitorProvider is CompetitorProvider {
     ////////// MEMBER VARIABLES //////////
 
-    // The IDs of the competitors.
-    uint256[] ids;
-
     // The mapping from competitor ID to metadata URI.
     mapping (uint256 => string) metadataURIs;
     
     ////////// CONSTRUCTOR //////////
 
     constructor(uint256[] memory _ids, string[] memory _uri) {
-      require(_ids.length >= 4 && _ids.length <= 256, "INVALID_NUM_IDS");
       require(_uri.length == _ids.length, "INVALID_NUM_URIS");
+
+      uint256 powerOfTwo = getPowerOfTwo(_ids.length);
       
-      // Determine the relevant power of 2 for the number of competitors,
-      // rather than doing expensive logarithm arithmetic.
-      uint256 powerOfTwo = 4;
-      
-      if (_ids.length < 8) {
-        powerOfTwo = 4;
-      } else if (_ids.length < 16 && _ids.length >= 8) {
-        powerOfTwo = 8;
-      } else if (_ids.length < 32) {
-        powerOfTwo = 16;
-      } else if (_ids.length < 64) {
-        powerOfTwo = 32;
-      } else if (_ids.length < 128) {
-        powerOfTwo = 64;
-      } else if (_ids.length < 256) {
-        powerOfTwo = 128;
-      } else {
-        powerOfTwo = 256;
-      }
-    
       for (uint16 i = 0; i < powerOfTwo; i++) {
         require(_ids[i] != 0, "ZERO_ID");
         ids.push(_ids[i]);
