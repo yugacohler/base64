@@ -16,24 +16,24 @@ fs.readFile(inputFilename, 'utf8', (err, data) => {
 
     const jsonData = JSON.parse(data);
 
-    if (jsonData.length < 64) {
-        console.error('The JSON file does not contain at least 64 objects.');
+    // Filter the data to ensure valid entries
+    const validData = jsonData.filter(obj => {
+        return obj.address && obj.twitterPfpUrl && obj.twitterPfpUrl.startsWith("https://pbs.twimg.com/");
+    });
+
+    if (validData.length < 64) {
+        console.error('There are not at least 64 valid objects in the JSON file.');
         return;
     }
 
-    // Convert the address from hex to base-10 representation
-    const ids = jsonData.slice(0, 64).map(obj => {
-        const bigIntValue = BigInt(obj.address);
-        return bigIntValue.toString(10);
+    // Map valid data to desired output format
+    const outputData = validData.slice(0, 64).map(obj => {
+        const id = BigInt(obj.address).toString(10);
+        const uri = `https://prod-api.kosetto.com/users/${obj.address}`;
+        return { id, uri };
     });
 
-    // Generate the URIs
-    const uris = jsonData.slice(0, 64).map(obj => `https://prod-api.kosetto.com/users/${obj.address}`);
-
-    // Construct the output string
-    const outputString = `[${ids.join(",")}] [${uris.join(",")}]`;
-
-    fs.writeFile(outputFilename, outputString, 'utf8', err => {
+    fs.writeFile(outputFilename, JSON.stringify(outputData, null, 2), 'utf8', err => {
         if (err) {
             console.error('Error writing the file:', err);
             return;
