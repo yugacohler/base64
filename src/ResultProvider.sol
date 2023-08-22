@@ -10,5 +10,5 @@ interface ResultProvider {
 
   // Returns the result of a match between two competitors.
   // It is the job of the caller to ensure that the two competitors are valid.
-  function getResult(uint256 competitor1, uint256 competitor2) external view returns (IBase64.Result memory);
+  function getResult(uint256 competitor1, uint256 competitor2) external returns (IBase64.Result memory);
 }

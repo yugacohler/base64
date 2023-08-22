@@ -3,7 +3,9 @@ pragma solidity ^0.8.13;
 
 import {Base64} from "../src/Base64.sol";
 import {CompetitorProvider} from "../src/CompetitorProvider.sol";
+import {ResultProvider} from "../src/ResultProvider.sol";
 import {StaticCompetitorProvider} from "../src/competitors/StaticCompetitorProvider.sol";
+import {RandomResultProvider} from "../src/results/RandomResultProvider.sol";
 import {IBase64} from "../src/IBase64.sol";
 import {Test} from "../lib/forge-std/src/Test.sol";
 import {console2} from "../lib/forge-std/src/console2.sol";
@@ -42,8 +44,9 @@ contract Base64Test is Test {
         competitorURLs[7] = "Will.com";
 
         CompetitorProvider cp = new StaticCompetitorProvider(competitorIDs, competitorURLs);
+        ResultProvider rp = new RandomResultProvider();
 
-        b = new Base64(address(cp));
+        b = new Base64(address(cp), address(rp));
 
         participant1 = address(0x420);
 
@@ -274,7 +277,7 @@ contract Base64Test is Test {
 
         // Can't collect payout twice.
         vm.prank(address(participant1));
-        vm.expectRevert("INSUFFICIENT_BALANCE");
+        vm.expectRevert("NO_PAYOUT");
         b.collectPayout();
 
         // Collect payout for the second participant.

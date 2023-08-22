@@ -4,6 +4,7 @@ pragma solidity ^0.8.13;
 import {CompetitorProvider} from "./CompetitorProvider.sol";
 import {IBase64} from "./IBase64.sol";
 import {Owned} from "../lib/solmate/src/auth/Owned.sol";
+import {ResultProvider} from "./ResultProvider.sol";
 import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
 
 /**
@@ -33,6 +34,9 @@ contract Base64 is IBase64, Owned {
     // The Competitor provider.
     CompetitorProvider competitorProvider;
 
+    // The match result provider.
+    ResultProvider resultProvider;
+
     // The current bracket.
     uint256[][] bracket;
 
@@ -61,8 +65,12 @@ contract Base64 is IBase64, Owned {
 
     // Initializes the Base64 bracket with the given competitors.
     // The number of competitors must be a power of two between 4 and 256 inclusive.
-    constructor(address _competitorProvider) Owned(msg.sender) {
+    constructor(
+      address _competitorProvider,
+      address _resultProvider
+    ) Owned(msg.sender) {
         competitorProvider = CompetitorProvider(_competitorProvider);
+        resultProvider = ResultProvider(_resultProvider);
 
         // Initialize the bracket.
         uint256[] memory competitorIDs = competitorProvider.listCompetitorIDs();
@@ -128,14 +136,13 @@ contract Base64 is IBase64, Owned {
 
     function collectPayout() external override {
         require(state == State.Finished, "TOURNAMENT_NOT_FINISHED");
+        require(participantMap[msg.sender].addr != address(0), "PARTICIPANT_NOT_FOUND");
+        require(participantMap[msg.sender].payout > 0, "NO_PAYOUT");
+        require(participantMap[msg.sender].payout <= address(this).balance, "INSUFFICIENT_BALANCE");
 
-        Participant memory p = participantMap[msg.sender];
-        require(p.addr != address(0), "PARTICIPANT_NOT_FOUND");
+        msg.sender.safeTransferETH(participantMap[msg.sender].payout);
 
-        require(p.payout <= address(this).balance, "INSUFFICIENT_BALANCE");
-        msg.sender.safeTransferETH(p.payout);
-
-        p.payout = 0;
+        participantMap[msg.sender].payout = 0;
     }
 
     ////////// ADMIN APIS //////////
@@ -191,37 +198,26 @@ contract Base64 is IBase64, Owned {
 
     // Advances the bracket to the next round.
     function advanceRound() private {
-        require(state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
-        require(curRound < numRounds, "TOURNAMENT_FINISHED");
+      require(state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
+      require(curRound < numRounds, "TOURNAMENT_FINISHED");
 
-        uint256 numWinners = bracket[curRound].length / 2;
+      uint256 numWinners = bracket[curRound].length / 2;
 
-        for (uint256 i = 0; i < numWinners; i++) {
-            uint256 winner = pickWinner(bracket[curRound][i * 2], bracket[curRound][(i * 2) + 1]);
-            bracket[curRound + 1].push(winner);
-        }
+      for (uint256 i = 0; i < numWinners; i++) {
+          IBase64.Result memory result = resultProvider.getResult(
+              bracket[curRound][i * 2], bracket[curRound][(i * 2) + 1]);
+          bracket[curRound + 1].push(result.winnerId);
+      }
 
-        updatePoints();
+      updatePoints();
 
-        pointsPerMatch *= 2;
-        curRound++;
+      pointsPerMatch *= 2;
+      curRound++;
 
-        if (curRound >= numRounds) {
-            calculatePayouts();
-            state = State.Finished;
-        }
-    }
-
-    // Randomly picks a winner between two competitor IDs.
-    function pickWinner(uint256 competitorID1, uint256 competitorID2) private returns (uint256) {
-        uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, nonce))) % 2;
-        nonce++;
-
-        if (random == 0) {
-            return competitorID1;
-        } else {
-            return competitorID2;
-        }
+      if (curRound >= numRounds) {
+          calculatePayouts();
+          state = State.Finished;
+      }
     }
 
     // Updates the participants' points according to the current bracket and the participants'
