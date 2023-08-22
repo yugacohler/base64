@@ -1,15 +1,14 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {Tournament} from "../src/Tournament.sol";
-import {CompetitorProvider} from "../src/CompetitorProvider.sol";
-import {ResultProvider} from "../src/ResultProvider.sol";
-import {StaticCompetitorProvider} from "../src/competitors/StaticCompetitorProvider.sol";
-import {RandomResultProvider} from "../src/results/RandomResultProvider.sol";
-import {Tournament} from "../src/Tournament.sol";
-import {StaticRandomTournament} from "../src/tournaments/StaticRandomTournament.sol";
-import {Test} from "../lib/forge-std/src/Test.sol";
-import {console2} from "../lib/forge-std/src/console2.sol";
+import {Tournament} from "../../src/Tournament.sol";
+import {CompetitorProvider} from "../../src/CompetitorProvider.sol";
+import {ResultProvider} from "../../src/ResultProvider.sol";
+import {StaticCompetitorProvider} from "../../src/competitors/StaticCompetitorProvider.sol";
+import {RandomResultProvider} from "../../src/results/RandomResultProvider.sol";
+import {Tournament} from "../../src/Tournament.sol";
+import {StaticRandomTournament} from "../../src/tournaments/StaticRandomTournament.sol";
+import {Test} from "../../lib/forge-std/src/Test.sol";
 
 // Unit tests for a Tournament.
 contract TournamentTest is Test {

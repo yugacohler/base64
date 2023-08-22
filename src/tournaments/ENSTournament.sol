@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 import {CompetitorProvider} from "../CompetitorProvider.sol";
 import {ResultProvider} from "../ResultProvider.sol";
-import {ENSGate, ENS, ReverseRegistrar} from "./ENSGate.sol";
+import {ENSGate, ENS, ReverseRegistrar} from "../ens/ENS.sol";
 import {Tournament} from "../Tournament.sol";
 
 // A Tournament which only ENS holders can participate in.
