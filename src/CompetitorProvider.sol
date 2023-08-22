@@ -6,7 +6,8 @@ import {IBase64} from "./IBase64.sol";
 // An interface that provides the list of competitors, their IDs, and their URIs.
 interface CompetitorProvider {
     // Lists the IDs of the competitors. This must return an array that is of a power of 2,
-    // between 4 and 256 inclusive.
+    // between 4 and 256 inclusive. Team IDs should be returned in match order of the 
+    // first round - from top to bottom on the left, then top to bottom on the right.
     function listCompetitorIDs() external view returns (uint256[] memory);
 
     // Returns the competitor for the given competitor ID.
