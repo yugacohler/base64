@@ -1,3 +1,4 @@
+// Run with node.
 const fs = require('fs');
 
 if (process.argv.length < 4) {
