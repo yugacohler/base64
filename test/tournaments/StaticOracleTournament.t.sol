@@ -14,6 +14,7 @@ import {Test} from "../../lib/forge-std/src/Test.sol";
 // Unit tests for a StaticOracleTournament.
 contract StaticOracleTournamentTest is Test {
     Tournament _t;
+    StaticCompetitorProvider _s;
     OracleResultProvider _o;
 
     uint256[][] _entry1;
@@ -58,7 +59,8 @@ contract StaticOracleTournamentTest is Test {
         competitorURLs[7] = "Will.com";
 
         _o = new OracleResultProvider(address(this));
-        _t = new StaticOracleTournament(competitorIDs, competitorURLs, _o);
+        _s = new StaticCompetitorProvider(competitorIDs, competitorURLs);
+        _t = new StaticOracleTournament(_s, _o);
 
         _participant1 = address(0x420);
 
