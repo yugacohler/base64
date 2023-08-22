@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-// The interface for a Tournament.
-interface ITournament {
+// The abstract class for a Tournament.
+abstract contract ITournament {
     ////////// STRUCTS AND ENUMS //////////
 
     // A struct representing a single competitor in the Tournament.
@@ -51,24 +51,24 @@ interface ITournament {
     // the round number of the tournament. The second array index corresponds to the competitor number,
     // from top to bottom on the left, and then top to bottom on the right. The array contains the
     // competitor ID.
-    function getBracket() external view returns (uint256[][] memory);
+    function getBracket() external view virtual returns (uint256[][] memory);
 
     // Returns the competitor for the given competitor ID.
-    function getCompetitor(uint256 competitorId) external view returns (Competitor memory);
+    function getCompetitor(uint256 competitorId) external view virtual returns (Competitor memory);
 
     // Submits an entry to the Tournament prediction market. The entry must consist of N-1 rounds, where N
     // is the number of rounds in the Tournament. An address may submit at most one entry.
-    function submitEntry(uint256[][] memory entry) external;
+    function submitEntry(uint256[][] memory entry) public virtual;
 
     // Returns an entry for a given address.
-    function getEntry(address addr) external view returns (uint256[][] memory);
+    function getEntry(address addr) external view virtual returns (uint256[][] memory);
 
     // Returns the state of the Tournament prediction market.
-    function getState() external view returns (State);
+    function getState() external view virtual returns (State);
 
     // Returns the addresses of the participants in the tournament prediction market.
-    function listParticipants() external view returns (address[] memory);
+    function listParticipants() external view virtual returns (address[] memory);
 
     // Returns the participant for the given address.
-    function getParticipant(address addr) external view returns (Participant memory);
+    function getParticipant(address addr) external view virtual returns (Participant memory);
 }

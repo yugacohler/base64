@@ -56,11 +56,11 @@ contract Tournament is ITournament, Owned {
     // Initializes the Base64 bracket with the given competitors.
     // The number of competitors must be a power of two between 4 and 256 inclusive.
     constructor(
-      address competitorProvider,
-      address resultProvider
+      CompetitorProvider competitorProvider,
+      ResultProvider resultProvider
     ) Owned(msg.sender) {
-        _competitorProvider = CompetitorProvider(competitorProvider);
-        _resultProvider = ResultProvider(resultProvider);
+        _competitorProvider = competitorProvider;
+        _resultProvider = resultProvider;
 
         // Initialize the bracket.
         uint256[] memory competitorIDs = _competitorProvider.listCompetitorIDs();
@@ -91,7 +91,7 @@ contract Tournament is ITournament, Owned {
         return _competitorProvider.getCompetitor(competitorId);
     }
 
-    function submitEntry(uint256[][] memory entry) external override {
+    function submitEntry(uint256[][] memory entry) public virtual override {
         require(_entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
         _validateEntry(entry);
 

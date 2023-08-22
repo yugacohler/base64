@@ -46,7 +46,7 @@ contract TournamentTest is Test {
         CompetitorProvider cp = new StaticCompetitorProvider(competitorIDs, competitorURLs);
         ResultProvider rp = new RandomResultProvider();
 
-        _t = new Tournament(address(cp), address(rp));
+        _t = new Tournament(cp, rp);
 
         _participant1 = address(0x420);
 
