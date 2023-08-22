@@ -3,8 +3,8 @@ pragma solidity ^0.8.13;
 
 // An interface to the FriendTechSharesV1 contract.
 interface FriendTech {
-  ////////// PUBLIC APIS //////////
+    ////////// PUBLIC APIS //////////
 
-  // Gets the sell price of a subject and a number of shares.
-  function getSellPrice(address sharesSubject, uint256 amount) external view returns (uint256);
+    // Gets the sell price of a subject and a number of shares.
+    function getSellPrice(address sharesSubject, uint256 amount) external view returns (uint256);
 }

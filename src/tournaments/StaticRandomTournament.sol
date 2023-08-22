@@ -13,10 +13,8 @@ import {Tournament} from "../Tournament.sol";
 // A Tournament in which the competitors are statically defined, and the results
 // are random.
 contract StaticRandomTournament is Tournament {
-  ////////// CONSTRUCTOR //////////
-  constructor(uint256[] memory ids, string[] memory uris) Tournament(
-    new StaticCompetitorProvider(ids, uris),
-    new RandomResultProvider()
-  ){
-  }
+    ////////// CONSTRUCTOR //////////
+    constructor(uint256[] memory ids, string[] memory uris)
+        Tournament(new StaticCompetitorProvider(ids, uris), new RandomResultProvider())
+    {}
 }

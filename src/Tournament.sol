@@ -12,8 +12,8 @@ import {ResultProvider} from "./ResultProvider.sol";
  * ██╔══██╗██╔══██║░╚═══██╗██╔══╝░░██╔══██╗███████║
  * ██████╦╝██║░░██║██████╔╝███████╗╚█████╔╝╚════██║
  * ╚═════╝░╚═╝░░╚═╝╚═════╝░╚══════╝░╚════╝░░░░░░╚═╝
- * 
- * 
+ *
+ *
  * A Smart Contract for Tournament-based prediction markets.
  */
 abstract contract Tournament is Owned {
@@ -23,21 +23,18 @@ abstract contract Tournament is Owned {
     struct Competitor {
         // The ID of the competitor.
         uint256 id;
-        
         // The URI housing the metadata of the competitor.
         string uri;
     }
 
     // A struct representing a single match result in the Tournament.
     struct Result {
-      // The ID of the winner of the match.
-      uint256 winnerId;
-
-      // The ID of the loser of the match.
-      uint256 loserId;
-
-      // A string representing any metadata about the match.
-      string metadata;
+        // The ID of the winner of the match.
+        uint256 winnerId;
+        // The ID of the loser of the match.
+        uint256 loserId;
+        // A string representing any metadata about the match.
+        string metadata;
     }
 
     // A struct representing a participant in the Tournament prediction market.
@@ -50,8 +47,8 @@ abstract contract Tournament is Owned {
 
     // An enum representing the state of the Tournament prediction market.
     enum State
+    // The Tournament prediction market is accepting entries.
     {
-        // The Tournament prediction market is accepting entries.
         AcceptingEntries,
         // The Tournament is in progress and the prediction market is no longer accepting entries.
         InProgress,
@@ -95,10 +92,7 @@ abstract contract Tournament is Owned {
 
     // Initializes the Base64 bracket with the given competitors.
     // The number of competitors must be a power of two between 4 and 256 inclusive.
-    constructor(
-      CompetitorProvider competitorProvider,
-      ResultProvider resultProvider
-    ) Owned(msg.sender) {
+    constructor(CompetitorProvider competitorProvider, ResultProvider resultProvider) Owned(msg.sender) {
         _competitorProvider = competitorProvider;
         _resultProvider = resultProvider;
 
@@ -127,12 +121,12 @@ abstract contract Tournament is Owned {
     // the round number of the tournament. The second array index corresponds to the competitor number,
     // from top to bottom on the left, and then top to bottom on the right. The array contains the
     // competitor ID.
-    function getBracket() external virtual view returns (uint256[][] memory) {
+    function getBracket() external view virtual returns (uint256[][] memory) {
         return _bracket;
     }
 
     // Returns the competitor for the given competitor ID.
-    function getCompetitor(uint256 competitorId) external virtual view returns (Competitor memory) {
+    function getCompetitor(uint256 competitorId) external view virtual returns (Competitor memory) {
         return _competitorProvider.getCompetitor(competitorId);
     }
 
@@ -190,7 +184,6 @@ abstract contract Tournament is Owned {
 
     ////////// PRIVATE HELPERS //////////
 
-
     // Validates an entry. To save on gas, we just ensure the entry has the proper number
     // of rounds and picks, without checking the competitor IDs.
     function _validateEntry(uint256[][] memory entry) private view {
@@ -207,25 +200,25 @@ abstract contract Tournament is Owned {
 
     // Advances the bracket to the next round.
     function _advanceRound() private {
-      require(_state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
-      require(_curRound < _numRounds, "TOURNAMENT_FINISHED");
+        require(_state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
+        require(_curRound < _numRounds, "TOURNAMENT_FINISHED");
 
-      uint256 numWinners = _bracket[_curRound].length / 2;
+        uint256 numWinners = _bracket[_curRound].length / 2;
 
-      for (uint256 i = 0; i < numWinners; i++) {
-          Tournament.Result memory result = _resultProvider.getResult(
-              _bracket[_curRound][i * 2], _bracket[_curRound][(i * 2) + 1]);
-          _bracket[_curRound + 1].push(result.winnerId);
-      }
+        for (uint256 i = 0; i < numWinners; i++) {
+            Tournament.Result memory result =
+                _resultProvider.getResult(_bracket[_curRound][i * 2], _bracket[_curRound][(i * 2) + 1]);
+            _bracket[_curRound + 1].push(result.winnerId);
+        }
 
-      _updatePoints();
+        _updatePoints();
 
-      _pointsPerMatch *= 2;
-      _curRound++;
+        _pointsPerMatch *= 2;
+        _curRound++;
 
-      if (_curRound >= _numRounds) {
-          _state = State.Finished;
-      }
+        if (_curRound >= _numRounds) {
+            _state = State.Finished;
+        }
     }
 
     // Updates the participants' points according to the current bracket and the participants'

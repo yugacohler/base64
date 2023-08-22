@@ -7,9 +7,9 @@ import {Test} from "../../lib/forge-std/src/Test.sol";
 
 // Unit tests for StaticCompetitorProvider.
 contract StaticCompetitorProviderTest is Test {
-  CompetitorProvider _cp;
+    CompetitorProvider _cp;
 
-  function setUp() public {
+    function setUp() public {
         uint256[] memory competitorIDs = new uint256[](8);
         for (uint8 i = 0; i < competitorIDs.length; i++) {
             competitorIDs[i] = i + 1;
@@ -98,5 +98,4 @@ contract StaticCompetitorProviderTest is Test {
 
         new StaticCompetitorProvider(invalidCompetitorIDs, invalidCompetitorURLs);
     }
-
 }

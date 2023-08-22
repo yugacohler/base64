@@ -8,18 +8,18 @@ import {Tournament} from "../Tournament.sol";
 
 // A Tournament which only ENS holders can participate in.
 contract ENSTournament is Tournament, ENSGate {
-  ////////// CONSTRUCTOR //////////
-  constructor (
-    CompetitorProvider competitorProvider,
-    ResultProvider resultProvider,
-    ENS ens,
-    ReverseRegistrar reverseRegistrar
-  ) Tournament(competitorProvider, resultProvider) ENSGate(ENS(ens), ReverseRegistrar(reverseRegistrar)) {}
+    ////////// CONSTRUCTOR //////////
+    constructor(
+        CompetitorProvider competitorProvider,
+        ResultProvider resultProvider,
+        ENS ens,
+        ReverseRegistrar reverseRegistrar
+    ) Tournament(competitorProvider, resultProvider) ENSGate(ENS(ens), ReverseRegistrar(reverseRegistrar)) {}
 
-  ////////// PUBLIC APIS //////////
+    ////////// PUBLIC APIS //////////
 
-  function submitEntry(uint256[][] memory entry) public virtual override {
-    require(hasENS(msg.sender), "NOT_ENS");
-    super.submitEntry(entry);
-  }
+    function submitEntry(uint256[][] memory entry) public virtual override {
+        require(hasENS(msg.sender), "NOT_ENS");
+        super.submitEntry(entry);
+    }
 }
