@@ -21,7 +21,7 @@ contract OracleResultProvider is ResultProvider, Owned {
     mapping(uint256 => mapping(uint256 => string)) _metadata;
 
     ////////// CONSTRUCTOR //////////
-    constructor() Owned(msg.sender) {}
+    constructor(address owner) Owned(owner) {}
 
     ////////// PUBLIC APIS //////////
     function getResult(uint256 competitor1, uint256 competitor2)
