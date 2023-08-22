@@ -213,6 +213,15 @@ contract StaticOracleTournamentTest is Test {
       metadata[3] = "match4";
 
       _o.writeResults(winners, losers, metadata);
+      _t.advance();
+
+      uint256[][] memory bracket = _t.getBracket();
+
+      assertEq(bracket[1].length, 4);
+      assertEq(bracket[1][0], 1);
+      assertEq(bracket[1][1], 3);
+      assertEq(bracket[1][2], 5);
+      assertEq(bracket[1][3], 7);
     }
 
     // function testAdvanceRoundNotOwner() public asParticipant {
