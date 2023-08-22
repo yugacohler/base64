@@ -19,6 +19,18 @@ contract StaticOracleTournamentTest is Test {
     uint256[][] _entry1;
     address _participant1;
 
+    uint256[] _round1Winners;
+    uint256[] _round1Losers;
+    string[] _round1Metadata;
+
+    uint256[] _round2Winners;
+    uint256[] _round2Losers;
+    string[] _round2Metadata;
+
+    uint256[] _round3Winners;
+    uint256[] _round3Losers;
+    string[] _round3Metadata;
+
     // Fallback function for this contract.
     receive() external payable {}
 
@@ -62,6 +74,24 @@ contract StaticOracleTournamentTest is Test {
         _entry1[1][0] = 1;
         _entry1[1][1] = 5;
         _entry1[2][0] = 1;
+
+        _round1Winners = new uint256[](4);
+      _round1Winners[0] = 1;
+      _round1Winners[1] = 3;
+      _round1Winners[2] = 5;
+      _round1Winners[3] = 7;
+
+      _round1Losers = new uint256[](4);
+      _round1Losers[0] = 2;
+      _round1Losers[1] = 4;
+      _round1Losers[2] = 6;
+      _round1Losers[3] = 8;
+
+      _round1Metadata = new string[](4);
+      _round1Metadata[0] = "match1";
+      _round1Metadata[1] = "match2";
+      _round1Metadata[2] = "match3";
+      _round1Metadata[3] = "match4";
 
         // Fund the address needed.
         vm.deal(address(_participant1), 1 ether);
@@ -194,25 +224,7 @@ contract StaticOracleTournamentTest is Test {
     }
 
     function testAdvanceRoundWithResults() public {
-      uint256[] memory winners = new uint256[](4);
-      winners[0] = 1;
-      winners[1] = 3;
-      winners[2] = 5;
-      winners[3] = 7;
-
-      uint256[] memory losers = new uint256[](4);
-      losers[0] = 2;
-      losers[1] = 4;
-      losers[2] = 6;
-      losers[3] = 8;
-
-      string[] memory metadata = new string[](4);
-      metadata[0] = "match1";
-      metadata[1] = "match2";
-      metadata[2] = "match3";
-      metadata[3] = "match4";
-
-      _o.writeResults(winners, losers, metadata);
+      _o.writeResults(_round1Winners, _round1Losers, _round1Metadata);
       _t.advance();
 
       uint256[][] memory bracket = _t.getBracket();
@@ -223,6 +235,11 @@ contract StaticOracleTournamentTest is Test {
       assertEq(bracket[1][2], 5);
       assertEq(bracket[1][3], 7);
     }
+
+    // function testWriteResultsNotOwner() public asParticipant {
+    //   vm.expectRevert("UNAUTHORIZED");
+
+    // }
 
     // function testAdvanceRoundNotOwner() public asParticipant {
     //     vm.expectRevert("UNAUTHORIZED");
