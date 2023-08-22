@@ -35,15 +35,38 @@ $ anvil
 ```
 
 ## Deploy Base64
-The command below uses a default private key of Anvil and the Anvil RPC:
+
+### OracleResultProvider
+Use the address of the deployer in `oracle_result_provider.data`:
 
 ```shell
-$ forge script script/Base64.s.sol:Base64Script \
-  --broadcast --verify --rpc-url "https://goerli.base.org/" \
-  --private-key <admin-private-key>
+forge create \
+	--constructor-args-path ./data/oracle_result_provider.data \
+	--verify \
+	--verifier etherscan \
+	--verifier-url "https://api-goerli.basescan.org/api" \
+  --etherscan-api-key <etherscan-api-key> \
+	--gas-limit 5000000 \
+	--private-key <owner-private-key> \
+	--rpc-url "https://goerli.base.org/" \
+	./src/results/OracleResultProvider.sol:OracleResultProvider
 ```
 
-The output will display the contract address.
+### StaticOracleTournament
+Use the OracleResultProvider address from above in `static_oracle_tournament.data`:
+
+```shell
+forge create \
+	--constructor-args ./data/static_oracle_tournament.data \
+	--verify \
+	--verifier etherscan \
+	--verifier-url "https://api-goerli.basescan.org/api" \
+  --etherscan-api-key <etherscan-api-key> \
+	--gas-limit 5000000 \
+	--private-key <owner-private-key> \
+	--rpc-url "https://goerli.base.org/" \
+	./src/results/OracleResultProvider.sol:OracleResultProvider
+```
 
 ## Call Base64
 
