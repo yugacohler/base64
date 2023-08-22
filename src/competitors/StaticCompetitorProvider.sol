@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {CompetitorProvider} from "../CompetitorProvider.sol";
-import {ITournament} from "../ITournament.sol";
+import {Tournament} from "../Tournament.sol";
 
 // A competitor provider for static competitors.
 contract StaticCompetitorProvider is CompetitorProvider {
@@ -34,8 +34,8 @@ contract StaticCompetitorProvider is CompetitorProvider {
       return _ids;
     }
 
-    function getCompetitor(uint256 competitorId) external view override returns (ITournament.Competitor memory) {
+    function getCompetitor(uint256 competitorId) external view override returns (Tournament.Competitor memory) {
       require(bytes(_metadataURIs[competitorId]).length != 0, "INVALID_ID");
-      return ITournament.Competitor(competitorId, _metadataURIs[competitorId]);
+      return Tournament.Competitor(competitorId, _metadataURIs[competitorId]);
     }
 }

@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 import {CompetitorProvider} from "../CompetitorProvider.sol";
 import {ERC721} from "../../lib/solmate/src/tokens/ERC721.sol";
-import {ITournament} from "../ITournament.sol";
+import {Tournament} from "../Tournament.sol";
 
 // A competitor provider for ERC-721 competitors.
 contract ERC721CompetitorProvider is CompetitorProvider {
@@ -31,10 +31,10 @@ contract ERC721CompetitorProvider is CompetitorProvider {
     return _ids;
   }
 
-  function getCompetitor(uint256 competitorId) external view override returns (ITournament.Competitor memory) {
+  function getCompetitor(uint256 competitorId) external view override returns (Tournament.Competitor memory) {
     require(_erc721.ownerOf(competitorId) != address(0), "INVALID_ID");
 
-    return ITournament.Competitor({
+    return Tournament.Competitor({
       id: competitorId,
       uri: _erc721.tokenURI(competitorId)
     });

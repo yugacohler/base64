@@ -6,7 +6,8 @@ import {CompetitorProvider} from "../src/CompetitorProvider.sol";
 import {ResultProvider} from "../src/ResultProvider.sol";
 import {StaticCompetitorProvider} from "../src/competitors/StaticCompetitorProvider.sol";
 import {RandomResultProvider} from "../src/results/RandomResultProvider.sol";
-import {ITournament} from "../src/ITournament.sol";
+import {Tournament} from "../src/Tournament.sol";
+import {StaticRandomTournament} from "../src/StaticRandomTournament.sol";
 import {Test} from "../lib/forge-std/src/Test.sol";
 import {console2} from "../lib/forge-std/src/console2.sol";
 
@@ -43,10 +44,7 @@ contract TournamentTest is Test {
         competitorURLs[6] = "Emilie.com";
         competitorURLs[7] = "Will.com";
 
-        CompetitorProvider cp = new StaticCompetitorProvider(competitorIDs, competitorURLs);
-        ResultProvider rp = new RandomResultProvider();
-
-        _t = new Tournament(cp, rp);
+        _t = new StaticRandomTournament(competitorIDs, competitorURLs);
 
         _participant1 = address(0x420);
 
@@ -175,7 +173,7 @@ contract TournamentTest is Test {
     }
 
     function testGetState() public asParticipant {
-        assertTrue(_t.getState() == ITournament.State.AcceptingEntries);
+        assertTrue(_t.getState() == Tournament.State.AcceptingEntries);
     }
 
     function testListParticipants() public asParticipant {
@@ -190,7 +188,7 @@ contract TournamentTest is Test {
     function testAdvanceRound() public {
         _t.advance();
 
-        assertTrue(_t.getState() == ITournament.State.InProgress);
+        assertTrue(_t.getState() == Tournament.State.InProgress);
 
         uint256[][] memory bracket = _t.getBracket();
 
@@ -240,8 +238,8 @@ contract TournamentTest is Test {
         address[] memory participants = _t.listParticipants();
         assertEq(participants.length, 2);
 
-        ITournament.Participant memory p1 = _t.getParticipant(participants[0]);
-        ITournament.Participant memory p2 = _t.getParticipant(participants[1]);
+        Tournament.Participant memory p1 = _t.getParticipant(participants[0]);
+        Tournament.Participant memory p2 = _t.getParticipant(participants[1]);
 
         assertTrue(p1.addr == address(_participant1) || p1.addr == address(0x1337));
         assertTrue(p2.addr == address(participant2) || p2.addr == address(0x1337));

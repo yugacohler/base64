@@ -2,10 +2,8 @@
 pragma solidity ^0.8.13;
 
 import {CompetitorProvider} from "./CompetitorProvider.sol";
-import {ITournament} from "./ITournament.sol";
 import {Owned} from "../lib/solmate/src/auth/Owned.sol";
 import {ResultProvider} from "./ResultProvider.sol";
-import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
 
 /**
  * ██████╗░░█████╗░░██████╗███████╗░█████╗░░░██╗██╗
@@ -18,7 +16,49 @@ import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
  * 
  * A Smart Contract for Tournament-based prediction markets.
  */
-contract Tournament is ITournament, Owned {
+abstract contract Tournament is Owned {
+    ////////// STRUCTS AND ENUMS //////////
+
+    // A struct representing a single competitor in the Tournament.
+    struct Competitor {
+        // The ID of the competitor.
+        uint256 id;
+        
+        // The URI housing the metadata of the competitor.
+        string uri;
+    }
+
+    // A struct representing a single match result in the Tournament.
+    struct Result {
+      // The ID of the winner of the match.
+      uint256 winnerId;
+
+      // The ID of the loser of the match.
+      uint256 loserId;
+
+      // A string representing any metadata about the match.
+      string metadata;
+    }
+
+    // A struct representing a participant in the Tournament prediction market.
+    struct Participant {
+        // The address of the participant.
+        address addr;
+        // The points the participant has earned.
+        uint256 points;
+    }
+
+    // An enum representing the state of the Tournament prediction market.
+    enum State
+    {
+        // The Tournament prediction market is accepting entries.
+        AcceptingEntries,
+        // The Tournament is in progress and the prediction market is no longer accepting entries.
+        InProgress,
+        // The Tournament has concluded.
+        Finished
+    }
+
     ////////// MEMBER VARIABLES //////////
 
     // The State of Base64.
@@ -83,15 +123,22 @@ contract Tournament is ITournament, Owned {
 
     ////////// PUBLIC APIS //////////
 
-    function getBracket() external view override returns (uint256[][] memory) {
+    // Returns the current state of the Tournament bracket. The first array index corresponds to
+    // the round number of the tournament. The second array index corresponds to the competitor number,
+    // from top to bottom on the left, and then top to bottom on the right. The array contains the
+    // competitor ID.
+    function getBracket() external virtual view returns (uint256[][] memory) {
         return _bracket;
     }
 
-    function getCompetitor(uint256 competitorId) external view override returns (Competitor memory) {
+    // Returns the competitor for the given competitor ID.
+    function getCompetitor(uint256 competitorId) external virtual view returns (Competitor memory) {
         return _competitorProvider.getCompetitor(competitorId);
     }
 
-    function submitEntry(uint256[][] memory entry) public virtual override {
+    // Submits an entry to the Tournament prediction market. The entry must consist of N-1 rounds, where N
+    // is the number of rounds in the Tournament. An address may submit at most one entry.
+    function submitEntry(uint256[][] memory entry) public virtual {
         require(_entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
         _validateEntry(entry);
 
@@ -103,21 +150,25 @@ contract Tournament is ITournament, Owned {
         _participants.push(msg.sender);
     }
 
-    function getEntry(address addr) external view override returns (uint256[][] memory) {
+    // Returns an entry for a given address.
+    function getEntry(address addr) external view returns (uint256[][] memory) {
         require(_entries[addr].length > 0, "ENTRY_NOT_FOUND");
 
         return _entries[addr];
     }
 
-    function getState() external view override returns (State) {
+    // Returns the state of the Tournament prediction market.
+    function getState() external view returns (State) {
         return _state;
     }
 
-    function listParticipants() external view override returns (address[] memory) {
+    // Returns the addresses of the participants in the tournament prediction market.
+    function listParticipants() external view returns (address[] memory) {
         return _participants;
     }
 
-    function getParticipant(address addr) external view override returns (Participant memory) {
+    // Returns the participant for the given address.
+    function getParticipant(address addr) external view returns (Participant memory) {
         require(_participantMap[addr].addr != address(0), "PARTICIPANT_NOT_FOUND");
 
         return _participantMap[addr];
@@ -162,7 +213,7 @@ contract Tournament is ITournament, Owned {
       uint256 numWinners = _bracket[_curRound].length / 2;
 
       for (uint256 i = 0; i < numWinners; i++) {
-          ITournament.Result memory result = _resultProvider.getResult(
+          Tournament.Result memory result = _resultProvider.getResult(
               _bracket[_curRound][i * 2], _bracket[_curRound][(i * 2) + 1]);
           _bracket[_curRound + 1].push(result.winnerId);
       }
