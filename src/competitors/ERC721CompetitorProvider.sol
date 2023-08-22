@@ -10,33 +10,33 @@ contract ERC721CompetitorProvider is CompetitorProvider {
   ////////// MEMBER VARIABLES //////////
 
   // The underlying ERC721.
-  ERC721 erc721;
+  ERC721 _erc721;
 
   ////////// CONSTRUCTOR //////////
 
-  constructor(address _erc721, uint256[] memory _ids) {
-    uint256 powerOfTwo = getPowerOfTwo(_ids.length);
+  constructor(address erc721, uint256[] memory ids) {
+    uint256 powerOfTwo = _getPowerOfTwo(_ids.length);
 
     for (uint16 i = 0; i < powerOfTwo; i++) {
-      require(_ids[i] != 0, "ZERO_ID");
-      ids.push(_ids[i]);
+      require(ids[i] != 0, "ZERO_ID");
+      _ids.push(ids[i]);
     }
 
-    erc721 = ERC721(_erc721); 
+    _erc721 = ERC721(erc721); 
   }
   
   ////////// PUBLIC APIS //////////  
 
   function listCompetitorIDs() external view override returns (uint256[] memory) {
-    return ids;
+    return _ids;
   }
 
   function getCompetitor(uint256 competitorId) external view override returns (IBase64.Competitor memory) {
-    require(erc721.ownerOf(competitorId) != address(0), "INVALID_ID");
+    require(_erc721.ownerOf(competitorId) != address(0), "INVALID_ID");
 
     return IBase64.Competitor({
       id: competitorId,
-      uri: erc721.tokenURI(competitorId)
+      uri: _erc721.tokenURI(competitorId)
     });
   }
 }

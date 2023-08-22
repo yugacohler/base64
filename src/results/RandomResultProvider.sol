@@ -8,13 +8,13 @@ contract RandomResultProvider is ResultProvider {
   ////////// MEMBER VARIABLES //////////
 
   // The random seed.
-  uint256 nonce;
+  uint256 _nonce;
 
   ////////// PUBLIC APIS //////////
 
   function getResult(uint256 competitor1, uint256 competitor2) external override returns (IBase64.Result memory) {
-    uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, nonce))) % 2;
-    nonce++;
+    uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, _nonce))) % 2;
+    _nonce++;
 
     uint256 winner;
     uint256 loser;

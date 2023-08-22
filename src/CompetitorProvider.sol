@@ -8,7 +8,7 @@ abstract contract CompetitorProvider {
   ////////// MEMBER VARIABLES //////////
   
   // The IDs of the competitors.
-  uint256[] ids;
+  uint256[] _ids;
 
   ////////// PUBLIC APIS //////////
 
@@ -23,7 +23,7 @@ abstract contract CompetitorProvider {
   ////////// INTERNAL APIS //////////
 
   // Returns the power of 2 that is greater than or equal to the given number.
-  function getPowerOfTwo(uint256 n) internal pure returns (uint256) {
+  function _getPowerOfTwo(uint256 n) internal pure returns (uint256) {
     require(n >= 4 && n <= 256, "INVALID_NUM_IDS");
     
     if (n < 8) {

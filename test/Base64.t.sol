@@ -12,17 +12,17 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 
 // Unit tests for Base64.
 contract Base64Test is Test {
-    Base64 b;
+    Base64 _b;
 
-    uint256[][] entry1;
-    address participant1;
+    uint256[][] _entry1;
+    address _participant1;
 
     // Fallback function for this contract.
     receive() external payable {}
 
     // Modifier for tests that are invoked by a participant.
     modifier asParticipant() {
-        vm.startPrank(participant1);
+        vm.startPrank(_participant1);
         _;
         vm.stopPrank();
     }
@@ -46,29 +46,29 @@ contract Base64Test is Test {
         CompetitorProvider cp = new StaticCompetitorProvider(competitorIDs, competitorURLs);
         ResultProvider rp = new RandomResultProvider();
 
-        b = new Base64(address(cp), address(rp));
+        _b = new Base64(address(cp), address(rp));
 
-        participant1 = address(0x420);
+        _participant1 = address(0x420);
 
-        entry1 = new uint256[][](3);
-        entry1[0] = new uint256[](4);
-        entry1[1] = new uint256[](2);
-        entry1[2] = new uint256[](1);
+        _entry1 = new uint256[][](3);
+        _entry1[0] = new uint256[](4);
+        _entry1[1] = new uint256[](2);
+        _entry1[2] = new uint256[](1);
 
-        entry1[0][0] = 1;
-        entry1[0][1] = 3;
-        entry1[0][2] = 5;
-        entry1[0][3] = 7;
-        entry1[1][0] = 1;
-        entry1[1][1] = 5;
-        entry1[2][0] = 1;
+        _entry1[0][0] = 1;
+        _entry1[0][1] = 3;
+        _entry1[0][2] = 5;
+        _entry1[0][3] = 7;
+        _entry1[1][0] = 1;
+        _entry1[1][1] = 5;
+        _entry1[2][0] = 1;
 
         // Fund the address needed.
-        vm.deal(address(participant1), 1 ether);
+        vm.deal(address(_participant1), 1 ether);
     }
 
-    function testGetBracket_initial() public asParticipant {
-        uint256[][] memory bracket = b.getBracket();
+    function testGetBracketInitial() public asParticipant {
+        uint256[][] memory bracket = _b.getBracket();
 
         assertEq(bracket.length, 4);
 
@@ -88,39 +88,39 @@ contract Base64Test is Test {
     }
 
     function testGetCompetitor() public asParticipant {
-        Base64.Competitor memory competitor = b.getCompetitor(1);
+        Base64.Competitor memory competitor = _b.getCompetitor(1);
 
         assertEq(competitor.id, 1);
         assertEq(competitor.uri, "Brian.com");
     }
 
-    function testGetCompetitor_notFound() public asParticipant {
+    function testGetCompetitorNotFound() public asParticipant {
         vm.expectRevert("INVALID_ID");
 
-        b.getCompetitor(9);
+        _b.getCompetitor(9);
     }
 
     function testSubmitEntry() public asParticipant {
-        b.submitEntry{value: 0.01 ether}(entry1);
+        _b.submitEntry{value: 0.01 ether}(_entry1);
     }
 
-    function testSubmitEntry_alreadySubmitted() public {
-        vm.prank(participant1);
-        b.submitEntry{value: 0.01 ether}(entry1);
+    function testSubmitEntryAlreadySubmitted() public {
+        vm.prank(_participant1);
+        _b.submitEntry{value: 0.01 ether}(_entry1);
 
         vm.expectRevert("ALREADY_SUBMITTED");
 
-        vm.prank(participant1);
-        b.submitEntry{value: 0.01 ether}(entry1);
+        vm.prank(_participant1);
+        _b.submitEntry{value: 0.01 ether}(_entry1);
     }
 
-    function testSubmitEntry_noFee() public asParticipant {
+    function testSubmitEntryNoFee() public asParticipant {
         vm.expectRevert("INVALID_ENTRY_FEE");
 
-        b.submitEntry(entry1);
+        _b.submitEntry(_entry1);
     }
 
-    function testSubmitEntry_invalidNumRounds() public asParticipant {
+    function testSubmitEntryInvalidNumRounds() public asParticipant {
         uint256[][] memory invalidEntry = new uint256[][](2);
         invalidEntry[0] = new uint256[](4);
         invalidEntry[1] = new uint256[](1);
@@ -133,10 +133,10 @@ contract Base64Test is Test {
 
         vm.expectRevert("INVALID_NUM_ROUNDS");
 
-        b.submitEntry{value: 0.01 ether}(invalidEntry);
+        _b.submitEntry{value: 0.01 ether}(invalidEntry);
     }
 
-    function testSubmitEntry_invalidNumCompetitors() public asParticipant {
+    function testSubmitEntryInvalidNumCompetitors() public asParticipant {
         uint256[][] memory invalidEntry = new uint256[][](3);
         invalidEntry[0] = new uint256[](4);
         invalidEntry[1] = new uint256[](3); // This needs to be 2.
@@ -152,53 +152,53 @@ contract Base64Test is Test {
 
         vm.expectRevert("INVALID_NUM_TEAMS");
 
-        b.submitEntry{value: 0.01 ether}(invalidEntry);
+        _b.submitEntry{value: 0.01 ether}(invalidEntry);
     }
 
     function testGetEntry() public asParticipant {
-        b.submitEntry{value: 0.01 ether}(entry1);
+        _b.submitEntry{value: 0.01 ether}(_entry1);
 
-        uint256[][] memory entry = b.getEntry(address(participant1));
+        uint256[][] memory entry = _b.getEntry(address(_participant1));
 
-        assertEq(entry.length, entry1.length);
-        assertEq(entry[0].length, entry1[0].length);
-        assertEq(entry[1].length, entry1[1].length);
-        assertEq(entry[2].length, entry1[2].length);
+        assertEq(entry.length, _entry1.length);
+        assertEq(entry[0].length, _entry1[0].length);
+        assertEq(entry[1].length, _entry1[1].length);
+        assertEq(entry[2].length, _entry1[2].length);
 
-        assertEq(entry[0][0], entry1[0][0]);
-        assertEq(entry[0][1], entry1[0][1]);
-        assertEq(entry[0][2], entry1[0][2]);
-        assertEq(entry[0][3], entry1[0][3]);
-        assertEq(entry[1][0], entry1[1][0]);
-        assertEq(entry[1][1], entry1[1][1]);
-        assertEq(entry[2][0], entry1[2][0]);
+        assertEq(entry[0][0], _entry1[0][0]);
+        assertEq(entry[0][1], _entry1[0][1]);
+        assertEq(entry[0][2], _entry1[0][2]);
+        assertEq(entry[0][3], _entry1[0][3]);
+        assertEq(entry[1][0], _entry1[1][0]);
+        assertEq(entry[1][1], _entry1[1][1]);
+        assertEq(entry[2][0], _entry1[2][0]);
     }
 
-    function testGetEntry_notFound() public asParticipant {
+    function testGetEntryNotFound() public asParticipant {
         vm.expectRevert("ENTRY_NOT_FOUND");
 
-        b.getEntry(address(this));
+        _b.getEntry(address(this));
     }
 
     function testGetState() public asParticipant {
-        assertTrue(b.getState() == IBase64.State.AcceptingEntries);
+        assertTrue(_b.getState() == IBase64.State.AcceptingEntries);
     }
 
     function testListParticipants() public asParticipant {
-        b.submitEntry{value: 0.01 ether}(entry1);
+        _b.submitEntry{value: 0.01 ether}(_entry1);
 
-        address[] memory participants = b.listParticipants();
+        address[] memory participants = _b.listParticipants();
 
         assertEq(participants.length, 1);
-        assertEq(participants[0], address(participant1));
+        assertEq(participants[0], address(_participant1));
     }
 
     function testAdvanceRound() public {
-        b.advance();
+        _b.advance();
 
-        assertTrue(b.getState() == IBase64.State.InProgress);
+        assertTrue(_b.getState() == IBase64.State.InProgress);
 
-        uint256[][] memory bracket = b.getBracket();
+        uint256[][] memory bracket = _b.getBracket();
 
         assertEq(bracket[1].length, 4);
         assertTrue(bracket[1][0] == 1 || bracket[1][0] == 2);
@@ -207,15 +207,15 @@ contract Base64Test is Test {
         assertTrue(bracket[1][3] == 7 || bracket[1][3] == 8);
     }
 
-    function testAdvanceRound_notOwner() public asParticipant {
+    function testAdvanceRoundNotOwner() public asParticipant {
         vm.expectRevert("UNAUTHORIZED");
 
-        b.advance();
+        _b.advance();
     }
 
     function testTwoParticipants() public {
-        vm.prank(participant1);
-        b.submitEntry{value: 0.01 ether}(entry1);
+        vm.prank(_participant1);
+        _b.submitEntry{value: 0.01 ether}(_entry1);
 
         // Submit another entry from address 0x1337.
         address participant2 = address(0x1337);
@@ -237,55 +237,55 @@ contract Base64Test is Test {
 
         // Send the entry from 0x1337.
         vm.prank(address(participant2));
-        b.submitEntry{value: 0.01 ether}(entry2);
+        _b.submitEntry{value: 0.01 ether}(entry2);
 
         // Advance the round.
-        b.advance();
+        _b.advance();
 
         // The points of the two participants should add up to 4.
-        address[] memory participants = b.listParticipants();
+        address[] memory participants = _b.listParticipants();
         assertEq(participants.length, 2);
 
-        IBase64.Participant memory p1 = b.getParticipant(participants[0]);
-        IBase64.Participant memory p2 = b.getParticipant(participants[1]);
+        IBase64.Participant memory p1 = _b.getParticipant(participants[0]);
+        IBase64.Participant memory p2 = _b.getParticipant(participants[1]);
 
-        assertTrue(p1.addr == address(participant1) || p1.addr == address(0x1337));
+        assertTrue(p1.addr == address(_participant1) || p1.addr == address(0x1337));
         assertTrue(p2.addr == address(participant2) || p2.addr == address(0x1337));
         assertEq(p1.points + p2.points, 4);
 
         // Advance the round twice more. No errors.
-        b.advance();
+        _b.advance();
 
-        uint256[][] memory bracket = b.getBracket();
+        uint256[][] memory bracket = _b.getBracket();
         assertEq(bracket[2].length, 2);
         assertTrue(bracket[2][0] >= 1 && bracket[2][0] <= 4);
         assertTrue(bracket[2][1] >= 5 && bracket[2][1] <= 8);
 
-        b.advance();
+        _b.advance();
 
-        bracket = b.getBracket();
+        bracket = _b.getBracket();
         assertEq(bracket[3].length, 1);
         assertTrue(bracket[3][0] >= 1 && bracket[3][0] <= 8);
 
         // Expect a revert if we try to advance once more.
         vm.expectRevert("TOURNAMENT_FINISHED");
-        b.advance();
+        _b.advance();
 
         // Collect payout for the first participant.
-        vm.prank(address(participant1));
-        b.collectPayout();
+        vm.prank(address(_participant1));
+        _b.collectPayout();
 
         // Can't collect payout twice.
-        vm.prank(address(participant1));
+        vm.prank(address(_participant1));
         vm.expectRevert("NO_PAYOUT");
-        b.collectPayout();
+        _b.collectPayout();
 
         // Collect payout for the second participant.
         vm.prank(address(participant2));
-        b.collectPayout();
+        _b.collectPayout();
 
         // Balance of the two addresses should add up to 0.02 ether.
-        console2.log("Participant 1 balance", address(participant1).balance);
+        console2.log("Participant 1 balance", address(_participant1).balance);
         console2.log("Participant 2 balance", address(participant2).balance);
     }
 }

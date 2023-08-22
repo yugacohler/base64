@@ -29,57 +29,54 @@ contract Base64 is IBase64, Owned {
     ////////// MEMBER VARIABLES //////////
 
     // The State of Base64.
-    State state = State.AcceptingEntries;
+    State _state = State.AcceptingEntries;
 
     // The Competitor provider.
-    CompetitorProvider competitorProvider;
+    CompetitorProvider _competitorProvider;
 
     // The match result provider.
-    ResultProvider resultProvider;
+    ResultProvider _resultProvider;
 
     // The current bracket.
-    uint256[][] bracket;
+    uint256[][] _bracket;
 
     // The mapping from participant address to entry.
-    mapping(address => uint256[][]) entries;
+    mapping(address => uint256[][]) _entries;
 
     // The mapping from participant address to participant.
-    mapping(address => Participant) participantMap;
+    mapping(address => Participant) _participantMap;
 
     // The list of participant addresses.
-    address[] participants;
+    address[] _participants;
 
     // The number of rounds in the bracket.
-    uint256 numRounds;
+    uint256 _numRounds;
 
     // The current round of the bracket, 0 indexed.
-    uint256 curRound = 0;
+    uint256 _curRound = 0;
 
     // The number of points awarded for each match in the current round.
-    uint256 pointsPerMatch = 1;
-
-    // A nonce used for picking winners.
-    uint256 nonce = 0;
+    uint256 _pointsPerMatch = 1;
 
     ////////// CONSTRUCTOR //////////
 
     // Initializes the Base64 bracket with the given competitors.
     // The number of competitors must be a power of two between 4 and 256 inclusive.
     constructor(
-      address _competitorProvider,
-      address _resultProvider
+      address competitorProvider,
+      address resultProvider
     ) Owned(msg.sender) {
-        competitorProvider = CompetitorProvider(_competitorProvider);
-        resultProvider = ResultProvider(_resultProvider);
+        _competitorProvider = CompetitorProvider(competitorProvider);
+        _resultProvider = ResultProvider(resultProvider);
 
         // Initialize the bracket.
-        uint256[] memory competitorIDs = competitorProvider.listCompetitorIDs();
+        uint256[] memory competitorIDs = _competitorProvider.listCompetitorIDs();
         uint256 competitorsLeft = competitorIDs.length;
 
         while (competitorsLeft >= 1) {
-            bracket.push();
+            _bracket.push();
             if (competitorsLeft > 1) {
-                numRounds++;
+                _numRounds++;
             }
 
             competitorsLeft /= 2;
@@ -87,107 +84,87 @@ contract Base64 is IBase64, Owned {
 
         // Initialize the first round of the bracket.
         for (uint256 i = 0; i < competitorIDs.length; i++) {
-            bracket[0].push(competitorIDs[i]);
+            _bracket[0].push(competitorIDs[i]);
         }
     }
 
     ////////// PUBLIC APIS //////////
 
     function getBracket() external view override returns (uint256[][] memory) {
-        return bracket;
+        return _bracket;
     }
 
     function getCompetitor(uint256 competitorId) external view override returns (Competitor memory) {
-        return competitorProvider.getCompetitor(competitorId);
+        return _competitorProvider.getCompetitor(competitorId);
     }
 
     function submitEntry(uint256[][] memory entry) external payable override {
         require(msg.value >= ENTRY_FEE, "INVALID_ENTRY_FEE");
-        require(entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
-        validateEntry(entry);
+        require(_entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
+        _validateEntry(entry);
 
-        entries[msg.sender] = entry;
+        _entries[msg.sender] = entry;
 
         Participant memory p = Participant(msg.sender, 0, 0);
 
-        participantMap[msg.sender] = p;
-        participants.push(msg.sender);
+        _participantMap[msg.sender] = p;
+        _participants.push(msg.sender);
     }
 
     function getEntry(address addr) external view override returns (uint256[][] memory) {
-        require(entries[addr].length > 0, "ENTRY_NOT_FOUND");
+        require(_entries[addr].length > 0, "ENTRY_NOT_FOUND");
 
-        return entries[addr];
+        return _entries[addr];
     }
 
     function getState() external view override returns (State) {
-        return state;
+        return _state;
     }
 
     function listParticipants() external view override returns (address[] memory) {
-        return participants;
+        return _participants;
     }
 
     function getParticipant(address addr) external view override returns (Participant memory) {
-        require(participantMap[addr].addr != address(0), "PARTICIPANT_NOT_FOUND");
+        require(_participantMap[addr].addr != address(0), "PARTICIPANT_NOT_FOUND");
 
-        return participantMap[addr];
+        return _participantMap[addr];
     }
 
     function collectPayout() external override {
-        require(state == State.Finished, "TOURNAMENT_NOT_FINISHED");
-        require(participantMap[msg.sender].addr != address(0), "PARTICIPANT_NOT_FOUND");
-        require(participantMap[msg.sender].payout > 0, "NO_PAYOUT");
-        require(participantMap[msg.sender].payout <= address(this).balance, "INSUFFICIENT_BALANCE");
+        require(_state == State.Finished, "TOURNAMENT_NOT_FINISHED");
+        require(_participantMap[msg.sender].addr != address(0), "PARTICIPANT_NOT_FOUND");
+        require(_participantMap[msg.sender].payout > 0, "NO_PAYOUT");
+        require(_participantMap[msg.sender].payout <= address(this).balance, "INSUFFICIENT_BALANCE");
 
-        msg.sender.safeTransferETH(participantMap[msg.sender].payout);
+        msg.sender.safeTransferETH(_participantMap[msg.sender].payout);
 
-        participantMap[msg.sender].payout = 0;
+        _participantMap[msg.sender].payout = 0;
     }
 
     ////////// ADMIN APIS //////////
 
     // Advances the state of Base64.
     function advance() external onlyOwner {
-        require(state != State.Finished, "TOURNAMENT_FINISHED");
+        require(_state != State.Finished, "TOURNAMENT_FINISHED");
 
-        if (state == State.AcceptingEntries) {
-            state = State.InProgress;
-            advanceRound();
-        } else if (state == State.InProgress) {
-            advanceRound();
+        if (_state == State.AcceptingEntries) {
+            _state = State.InProgress;
+            _advanceRound();
+        } else if (_state == State.InProgress) {
+            _advanceRound();
         }
     }
 
     ////////// PRIVATE HELPERS //////////
 
-    // Returns true if a number is a power of 2 greater than 4 and less than 256.
-    function isPowerOfTwo(uint256 x) private pure returns (bool) {
-        return x >= 4 && x <= 256 && (x & (x - 1)) == 0;
-    }
-
-    // Returns true if the competitor IDs are unique and valid.
-    function checkCompetitorIDs(uint32[] memory competitorIDs) private pure returns (bool) {
-        for (uint256 i = 0; i < competitorIDs.length; i++) {
-            for (uint256 j = i + 1; j < competitorIDs.length; j++) {
-                if (competitorIDs[i] == competitorIDs[j]) {
-                    return false;
-                } else if (competitorIDs[i] == 0) {
-                    // Competitor IDs must be greater than 0.
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
 
     // Validates an entry. To save on gas, we just ensure the entry has the proper number
     // of rounds and picks, without checking the competitor IDs.
-    function validateEntry(uint256[][] memory entry) private view {
-        require(entry.length == numRounds, "INVALID_NUM_ROUNDS");
+    function _validateEntry(uint256[][] memory entry) private view {
+        require(entry.length == _numRounds, "INVALID_NUM_ROUNDS");
 
-        uint256 numCompetitors = bracket[0].length;
+        uint256 numCompetitors = _bracket[0].length;
 
         for (uint32 i = 0; i < entry.length; i++) {
             numCompetitors /= 2;
@@ -197,55 +174,55 @@ contract Base64 is IBase64, Owned {
     }
 
     // Advances the bracket to the next round.
-    function advanceRound() private {
-      require(state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
-      require(curRound < numRounds, "TOURNAMENT_FINISHED");
+    function _advanceRound() private {
+      require(_state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
+      require(_curRound < _numRounds, "TOURNAMENT_FINISHED");
 
-      uint256 numWinners = bracket[curRound].length / 2;
+      uint256 numWinners = _bracket[_curRound].length / 2;
 
       for (uint256 i = 0; i < numWinners; i++) {
-          IBase64.Result memory result = resultProvider.getResult(
-              bracket[curRound][i * 2], bracket[curRound][(i * 2) + 1]);
-          bracket[curRound + 1].push(result.winnerId);
+          IBase64.Result memory result = _resultProvider.getResult(
+              _bracket[_curRound][i * 2], _bracket[_curRound][(i * 2) + 1]);
+          _bracket[_curRound + 1].push(result.winnerId);
       }
 
-      updatePoints();
+      _updatePoints();
 
-      pointsPerMatch *= 2;
-      curRound++;
+      _pointsPerMatch *= 2;
+      _curRound++;
 
-      if (curRound >= numRounds) {
-          calculatePayouts();
-          state = State.Finished;
+      if (_curRound >= _numRounds) {
+          _calculatePayouts();
+          _state = State.Finished;
       }
     }
 
     // Updates the participants' points according to the current bracket and the participants'
     // entries.
-    function updatePoints() private {
-        for (uint256 i = 0; i < participants.length; i++) {
-            uint256[][] memory entry = entries[participants[i]];
+    function _updatePoints() private {
+        for (uint256 i = 0; i < _participants.length; i++) {
+            uint256[][] memory entry = _entries[_participants[i]];
 
             // Score the entry for the current round.
-            for (uint256 j = 0; j < bracket[curRound + 1].length; j++) {
-                if (bracket[curRound + 1][j] == entry[curRound][j]) {
-                    participantMap[participants[i]].points += pointsPerMatch;
+            for (uint256 j = 0; j < _bracket[_curRound + 1].length; j++) {
+                if (_bracket[_curRound + 1][j] == entry[_curRound][j]) {
+                    _participantMap[_participants[i]].points += _pointsPerMatch;
                 }
             }
         }
     }
 
     // Calculates the payout for each participant.
-    function calculatePayouts() private {
+    function _calculatePayouts() private {
         uint256 totalPoints = 0;
 
-        for (uint256 i = 0; i < participants.length; i++) {
-            totalPoints += participantMap[participants[i]].points;
+        for (uint256 i = 0; i < _participants.length; i++) {
+            totalPoints += _participantMap[_participants[i]].points;
         }
 
-        for (uint256 i = 0; i < participants.length; i++) {
-            uint256 payout = (participantMap[participants[i]].points * address(this).balance) / totalPoints;
-            participantMap[participants[i]].payout = payout;
+        for (uint256 i = 0; i < _participants.length; i++) {
+            uint256 payout = (_participantMap[_participants[i]].points * address(this).balance) / totalPoints;
+            _participantMap[_participants[i]].payout = payout;
         }
     }
 }

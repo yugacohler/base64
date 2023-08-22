@@ -7,7 +7,7 @@ import {Test} from "../../lib/forge-std/src/Test.sol";
 
 // Unit tests for StaticCompetitorProvider.
 contract StaticCompetitorProviderTest is Test {
-  CompetitorProvider cp;
+  CompetitorProvider _cp;
 
   function setUp() public {
         uint256[] memory competitorIDs = new uint256[](8);
@@ -25,10 +25,10 @@ contract StaticCompetitorProviderTest is Test {
         competitorURLs[6] = "Emilie.com";
         competitorURLs[7] = "Will.com";
 
-        cp = new StaticCompetitorProvider(competitorIDs, competitorURLs);
+        _cp = new StaticCompetitorProvider(competitorIDs, competitorURLs);
     }
 
-    function testConstructor_tooShort() public {
+    function testConstructorTooShort() public {
         uint256[] memory invalidCompetitorIDs = new uint256[](3);
         for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
             invalidCompetitorIDs[i] = i + 1;
@@ -44,7 +44,7 @@ contract StaticCompetitorProviderTest is Test {
         new StaticCompetitorProvider(invalidCompetitorIDs, invalidCompetitorURLs);
     }
 
-    function testConstructor_notEnoughURLs() public {
+    function testConstructorNotEnoughURLs() public {
         uint256[] memory invalidCompetitorIDs = new uint256[](8);
         for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
             invalidCompetitorIDs[i] = i + 1;
@@ -61,7 +61,7 @@ contract StaticCompetitorProviderTest is Test {
         new StaticCompetitorProvider(invalidCompetitorIDs, invalidCompetitorURLs);
     }
 
-    function testConstructor_duplicateCompetitorIDs() public {
+    function testConstructorDuplicateCompetitorIDs() public {
         uint256[] memory invalidCompetitorIDs = new uint256[](4);
         for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
             invalidCompetitorIDs[i] = i + 1;
@@ -80,7 +80,7 @@ contract StaticCompetitorProviderTest is Test {
         new StaticCompetitorProvider(invalidCompetitorIDs, invalidCompetitorURLs);
     }
 
-    function testConstructor_zeroValueID() public {
+    function testConstructorZeroValueID() public {
         uint256[] memory invalidCompetitorIDs = new uint256[](4);
         for (uint8 i = 0; i < invalidCompetitorIDs.length; i++) {
             invalidCompetitorIDs[i] = i;
