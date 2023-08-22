@@ -28,7 +28,7 @@ abstract contract CompetitorProvider {
 
         if (n < 8) {
             return 4;
-        } else if (n < 16 && n >= 8) {
+        } else if (n < 16) {
             return 8;
         } else if (n < 32) {
             return 16;
