@@ -4,6 +4,7 @@ pragma solidity ^0.8.13;
 import {IBase64} from "../IBase64.sol";
 import {ResultProvider} from "../ResultProvider.sol";
 
+// A result provider that picks the result randomly.
 contract RandomResultProvider is ResultProvider {
   ////////// MEMBER VARIABLES //////////
 
