@@ -5,24 +5,28 @@ import {CompetitorProvider} from "../CompetitorProvider.sol";
 import {ERC721} from "../../lib/solmate/src/tokens/ERC721.sol";
 import {IBase64} from "../IBase64.sol";
 
-// A competitor provider for ERC-721 competitors.
-contract ERC721CompetitorProvider is CompetitorProvider {
+// A competitor provider for FriendTech competitors.
+contract FriendTechCompetitorProvider is CompetitorProvider {
   ////////// MEMBER VARIABLES //////////
 
-  // The underlying ERC721.
-  ERC721 erc721;
+  // The map from FriendTech ID to FriendTech wallet address.
+  mapping (uint256 => address) public addresses;
 
   ////////// CONSTRUCTOR //////////
 
-  constructor(address _erc721, uint256[] memory _ids) {
+  constructor(uint256[] memory _ids, address[] memory _addresses) {
+    require(_ids.length == _addresses.length, "INVALID_NUM_ADDRESSES");
+
     uint256 powerOfTwo = getPowerOfTwo(_ids.length);
 
     for (uint16 i = 0; i < powerOfTwo; i++) {
       require(_ids[i] != 0, "ZERO_ID");
       ids.push(_ids[i]);
-    }
 
-    erc721 = ERC721(_erc721); 
+      // Fail if there was a duplicate ID.
+      require(addresses[_ids[i]] == address(0), "DUPLICATE_IDS");
+      addresses[_ids[i]] = _addresses[i];
+    }
   }
   
   ////////// PUBLIC APIS //////////  
@@ -32,11 +36,11 @@ contract ERC721CompetitorProvider is CompetitorProvider {
   }
 
   function getCompetitor(uint256 competitorId) external view override returns (IBase64.Competitor memory) {
-    require(erc721.ownerOf(competitorId) != address(0), "INVALID_ID");
+    require(addresses[competitorId] != address(0), "INVALID_ID");
 
     return IBase64.Competitor({
       id: competitorId,
-      uri: erc721.tokenURI(competitorId)
+      uri: "" // TODO
     });
   }
 }
