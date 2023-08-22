@@ -101,22 +101,16 @@ contract TournamentTest is Test {
     }
 
     function testSubmitEntry() public asParticipant {
-        _t.submitEntry{value: 0.01 ether}(_entry1);
+        _t.submitEntry(_entry1);
     }
 
     function testSubmitEntryAlreadySubmitted() public {
         vm.prank(_participant1);
-        _t.submitEntry{value: 0.01 ether}(_entry1);
+        _t.submitEntry(_entry1);
 
         vm.expectRevert("ALREADY_SUBMITTED");
 
         vm.prank(_participant1);
-        _t.submitEntry{value: 0.01 ether}(_entry1);
-    }
-
-    function testSubmitEntryNoFee() public asParticipant {
-        vm.expectRevert("INVALID_ENTRY_FEE");
-
         _t.submitEntry(_entry1);
     }
 
@@ -133,7 +127,7 @@ contract TournamentTest is Test {
 
         vm.expectRevert("INVALID_NUM_ROUNDS");
 
-        _t.submitEntry{value: 0.01 ether}(invalidEntry);
+        _t.submitEntry(invalidEntry);
     }
 
     function testSubmitEntryInvalidNumCompetitors() public asParticipant {
@@ -152,11 +146,11 @@ contract TournamentTest is Test {
 
         vm.expectRevert("INVALID_NUM_TEAMS");
 
-        _t.submitEntry{value: 0.01 ether}(invalidEntry);
+        _t.submitEntry(invalidEntry);
     }
 
     function testGetEntry() public asParticipant {
-        _t.submitEntry{value: 0.01 ether}(_entry1);
+        _t.submitEntry(_entry1);
 
         uint256[][] memory entry = _t.getEntry(address(_participant1));
 
@@ -185,7 +179,7 @@ contract TournamentTest is Test {
     }
 
     function testListParticipants() public asParticipant {
-        _t.submitEntry{value: 0.01 ether}(_entry1);
+        _t.submitEntry(_entry1);
 
         address[] memory participants = _t.listParticipants();
 
@@ -215,7 +209,7 @@ contract TournamentTest is Test {
 
     function testTwoParticipants() public {
         vm.prank(_participant1);
-        _t.submitEntry{value: 0.01 ether}(_entry1);
+        _t.submitEntry(_entry1);
 
         // Submit another entry from address 0x1337.
         address participant2 = address(0x1337);
@@ -237,7 +231,7 @@ contract TournamentTest is Test {
 
         // Send the entry from 0x1337.
         vm.prank(address(participant2));
-        _t.submitEntry{value: 0.01 ether}(entry2);
+        _t.submitEntry(entry2);
 
         // Advance the round.
         _t.advance();
@@ -270,22 +264,5 @@ contract TournamentTest is Test {
         // Expect a revert if we try to advance once more.
         vm.expectRevert("TOURNAMENT_FINISHED");
         _t.advance();
-
-        // Collect payout for the first participant.
-        vm.prank(address(_participant1));
-        _t.collectPayout();
-
-        // Can't collect payout twice.
-        vm.prank(address(_participant1));
-        vm.expectRevert("NO_PAYOUT");
-        _t.collectPayout();
-
-        // Collect payout for the second participant.
-        vm.prank(address(participant2));
-        _t.collectPayout();
-
-        // Balance of the two addresses should add up to 0.02 ether.
-        console2.log("Participant 1 balance", address(_participant1).balance);
-        console2.log("Participant 2 balance", address(participant2).balance);
     }
 }

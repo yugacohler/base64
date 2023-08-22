@@ -32,8 +32,6 @@ interface ITournament {
         address addr;
         // The points the participant has earned.
         uint256 points;
-        // The payout the participant has earned at the end of the Tournament, in Wei.
-        uint256 payout;
     }
 
     // An enum representing the state of the Tournament prediction market.
@@ -59,9 +57,8 @@ interface ITournament {
     function getCompetitor(uint256 competitorId) external view returns (Competitor memory);
 
     // Submits an entry to the Tournament prediction market. The entry must consist of N-1 rounds, where N
-    // is the number of rounds in the Tournament. The entry must also pay the entry fee.
-    // An address may submit at most one entry.
-    function submitEntry(uint256[][] memory entry) external payable;
+    // is the number of rounds in the Tournament. An address may submit at most one entry.
+    function submitEntry(uint256[][] memory entry) external;
 
     // Returns an entry for a given address.
     function getEntry(address addr) external view returns (uint256[][] memory);
@@ -74,8 +71,4 @@ interface ITournament {
 
     // Returns the participant for the given address.
     function getParticipant(address addr) external view returns (Participant memory);
-
-    // Collects the payout to a winner. Only callable when the Tournament is in the
-    // Finished state and if the caller is a winner.
-    function collectPayout() external;
 }

@@ -17,15 +17,8 @@ import {SafeTransferLib} from "../lib/solmate/src/utils/SafeTransferLib.sol";
  * 
  * 
  * A Smart Contract for Tournament-based prediction markets.
- * Right now, this is hard-coded to pick winners randomly.
  */
 contract Tournament is ITournament, Owned {
-    using SafeTransferLib for address;
-    ////////// CONSTANTS //////////
-
-    // The entry fee.
-    uint256 public constant ENTRY_FEE = 0.01 ether;
-
     ////////// MEMBER VARIABLES //////////
 
     // The State of Base64.
@@ -98,14 +91,13 @@ contract Tournament is ITournament, Owned {
         return _competitorProvider.getCompetitor(competitorId);
     }
 
-    function submitEntry(uint256[][] memory entry) external payable override {
-        require(msg.value >= ENTRY_FEE, "INVALID_ENTRY_FEE");
+    function submitEntry(uint256[][] memory entry) external override {
         require(_entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
         _validateEntry(entry);
 
         _entries[msg.sender] = entry;
 
-        Participant memory p = Participant(msg.sender, 0, 0);
+        Participant memory p = Participant(msg.sender, 0);
 
         _participantMap[msg.sender] = p;
         _participants.push(msg.sender);
@@ -129,17 +121,6 @@ contract Tournament is ITournament, Owned {
         require(_participantMap[addr].addr != address(0), "PARTICIPANT_NOT_FOUND");
 
         return _participantMap[addr];
-    }
-
-    function collectPayout() external override {
-        require(_state == State.Finished, "TOURNAMENT_NOT_FINISHED");
-        require(_participantMap[msg.sender].addr != address(0), "PARTICIPANT_NOT_FOUND");
-        require(_participantMap[msg.sender].payout > 0, "NO_PAYOUT");
-        require(_participantMap[msg.sender].payout <= address(this).balance, "INSUFFICIENT_BALANCE");
-
-        msg.sender.safeTransferETH(_participantMap[msg.sender].payout);
-
-        _participantMap[msg.sender].payout = 0;
     }
 
     ////////// ADMIN APIS //////////
@@ -192,7 +173,6 @@ contract Tournament is ITournament, Owned {
       _curRound++;
 
       if (_curRound >= _numRounds) {
-          _calculatePayouts();
           _state = State.Finished;
       }
     }
@@ -209,20 +189,6 @@ contract Tournament is ITournament, Owned {
                     _participantMap[_participants[i]].points += _pointsPerMatch;
                 }
             }
-        }
-    }
-
-    // Calculates the payout for each participant.
-    function _calculatePayouts() private {
-        uint256 totalPoints = 0;
-
-        for (uint256 i = 0; i < _participants.length; i++) {
-            totalPoints += _participantMap[_participants[i]].points;
-        }
-
-        for (uint256 i = 0; i < _participants.length; i++) {
-            uint256 payout = (_participantMap[_participants[i]].points * address(this).balance) / totalPoints;
-            _participantMap[_participants[i]].payout = payout;
         }
     }
 }
