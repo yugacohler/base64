@@ -1,12 +1,12 @@
-# Base64
+# Base64demo
+
 Base64 is a smart contract framework for Tournament-based prediction markets that was built for Coinbase's 
 [Onchain Summer](https://www.onchainsummer.xyz) Hackathon. It was built using [Foundry](https://book.getfoundry.sh)
 by [Yuga Cohler](https://github.com/yugacohler) and [Chris Nascone](https://github.com/cnasc).
 
 > **NOTE:** These contracts are unaudited and potentially buggy. Use at your own risk!
 
-
-https://github.com/yugacohler/base64/assets/11857268/e938ff18-83f8-4d68-89a2-6b31c8348284
+https://github.com/yugacohler/base64/assets/11857268/0ee3cb35-3f94-43c7-9053-143bbdbd9b29
 
 (The above video uses random competitors and random results.)
 
