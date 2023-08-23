@@ -43,45 +43,7 @@ $ anvil
 
 ## Deploy Base64
 
-### StaticFriendTechCompetitors
-forge script ./script/01_StaticFriendTechCompetitors.s.sol:StaticFriendTechCompetitors \
-  --broadcast --verify --rpc-url "https://goerli.base.org/" \
-  --private-key <owner-private-key> \
-  --verifier etherscan \
-  --verifier-url "https://api-goerli.basescan.org/api" \
-  --etherscan-api-key <etherscan-api-key>
-
-### OracleResultProvider
-Use the address of the deployer in `oracle_result_provider.data`:
-
-```shell
-forge create \
-	--constructor-args-path ./data/oracle_result_provider.data \
-	--verify \
-	--verifier etherscan \
-	--verifier-url "https://api-goerli.basescan.org/api" \
-  --etherscan-api-key <etherscan-api-key> \
-	--gas-limit 5000000 \
-	--private-key <owner-private-key> \
-	--rpc-url "https://goerli.base.org/" \
-	./src/results/OracleResultProvider.sol:OracleResultProvider
-```
-
-### StaticOracleTournament
-Use the OracleResultProvider address from above in `static_oracle_tournament.data`:
-
-```shell
-forge create \
-	--constructor-args ./data/static_oracle_tournament.data \
-	--verify \
-	--verifier etherscan \
-	--verifier-url "https://api-goerli.basescan.org/api" \
-  --etherscan-api-key <etherscan-api-key> \
-	--gas-limit 5000000 \
-	--private-key <owner-private-key> \
-	--rpc-url "https://goerli.base.org/" \
-	./src/results/OracleResultProvider.sol:OracleResultProvider
-```
+See the `script` folder for a sequence of scripts to deploy Base64 on Base Goerli.
 
 ## Call Base64
 
