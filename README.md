@@ -1,7 +1,27 @@
 # Base64
-This is the repository for Base64, a smart contract framework for Tournament-based prediction markets.
+Base64 is a smart contract framework for Tournament-based prediction markets that was built for Coinbase's 
+[Onchain Summer](https://www.onchainsummer.xyz) Hackathon. It was built using [Foundry](https://book.getfoundry.sh)
+by [Yuga Cohler](https://github.com/yugacohler) and [Chris Nascone](https://github.com/cnasc).
 
-It is built using [Foundry](https://book.getfoundry.sh/).
+> **NOTE:** These contracts are unaudited and potentially buggy. Use at your own risk!
+
+## Key Concepts
+A **Tournament** is the central smart contract of Base64. It consists of:
+- **Competitors**: The entities that compete in the tournament. These can be anything, e.g. [ERC-721 tokens](./src/competitors/ERC721CompetitorProvider.sol), or [FriendTech accounts](./src/competitors/FriendTechCompetitorProvider.sol). The number of 
+competitors must be a power of 2 between 4 and 256 inclusive.
+- **Results**: The mechanism for deciding the winner of any given match in the Tournament. This could be anything, e.g.
+[random](./src/results/RandomResultProvider.sol), or based on [price](./src/results/FriendTechResultProvider.sol).
+- **Participants**: These are the onchain addresses that predict the results of the Tournament. There could be
+conditions on them, for example, [that they are ENS holders](./src/ens/ENS.sol).
+
+The Participant with the most points at the end of the Tournament wins.
+
+> **NOTE**: Base64 does not accept bets/stakes and does not compute payouts to participants. However, a separate Escrow contract
+> that depends on Base64 could be deployed to enable this functionality. Do so at your own risk!
+
+## Frontend 
+
+Coming soon!
 
 ## Live Contract Addresses
 On Base Goerli:
