@@ -86,7 +86,6 @@ cast call <contract-address> "getTeam(uint256)((uint256,string))" 1
 Use another private key for this transaction.
 ```shell
 cast send \
-  --value 0.01ether \
   --private-key <other-private-key> \
   <contract-address> \
   "submitEntry(uint256[][])" "[[1,3,5,7],[3,5],[3]]"
