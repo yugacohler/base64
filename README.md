@@ -3,12 +3,12 @@ This is the repository for Base64, a smart contract framework for Tournament-bas
 
 It is built using [Foundry](https://book.getfoundry.sh/).
 
-## Contract Addresses
+## Live Contract Addresses
 On Base Goerli:
 
-- [StaticOracleTournament](https://goerli.basescan.org/address/0xf9344c79044F64c6A068e4E8eA4d92A2A91F7675)
-- [StaticCompetitorProvider](https://goerli.basescan.org/address/0xfe423ee2386720a066AAb2349062b5594E086133)
-- [OracleResultProvider](https://goerli.basescan.org/address/0xD3E14C73157144D0eCe2a57364AC2320d72aCB69)
+- [StaticOracleTournament](https://goerli.basescan.org/address/0xC09DF9Cb1A95835e49861e2a40711f7483978656)
+- [StaticCompetitorProvider](https://goerli.basescan.org/address/0x50F809a2cEDEEBe99728d5Ca45CC15a39FE59ca3)
+- [OracleResultProvider](https://goerli.basescan.org/address/0x6DE9cF0947a539Ac38CC7a8821955ED43715c305)
 
 ## Build
 

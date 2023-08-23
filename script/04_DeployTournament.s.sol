@@ -18,8 +18,8 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 contract DeployTournament is Script {
     function run() public {
         // TODO: Update these to the results from the previous scripts.
-        StaticCompetitorProvider scp = StaticCompetitorProvider(0xfe423ee2386720a066AAb2349062b5594E086133);
-        OracleResultProvider orp = OracleResultProvider(0xD3E14C73157144D0eCe2a57364AC2320d72aCB69);
+        StaticCompetitorProvider scp = StaticCompetitorProvider(0x0);
+        OracleResultProvider orp = OracleResultProvider(0x0);
 
         vm.startBroadcast();
 
