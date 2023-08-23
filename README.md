@@ -1,4 +1,4 @@
-# Base64demo
+# Base64
 
 Base64 is a smart contract framework for Tournament-based prediction markets that was built for Coinbase's 
 [Onchain Summer](https://www.onchainsummer.xyz) Hackathon. It was built using [Foundry](https://book.getfoundry.sh)
