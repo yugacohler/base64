@@ -1,12 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {FriendTech} from "./FriendTech.sol";
-import {FriendTechCompetitorProvider} from "../competitors/FriendTechCompetitorProvider.sol";
 import {Owned} from "../../lib/solmate/src/auth/Owned.sol";
-import {Tournament} from "../Tournament.sol";
 import {ResultProvider} from "../ResultProvider.sol";
-import {Strings} from "../../lib/openzeppelin-contracts/contracts/utils/Strings.sol";
+import {Tournament} from "../Tournament.sol";
 
 // A result provider that acts as an oracle to determine the result of a match.
 contract OracleResultProvider is ResultProvider, Owned {
