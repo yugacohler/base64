@@ -5,6 +5,11 @@ by [Yuga Cohler](https://github.com/yugacohler) and [Chris Nascone](https://gith
 
 > **NOTE:** These contracts are unaudited and potentially buggy. Use at your own risk!
 
+
+https://github.com/yugacohler/base64/assets/11857268/e938ff18-83f8-4d68-89a2-6b31c8348284
+
+(The above video uses random competitors and random results.)
+
 ## Key Concepts
 A **Tournament** is the central smart contract of Base64. It consists of:
 - **Competitors**: The entities that compete in the tournament. These can be anything, e.g. [ERC-721 tokens](./src/competitors/ERC721CompetitorProvider.sol), or [FriendTech accounts](./src/competitors/FriendTechCompetitorProvider.sol). The number of 
