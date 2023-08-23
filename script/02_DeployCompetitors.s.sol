@@ -1,13 +1,18 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {OracleResultProvider} from "../src/results/OracleResultProvider.sol";
 import {Script} from "../lib/forge-std/src/Script.sol";
 import {StaticCompetitorProvider} from "../src/competitors/StaticCompetitorProvider.sol";
 import {Tournament} from "../src/Tournament.sol";
 import {console2} from "../lib/forge-std/src/console2.sol";
 
-// A script to deploy a sample Base64 Tournament.
+// A script to deploy the competitors in a Base64 Tournament.
+// Usage: forge script ./script/02_DeployCompetitors.s.sol:DeployCompetitors \
+// --broadcast --verify --rpc-url "https://goerli.base.org/" \
+// --private-key <private-key> \
+// --verifier etherscan \
+// --verifier-url "https://api-goerli.basescan.org/api" \
+// --etherscan-api-key <etherscan-api-key>
 contract DeployCompetitors is Script {
     // A struct for the input data.
     struct InputData {
@@ -40,7 +45,6 @@ contract DeployCompetitors is Script {
         StaticCompetitorProvider scp = new StaticCompetitorProvider(ids, uris);
 
         console2.log("Competitors", address(scp));
-        console2.log("This address", address(this));
 
         vm.stopBroadcast();
     }

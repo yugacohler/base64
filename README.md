@@ -6,9 +6,9 @@ It is built using [Foundry](https://book.getfoundry.sh/).
 ## Contract Addresses
 On Base Goerli:
 
-- [StaticOracleTournament](https://goerli.basescan.org/address/0x81098fa18a0ce881f733cdc886ce87b84b438fc4)
+- [StaticOracleTournament](https://goerli.basescan.org/address/0xf9344c79044F64c6A068e4E8eA4d92A2A91F7675)
 - [StaticCompetitorProvider](https://goerli.basescan.org/address/0xfe423ee2386720a066AAb2349062b5594E086133)
-- [OracleResultProvider](https://goerli.basescan.org/address/0x658b1457217a030cf62b4aa7c67c1f29494dc939)
+- [OracleResultProvider](https://goerli.basescan.org/address/0xD3E14C73157144D0eCe2a57364AC2320d72aCB69)
 
 ## Build
 
