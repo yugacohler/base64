@@ -4,12 +4,12 @@ pragma solidity ^0.8.13;
 // A contract that ensures that the given address is an ENS name.
 abstract contract ENSGate {
     ////////// MEMBER VARIABLES //////////
-    ENS _ens;
+    ENSRegistrar _ens;
     ReverseRegistrar _reverseRegistrar;
 
     ////////// CONSTRUCTOR //////////
 
-    constructor(ENS ens, ReverseRegistrar reverseRegistrar) {
+    constructor(ENSRegistrar ens, ReverseRegistrar reverseRegistrar) {
         _ens = ens;
         _reverseRegistrar = reverseRegistrar;
     }
@@ -22,7 +22,7 @@ abstract contract ENSGate {
 }
 
 // The interface to the ENS registrar.
-abstract contract ENS {
+abstract contract ENSRegistrar {
     function recordExists(bytes32 node) external view virtual returns (bool);
 }
 
