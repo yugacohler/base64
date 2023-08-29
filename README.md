@@ -17,7 +17,7 @@ competitors must be a power of 2 between 4 and 256 inclusive.
 - **Results**: The mechanism for deciding the winner of any given match in the Tournament. This could be anything, e.g.
 [random](./src/results/RandomResultProvider.sol), or based on [price](./src/results/FriendTechResultProvider.sol).
 - **Participants**: These are the onchain addresses that predict the results of the Tournament. There could be
-conditions on them, for example, [that they are ENS holders](./src/ens/ENS.sol).
+conditions on them, for example, [that they are ENS holders](./src/ens/ENSGate.sol).
 
 The Participant with the most points at the end of the Tournament wins.
 
