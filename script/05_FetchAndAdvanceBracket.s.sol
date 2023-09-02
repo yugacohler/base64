@@ -7,11 +7,12 @@ import {Script} from "../lib/forge-std/src/Script.sol";
 import {StaticOracleTournament} from "../src/tournaments/StaticOracleTournament.sol";
 import {console2} from "../lib/forge-std/src/console2.sol";
 
-// A script to fetch the bracket in a Base64 Tournament.
-// Usage: forge script ./script/05_FetchBracket.s.sol:FetchBracket \
+// A script to fetch the bracket in a Base64 Tournament and advance it
+// randomly.
+// Usage: forge script ./script/05_FetchAndAdvanceBracket.s.sol:FetchAndAdvanceBracket \
 // --broadcast --rpc-url "https://goerli.base.org/" \
-// --private-key <private-key> \
-contract FetchBracket is Script {
+// --private-key <private-key>
+contract FetchAndAdvanceBracket is Script {
     function run() public {
         address tAddr = 0x6DE9cF0947a539Ac38CC7a8821955ED43715c305;
         address oAddr = 0x50F809a2cEDEEBe99728d5Ca45CC15a39FE59ca3;
@@ -55,5 +56,12 @@ contract FetchBracket is Script {
 
           console2.log("Winner", winner);
         }
+
+        vm.startBroadcast();
+
+        OracleResultProvider o = OracleResultProvider(oAddr);
+        o.writeResults(winners, losers, metadata);
+        t.advance();
+        vm.stopBroadcast();
     }
 }
