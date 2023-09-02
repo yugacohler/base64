@@ -19,11 +19,11 @@ contract FetchAndAdvanceBracket is Script {
 
         StaticOracleTournament t = StaticOracleTournament(tAddr);
 
-        uint256[][] memory bracket  = t.getBracket();
+        uint256[][] memory bracket = t.getBracket();
 
         uint256 curRound = 0;
         while (bracket[curRound].length != 0) {
-          curRound++;
+            curRound++;
         }
 
         uint256[] memory winners = new uint256[](bracket[curRound - 1].length / 2);
@@ -33,28 +33,28 @@ contract FetchAndAdvanceBracket is Script {
         console2.log("Current round", curRound);
 
         for (uint256 i = 0; i < bracket[curRound - 1].length; i += 2) {
-          uint256 competitor1 = bracket[curRound - 1][i];
-          uint256 competitor2 = bracket[curRound - 1][i + 1];
-          
-          uint256 result = uint256(keccak256(abi.encodePacked(block.timestamp, competitor1, competitor2))) % 2;
+            uint256 competitor1 = bracket[curRound - 1][i];
+            uint256 competitor2 = bracket[curRound - 1][i + 1];
 
-          uint256 winner;
-          uint256 loser;
+            uint256 result = uint256(keccak256(abi.encodePacked(block.timestamp, competitor1, competitor2))) % 2;
 
-          if (result == 0) {
-              winner = competitor1;
-              loser = competitor2;
-          } else {
-              winner = competitor2;
-              loser = competitor1;
-          }
-          
+            uint256 winner;
+            uint256 loser;
 
-          winners[i / 2] = winner;
-          losers[i / 2] = loser;
-          metadata[i / 2] = string(abi.encodePacked("Winner: ", LibString.toString(winner), " Loser: ", LibString.toString(loser)));
+            if (result == 0) {
+                winner = competitor1;
+                loser = competitor2;
+            } else {
+                winner = competitor2;
+                loser = competitor1;
+            }
 
-          console2.log("Winner", winner);
+            winners[i / 2] = winner;
+            losers[i / 2] = loser;
+            metadata[i / 2] =
+                string(abi.encodePacked("Winner: ", LibString.toString(winner), " Loser: ", LibString.toString(loser)));
+
+            console2.log("Winner", winner);
         }
 
         vm.startBroadcast();

@@ -135,7 +135,7 @@ abstract contract Tournament is Owned {
     function submitEntry(uint256[][] memory entry) public virtual {
         require(_entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
         require(_state == State.AcceptingEntries, "TOURNAMENT_NOT_ACCEPTING_ENTRIES");
-        
+
         _validateEntry(entry);
 
         _entries[msg.sender] = entry;
