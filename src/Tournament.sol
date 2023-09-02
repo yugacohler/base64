@@ -59,7 +59,7 @@ abstract contract Tournament is Owned {
     ////////// MEMBER VARIABLES //////////
 
     // The State of Base64.
-    State _state = State.AcceptingEntries;
+    State public state = State.AcceptingEntries;
 
     // The Competitor provider.
     CompetitorProvider _competitorProvider;
@@ -80,10 +80,10 @@ abstract contract Tournament is Owned {
     address[] _participants;
 
     // The number of rounds in the bracket.
-    uint256 _numRounds;
+    uint256 public numRounds;
 
     // The current round of the bracket, 0 indexed.
-    uint256 _curRound = 0;
+    uint256 public curRound = 0;
 
     // The number of points awarded for each match in the current round.
     uint256 _pointsPerMatch = 1;
@@ -103,7 +103,7 @@ abstract contract Tournament is Owned {
         while (competitorsLeft >= 1) {
             _bracket.push();
             if (competitorsLeft > 1) {
-                _numRounds++;
+                numRounds++;
             }
 
             competitorsLeft /= 2;
@@ -134,7 +134,7 @@ abstract contract Tournament is Owned {
     // is the number of rounds in the Tournament. An address may submit at most one entry.
     function submitEntry(uint256[][] memory entry) public virtual {
         require(_entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
-        require(_state == State.AcceptingEntries, "TOURNAMENT_NOT_ACCEPTING_ENTRIES");
+        require(state == State.AcceptingEntries, "TOURNAMENT_NOT_ACCEPTING_ENTRIES");
 
         _validateEntry(entry);
 
@@ -155,7 +155,7 @@ abstract contract Tournament is Owned {
 
     // Returns the state of the Tournament prediction market.
     function getState() external view returns (State) {
-        return _state;
+        return state;
     }
 
     // Returns the addresses of the participants in the tournament prediction market.
@@ -174,12 +174,12 @@ abstract contract Tournament is Owned {
 
     // Advances the state of Base64.
     function advance() external onlyOwner {
-        require(_state != State.Finished, "TOURNAMENT_FINISHED");
+        require(state != State.Finished, "TOURNAMENT_FINISHED");
 
-        if (_state == State.AcceptingEntries) {
-            _state = State.InProgress;
+        if (state == State.AcceptingEntries) {
+            state = State.InProgress;
             _advanceRound();
-        } else if (_state == State.InProgress) {
+        } else if (state == State.InProgress) {
             _advanceRound();
         }
     }
@@ -189,7 +189,7 @@ abstract contract Tournament is Owned {
     // Validates an entry. To save on gas, we just ensure the entry has the proper number
     // of rounds and picks, without checking the competitor IDs.
     function _validateEntry(uint256[][] memory entry) private view {
-        require(entry.length == _numRounds, "INVALID_NUM_ROUNDS");
+        require(entry.length == numRounds, "INVALID_NUM_ROUNDS");
 
         uint256 numCompetitors = _bracket[0].length;
 
@@ -202,24 +202,24 @@ abstract contract Tournament is Owned {
 
     // Advances the bracket to the next round.
     function _advanceRound() private {
-        require(_state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
-        require(_curRound < _numRounds, "TOURNAMENT_FINISHED");
+        require(state == State.InProgress, "TOURNAMENT_NOT_IN_PROGRESS");
+        require(curRound < numRounds, "TOURNAMENT_FINISHED");
 
-        uint256 numWinners = _bracket[_curRound].length / 2;
+        uint256 numWinners = _bracket[curRound].length / 2;
 
         for (uint256 i = 0; i < numWinners; i++) {
             Tournament.Result memory result =
-                resultProvider.getResult(_bracket[_curRound][i * 2], _bracket[_curRound][(i * 2) + 1]);
-            _bracket[_curRound + 1].push(result.winnerId);
+                resultProvider.getResult(_bracket[curRound][i * 2], _bracket[curRound][(i * 2) + 1]);
+            _bracket[curRound + 1].push(result.winnerId);
         }
 
         _updatePoints();
 
         _pointsPerMatch *= 2;
-        _curRound++;
+        curRound++;
 
-        if (_curRound >= _numRounds) {
-            _state = State.Finished;
+        if (curRound >= numRounds) {
+            state = State.Finished;
         }
     }
 
@@ -230,8 +230,8 @@ abstract contract Tournament is Owned {
             uint256[][] memory entry = _entries[_participants[i]];
 
             // Score the entry for the current round.
-            for (uint256 j = 0; j < _bracket[_curRound + 1].length; j++) {
-                if (_bracket[_curRound + 1][j] == entry[_curRound][j]) {
+            for (uint256 j = 0; j < _bracket[curRound + 1].length; j++) {
+                if (_bracket[curRound + 1][j] == entry[curRound][j]) {
                     _participantMap[_participants[i]].points += _pointsPerMatch;
                 }
             }
