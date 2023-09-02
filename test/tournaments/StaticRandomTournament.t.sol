@@ -101,6 +101,15 @@ contract StaticRandomTournamentTest is Test {
         _t.submitEntry(_entry1);
     }
 
+    function testSubmitEntryFailsWhenNotAcceptingEntries() public {
+        _t.advance();
+
+        vm.expectRevert("TOURNAMENT_NOT_ACCEPTING_ENTRIES");
+
+        vm.prank(_participant1);
+        _t.submitEntry(_entry1);
+    }
+
     function testSubmitEntryAlreadySubmitted() public {
         vm.prank(_participant1);
         _t.submitEntry(_entry1);

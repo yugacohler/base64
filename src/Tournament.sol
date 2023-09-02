@@ -134,6 +134,8 @@ abstract contract Tournament is Owned {
     // is the number of rounds in the Tournament. An address may submit at most one entry.
     function submitEntry(uint256[][] memory entry) public virtual {
         require(_entries[msg.sender].length == 0, "ALREADY_SUBMITTED");
+        require(_state == State.AcceptingEntries, "TOURNAMENT_NOT_ACCEPTING_ENTRIES");
+        
         _validateEntry(entry);
 
         _entries[msg.sender] = entry;
