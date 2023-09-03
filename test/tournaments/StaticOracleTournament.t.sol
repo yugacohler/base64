@@ -241,12 +241,18 @@ contract StaticOracleTournamentTest is Test {
     }
 
     function testAdvanceRoundWithoutResults() public {
+        // First advance closes submissions.
+        _t.advance();
+
         vm.expectRevert("NO_SUCH_MATCH");
 
         _t.advance();
     }
 
     function testAdvanceRoundWithResults() public {
+        // First advance closes submissions.
+        _t.advance();
+
         _o.writeResults(_round1Winners, _round1Losers, _round1Metadata);
         _t.advance();
 
@@ -296,6 +302,9 @@ contract StaticOracleTournamentTest is Test {
         // Send the entry from 0x1337.
         vm.prank(address(participant2));
         _t.submitEntry(entry2);
+
+        // Advance the round so no more submissions.
+        _t.advance();
 
         // Advance the round.
         _o.writeResults(_round1Winners, _round1Losers, _round1Metadata);
