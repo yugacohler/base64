@@ -194,6 +194,9 @@ contract StaticRandomTournamentTest is Test {
     }
 
     function testAdvanceRound() public {
+        // Advance the round so no more submissions.
+        _t.advance();
+        
         _t.advance();
 
         assertTrue(_t.getState() == Tournament.State.InProgress);
@@ -238,6 +241,9 @@ contract StaticRandomTournamentTest is Test {
         // Send the entry from 0x1337.
         vm.prank(address(participant2));
         _t.submitEntry(entry2);
+
+        // Advance the round so no more submissions.
+        _t.advance();
 
         // Advance the round.
         _t.advance();

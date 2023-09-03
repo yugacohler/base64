@@ -47,10 +47,12 @@ abstract contract Tournament is Owned {
 
     // An enum representing the state of the Tournament prediction market.
     enum State
-    // The Tournament prediction market is accepting entries.
     {
+        // The Tournament prediction market is accepting entries.
         AcceptingEntries,
-        // The Tournament is in progress and the prediction market is no longer accepting entries.
+        // The Tournament prediction market is no longer accepting entries.
+        NotAcceptingEntries,
+        // The Tournament is in progress.
         InProgress,
         // The Tournament has concluded.
         Finished
@@ -177,6 +179,8 @@ abstract contract Tournament is Owned {
         require(state != State.Finished, "TOURNAMENT_FINISHED");
 
         if (state == State.AcceptingEntries) {
+            state = State.NotAcceptingEntries;
+        } else if (state == State.NotAcceptingEntries) {
             state = State.InProgress;
             _advanceRound();
         } else if (state == State.InProgress) {
