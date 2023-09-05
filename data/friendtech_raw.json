@@ -1,0 +1,3002 @@
+[
+  {
+    "address": "0xfd7232e66a69e1ae01e1e0ea8fab4776e2d325a9",
+    "twitterUsername": "0xRacerAlt",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1688403387090673665/HOhwOdYd.jpg",
+    "profileChecked": true,
+    "supply": 239,
+    "createdAt": "2023-08-12T01:34:19.403Z",
+    "updatedAt": "2023-09-05T20:19:07.077Z",
+    "cost": 3.92706875
+  },
+  {
+    "address": "0xef42b587e4a3d33f88fa499be1d80c676ff7a226",
+    "twitterUsername": "HsakaTrades",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1500635331061760003/hhOseoKP.jpg",
+    "profileChecked": true,
+    "supply": 191,
+    "createdAt": "2023-08-12T01:44:04.908Z",
+    "updatedAt": "2023-09-05T20:49:24.919Z",
+    "cost": 2.50806875
+  },
+  {
+    "address": "0xe9825fd47c5d863b1aecba3707abcc7c8b49b88d",
+    "twitterUsername": "blknoiz06",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1678977796083789825/6LZ3IF5Y.jpg",
+    "profileChecked": true,
+    "supply": 190,
+    "createdAt": "2023-08-12T06:06:57.056Z",
+    "updatedAt": "2023-09-05T20:45:54.089Z",
+    "cost": 2.481875
+  },
+  {
+    "address": "0xe58cdd8350b8b81f84ba5b6140bbb95d59c60fd0",
+    "twitterUsername": "8892OS",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1421700725386719232/2fDxM2jZ.png",
+    "profileChecked": true,
+    "supply": 181,
+    "createdAt": "2023-08-12T01:37:11.038Z",
+    "updatedAt": "2023-09-05T20:35:31.194Z",
+    "cost": 2.25231875
+  },
+  {
+    "address": "0xbc6da4703841127bfe7a09595507f2cbacf52f9c",
+    "twitterUsername": "lBattleRhino",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1111344875494998016/GtYHSkYl.jpg",
+    "profileChecked": true,
+    "supply": 174,
+    "createdAt": "2023-08-17T03:45:21.007Z",
+    "updatedAt": "2023-09-05T20:10:47.527Z",
+    "cost": 2.081475
+  },
+  {
+    "address": "0xe3354409644c8f791885ab232d43073782638704",
+    "twitterUsername": "0xLawliette",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1549588190805127168/kPliSYJ1.jpg",
+    "profileChecked": true,
+    "supply": 169,
+    "createdAt": "2023-08-12T01:37:49.535Z",
+    "updatedAt": "2023-09-05T20:35:31.194Z",
+    "cost": 1.96356875
+  },
+  {
+    "address": "0x4ff9939edf3db7c1dca1b4b2c1d60a623f7ca06f",
+    "twitterUsername": "pokerbrat2019",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/754979569191366657/FPNqTj4Q.jpg",
+    "profileChecked": true,
+    "supply": 164,
+    "createdAt": "2023-08-13T19:26:49.370Z",
+    "updatedAt": "2023-09-05T20:49:13.818Z",
+    "cost": 1.8491
+  },
+  {
+    "address": "0xbdc0dc2c00f022513511d915aff99fdd82d818a9",
+    "twitterUsername": "Christianeth",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1612190317951729664/jAztEswl.png",
+    "profileChecked": true,
+    "supply": 163,
+    "createdAt": "2023-08-20T07:40:07.944Z",
+    "updatedAt": "2023-09-05T18:23:21.315Z",
+    "cost": 1.82661875
+  },
+  {
+    "address": "0x88ab3976d11db0ffa5e555ac846e90152db1ce32",
+    "twitterUsername": "CapitalGrug",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1666410355109646337/wX18eldO.png",
+    "profileChecked": true,
+    "supply": 162,
+    "createdAt": "2023-08-26T04:12:49.462Z",
+    "updatedAt": "2023-09-05T20:06:50.243Z",
+    "cost": 1.804275
+  },
+  {
+    "address": "0x5479f127a4d594208549c86f4b4903a1175a0311",
+    "twitterUsername": "HerroCrypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1670862443055321088/BWiKSdKC.jpg",
+    "profileChecked": true,
+    "supply": 159,
+    "createdAt": "2023-08-21T15:01:16.181Z",
+    "updatedAt": "2023-09-05T20:22:39.267Z",
+    "cost": 1.73806875
+  },
+  {
+    "address": "0xf9b7cf4be6f4cde37dd1a5b75187d431d94a4fcc",
+    "twitterUsername": "0xCaptainLevi",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1670456392971591681/NKZOtGRm.jpg",
+    "profileChecked": true,
+    "supply": 158,
+    "createdAt": "2023-08-12T01:43:14.334Z",
+    "updatedAt": "2023-09-05T20:35:14.670Z",
+    "cost": 1.716275
+  },
+  {
+    "address": "0x4e5f7e4a774bd30b9bdca7eb84ce3681a71676e1",
+    "twitterUsername": "cobie",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1688496375707701248/WwWz33DI.jpg",
+    "profileChecked": true,
+    "supply": 158,
+    "createdAt": "2023-08-12T01:38:33.621Z",
+    "updatedAt": "2023-09-05T18:40:53.566Z",
+    "cost": 1.716275
+  },
+  {
+    "address": "0xcea53f22baf97eb0b17752a20f64ca91f3e3d164",
+    "twitterUsername": "youdumpidump",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1698631257725534208/cX9x4iGq.jpg",
+    "profileChecked": true,
+    "supply": 155,
+    "createdAt": "2023-09-04T08:49:55.289Z",
+    "updatedAt": "2023-09-05T18:16:09.001Z",
+    "cost": 1.65171875
+  },
+  {
+    "address": "0x63f44efd09e14b2b7e54dfff09fee2f7e9f4249a",
+    "twitterUsername": "basedkarbon",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1591912927837229059/Y1buy3ZC.jpg",
+    "profileChecked": true,
+    "supply": 145,
+    "createdAt": "2023-08-12T01:39:38.467Z",
+    "updatedAt": "2023-09-05T20:03:14.795Z",
+    "cost": 1.4454687499999999
+  },
+  {
+    "address": "0x3c2c38a354f72d0d5cd1ac4b77bf7b0d86d0f80a",
+    "twitterUsername": "Cryptoyieldinfo",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1443848870039937027/gWnu2ceQ.jpg",
+    "profileChecked": true,
+    "supply": 144,
+    "createdAt": "2023-08-16T11:53:31.439Z",
+    "updatedAt": "2023-09-05T20:25:30.820Z",
+    "cost": 1.4256
+  },
+  {
+    "address": "0xbfb0def5dea6e14b149fbca0beccf4386247b561",
+    "twitterUsername": "zhusu",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1642482315602395138/7g4NNyuA.jpg",
+    "profileChecked": true,
+    "supply": 143,
+    "createdAt": "2023-08-12T01:40:34.511Z",
+    "updatedAt": "2023-09-05T20:11:48.717Z",
+    "cost": 1.4058687500000002
+  },
+  {
+    "address": "0xecd55f15f1b1d5eb2d6627f69a2d93161b0c572d",
+    "twitterUsername": "0xSisyphus",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1444824208790392832/YqjYT0SD.png",
+    "profileChecked": true,
+    "supply": 142,
+    "createdAt": "2023-08-12T01:38:01.662Z",
+    "updatedAt": "2023-09-05T20:15:20.357Z",
+    "cost": 1.3862750000000001
+  },
+  {
+    "address": "0xa13e9e2dc9c8106b54f14d0441a1abcdb92ca6cd",
+    "twitterUsername": "saliencexbt",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1684834797338976256/7bSNFDy8.jpg",
+    "profileChecked": true,
+    "supply": 134,
+    "createdAt": "2023-08-12T01:42:27.420Z",
+    "updatedAt": "2023-09-05T20:43:48.076Z",
+    "cost": 1.234475
+  },
+  {
+    "address": "0xf0ade82040dcf92efa34f12d99a95c389e931225",
+    "twitterUsername": "friendtechindex",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1690070232524533763/USv3lJhZ.jpg",
+    "profileChecked": true,
+    "supply": 131,
+    "createdAt": "2023-08-12T01:48:54.707Z",
+    "updatedAt": "2023-09-05T20:43:42.603Z",
+    "cost": 1.1798187500000001
+  },
+  {
+    "address": "0x72d86ebcfe0b4a3f96350d3cc7fb8f763a0c2e7b",
+    "twitterUsername": "LomahCrypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1537185920046096384/a5N-KEkn.jpg",
+    "profileChecked": true,
+    "supply": 129,
+    "createdAt": "2023-08-21T00:13:56.297Z",
+    "updatedAt": "2023-09-05T18:22:37.472Z",
+    "cost": 1.14406875
+  },
+  {
+    "address": "0xf7525a3bddc2b6281ae3a7de9159e72b7e86d359",
+    "twitterUsername": "RookieXBT",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1613188823411838976/LzWlW37g.jpg",
+    "profileChecked": true,
+    "supply": 120,
+    "createdAt": "2023-08-20T14:37:06.109Z",
+    "updatedAt": "2023-09-05T18:17:20.777Z",
+    "cost": 0.99
+  },
+  {
+    "address": "0x6a955d6d6cfaefbb7b2f1bf59e2552ac4a18d0d9",
+    "twitterUsername": "CL207",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1673337518803042314/VqpwIj03.jpg",
+    "profileChecked": true,
+    "supply": 119,
+    "createdAt": "2023-08-30T06:47:22.722Z",
+    "updatedAt": "2023-09-05T20:28:15.587Z",
+    "cost": 0.97356875
+  },
+  {
+    "address": "0xb4358378bc57ca398afbceec6a8f24cac955ee4f",
+    "twitterUsername": "holycryptoroni",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1546784901365698560/G32HZSic.jpg",
+    "profileChecked": true,
+    "supply": 117,
+    "createdAt": "2023-08-21T01:21:26.930Z",
+    "updatedAt": "2023-09-05T18:17:37.122Z",
+    "cost": 0.94111875
+  },
+  {
+    "address": "0xecd7cbf5d980ef1206e68437f677bd467e61e418",
+    "twitterUsername": "tyfflyingwithus",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1691464868623417344/kCJLhFzS.jpg",
+    "profileChecked": true,
+    "supply": 114,
+    "createdAt": "2023-09-02T12:58:52.050Z",
+    "updatedAt": "2023-09-05T18:17:54.093Z",
+    "cost": 0.893475
+  },
+  {
+    "address": "0x4a80ef8af277e5ca613154ddb4698fec3a960a9b",
+    "twitterUsername": "0xmj23",
+    "twitterPfpUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile.png",
+    "profileChecked": true,
+    "supply": 114,
+    "createdAt": "2023-08-18T22:40:40.189Z",
+    "updatedAt": "2023-09-05T18:17:43.121Z",
+    "cost": 0.893475
+  },
+  {
+    "address": "0xe2d81151a148ca5fa2bc77cf811b87477a1aba91",
+    "twitterUsername": "Pancakesbrah",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1681190756621647872/oAyT220L.jpg",
+    "profileChecked": true,
+    "supply": 111,
+    "createdAt": "2023-08-12T01:37:50.764Z",
+    "updatedAt": "2023-09-05T20:12:50.820Z",
+    "cost": 0.84706875
+  },
+  {
+    "address": "0x39a3f21b712d8f93e37d30376680d789ff3e9167",
+    "twitterUsername": "SmallCapScience",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1556492962951045120/I1b7rAnk.jpg",
+    "profileChecked": true,
+    "supply": 110,
+    "createdAt": "2023-08-12T01:41:39.758Z",
+    "updatedAt": "2023-09-05T20:16:48.645Z",
+    "cost": 0.8318749999999999
+  },
+  {
+    "address": "0x94010296797ff324d930e47a6c5ffb5105316c8d",
+    "twitterUsername": "shrimppepe",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1666945815317807107/L0-o6T0e.jpg",
+    "profileChecked": true,
+    "supply": 108,
+    "createdAt": "2023-08-12T01:34:21.154Z",
+    "updatedAt": "2023-09-05T20:47:11.811Z",
+    "cost": 0.8019
+  },
+  {
+    "address": "0x918684777d5bd27408f185666cda71c2e97be835",
+    "twitterUsername": "0xMakesy",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1557078856753942530/KyKHxE38.jpg",
+    "profileChecked": true,
+    "supply": 105,
+    "createdAt": "2023-08-12T01:39:16.436Z",
+    "updatedAt": "2023-09-05T20:29:05.635Z",
+    "cost": 0.7579687500000001
+  },
+  {
+    "address": "0x8da3dca5a6d55237a4667d6eb1a191864ed4f3de",
+    "twitterUsername": "xcurveth",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1665852893285474305/H7CvGNAr.jpg",
+    "profileChecked": true,
+    "supply": 104,
+    "createdAt": "2023-08-12T01:38:58.320Z",
+    "updatedAt": "2023-09-05T18:59:28.336Z",
+    "cost": 0.7436
+  },
+  {
+    "address": "0xa66c0e4419a7f8e70323470f02a26dfb79ba68a7",
+    "twitterUsername": "0revenue",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1482063419972984838/hOyz-nlK.jpg",
+    "profileChecked": true,
+    "supply": 104,
+    "createdAt": "2023-08-18T20:28:11.726Z",
+    "updatedAt": "2023-09-05T18:18:43.755Z",
+    "cost": 0.7436
+  },
+  {
+    "address": "0xa5141a8816e5986e1ee945a4a837d7378deed9f9",
+    "twitterUsername": "eth_ben",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1595481185068597248/vPgn5glR.png",
+    "profileChecked": true,
+    "supply": 99,
+    "createdAt": "2023-08-12T01:40:51.864Z",
+    "updatedAt": "2023-09-05T18:19:00.570Z",
+    "cost": 0.67381875
+  },
+  {
+    "address": "0x7574eae919aed88c4e66601f21a04d7fb72b29e5",
+    "twitterUsername": "Evan_ss6",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1544887512455188480/NTlA57Iu.jpg",
+    "profileChecked": true,
+    "supply": 98,
+    "createdAt": "2023-08-12T01:39:32.446Z",
+    "updatedAt": "2023-09-05T20:38:15.037Z",
+    "cost": 0.660275
+  },
+  {
+    "address": "0x5fe3cbd273858dfea0755573ed6e8dbce49c7ae8",
+    "twitterUsername": "owen1v9",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1398772865290362884/QHA-U0SM.jpg",
+    "profileChecked": true,
+    "supply": 97,
+    "createdAt": "2023-08-19T01:15:07.036Z",
+    "updatedAt": "2023-09-05T20:44:59.114Z",
+    "cost": 0.6468687500000001
+  },
+  {
+    "address": "0x0524e47e02b152368b4f2493459f43b8b4604977",
+    "twitterUsername": "Pool2Paulie",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1596300089609359361/fBfoeRgy.jpg",
+    "profileChecked": true,
+    "supply": 96,
+    "createdAt": "2023-08-12T01:38:33.621Z",
+    "updatedAt": "2023-09-05T18:19:39.122Z",
+    "cost": 0.6335999999999999
+  },
+  {
+    "address": "0x3c3985a23f12fac7023d134f8b4c131947ae1279",
+    "twitterUsername": "icebergy_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1611158476239036420/ih4HPw_W.jpg",
+    "profileChecked": true,
+    "supply": 93,
+    "createdAt": "2023-08-12T01:37:42.905Z",
+    "updatedAt": "2023-09-05T20:49:57.600Z",
+    "cost": 0.59461875
+  },
+  {
+    "address": "0x3931344ba6a2c98450bc82e412db5e70d15c9ded",
+    "twitterUsername": "crypto_bitlord7",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1584899053283942402/nFLK15Bx.jpg",
+    "profileChecked": true,
+    "supply": 92,
+    "createdAt": "2023-08-22T06:49:59.576Z",
+    "updatedAt": "2023-09-05T20:17:39.439Z",
+    "cost": 0.5819000000000001
+  },
+  {
+    "address": "0x761cdf0ae6b2e51704eff2d41b8617fdac20750c",
+    "twitterUsername": "msj23m",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1622784937161261056/zsQvv62_.jpg",
+    "profileChecked": true,
+    "supply": 92,
+    "createdAt": "2023-08-16T18:58:20.096Z",
+    "updatedAt": "2023-09-05T18:20:06.860Z",
+    "cost": 0.5819000000000001
+  },
+  {
+    "address": "0x00f3318ac90a4cd09949f0e8ff8506ac8e1d1b2c",
+    "twitterUsername": "degendevv",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1536297633890766848/N7fiIyyf.jpg",
+    "profileChecked": true,
+    "supply": 91,
+    "createdAt": "2023-08-12T01:39:13.602Z",
+    "updatedAt": "2023-09-05T20:04:21.031Z",
+    "cost": 0.5693187500000001
+  },
+  {
+    "address": "0x1be1f0495b3c3cbc4a960c9e2ae403f841fa9705",
+    "twitterUsername": "gainzy222",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683450153372459010/iKLoSl9c.jpg",
+    "profileChecked": true,
+    "supply": 91,
+    "createdAt": "2023-08-12T01:39:49.802Z",
+    "updatedAt": "2023-09-05T18:20:17.773Z",
+    "cost": 0.5693187500000001
+  },
+  {
+    "address": "0x4ab0452964e704cf19f0639e503e94438069f511",
+    "twitterUsername": "jenfoxxuwu",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1546285704019210241/XKLMQffp.jpg",
+    "profileChecked": true,
+    "supply": 91,
+    "createdAt": "2023-08-23T04:17:51.728Z",
+    "updatedAt": "2023-09-05T19:44:31.807Z",
+    "cost": 0.5693187500000001
+  },
+  {
+    "address": "0x0274acc34553736f57043076984b87f6ec98debc",
+    "twitterUsername": "yixie10",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1527468554773483520/voPrHiXX.jpg",
+    "profileChecked": true,
+    "supply": 90,
+    "createdAt": "2023-08-20T15:20:17.559Z",
+    "updatedAt": "2023-09-05T18:21:13.583Z",
+    "cost": 0.556875
+  },
+  {
+    "address": "0x88e6e458359987dec5a0d5e933a57b4d10065014",
+    "twitterUsername": "CryptoKaleo",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1606041732004593664/JxLZNWsq.jpg",
+    "profileChecked": true,
+    "supply": 89,
+    "createdAt": "2023-08-12T01:40:08.173Z",
+    "updatedAt": "2023-09-05T20:18:17.417Z",
+    "cost": 0.54456875
+  },
+  {
+    "address": "0xaee8b582be0229bd053b0421b22372abfe4f86ea",
+    "twitterUsername": "notEezzy",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1684639876036153345/eHNH_1RH.png",
+    "profileChecked": true,
+    "supply": 88,
+    "createdAt": "2023-08-12T01:38:34.949Z",
+    "updatedAt": "2023-09-05T20:14:52.277Z",
+    "cost": 0.5324
+  },
+  {
+    "address": "0x956d9b56b20c28993b9baaed1465376ce996e3ed",
+    "twitterUsername": "CharlotteFang77",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1663945552633950208/2D9J9_mL.jpg",
+    "profileChecked": true,
+    "supply": 88,
+    "createdAt": "2023-08-12T01:46:45.610Z",
+    "updatedAt": "2023-09-05T18:20:45.680Z",
+    "cost": 0.5324
+  },
+  {
+    "address": "0xde115e634cddeb5ddd224f02a014ba9343461d28",
+    "twitterUsername": "yugoviking",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1673295069024079879/Ef2r3J6f.jpg",
+    "profileChecked": true,
+    "supply": 88,
+    "createdAt": "2023-08-20T10:32:20.223Z",
+    "updatedAt": "2023-09-05T18:21:30.301Z",
+    "cost": 0.5324
+  },
+  {
+    "address": "0x00dfedacf123b27291fc81f18564cd7b56331bc9",
+    "twitterUsername": "BasedShillBH",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1650353065650782210/XHvCgN1a.jpg",
+    "profileChecked": true,
+    "supply": 87,
+    "createdAt": "2023-08-12T01:39:52.596Z",
+    "updatedAt": "2023-09-05T20:07:29.271Z",
+    "cost": 0.52036875
+  },
+  {
+    "address": "0xcc4b595aaf16ba242440043be413b9499df8d035",
+    "twitterUsername": "ColdBloodShill",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1620218776175235073/kt-H5Y8w.jpg",
+    "profileChecked": true,
+    "supply": 86,
+    "createdAt": "2023-08-20T23:24:55.199Z",
+    "updatedAt": "2023-09-05T20:03:58.613Z",
+    "cost": 0.508475
+  },
+  {
+    "address": "0xd42f9e515f0422952cb75131302512513648e9d3",
+    "twitterUsername": "Arthur_0x",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1680184510510669825/fmWRG1f-.jpg",
+    "profileChecked": true,
+    "supply": 86,
+    "createdAt": "2023-08-20T18:24:20.801Z",
+    "updatedAt": "2023-09-05T20:50:03.089Z",
+    "cost": 0.508475
+  },
+  {
+    "address": "0xf71bf0d6542b4db4432bc16daa75e8de686e8d8d",
+    "twitterUsername": "0xjakee",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1684410510203027457/1KSJUZBy.jpg",
+    "profileChecked": true,
+    "supply": 85,
+    "createdAt": "2023-08-12T01:38:19.574Z",
+    "updatedAt": "2023-09-05T18:21:41.285Z",
+    "cost": 0.49671875
+  },
+  {
+    "address": "0x27dcf22692b257c3bb2286f7c02b64004eeead15",
+    "twitterUsername": "PaulyPaulNFT",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1565834673934270466/SwYNnAXI.jpg",
+    "profileChecked": true,
+    "supply": 83,
+    "createdAt": "2023-08-12T01:44:42.187Z",
+    "updatedAt": "2023-09-05T14:34:50.097Z",
+    "cost": 0.47361875000000003
+  },
+  {
+    "address": "0x1ab97fce03992c5b58cf0c261162927090097f0f",
+    "twitterUsername": "0xAdelina",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1697937306613628928/ar7eNkWw.jpg",
+    "profileChecked": true,
+    "supply": 82,
+    "createdAt": "2023-08-30T07:04:19.438Z",
+    "updatedAt": "2023-09-05T12:49:57.654Z",
+    "cost": 0.462275
+  },
+  {
+    "address": "0x0f2d33fd28ee595fe17cd53e68ee3dfbff4c214f",
+    "twitterUsername": "VentureCoinist",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1675231769514201088/svmOBvhn.jpg",
+    "profileChecked": true,
+    "supply": 81,
+    "createdAt": "2023-08-22T02:31:46.247Z",
+    "updatedAt": "2023-09-05T20:50:14.111Z",
+    "cost": 0.45106875
+  },
+  {
+    "address": "0x02fd88375af77cede4d3d85fcfd802fb998c7c29",
+    "twitterUsername": "thiccythot_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1664830530670477312/FNGrZRYX.jpg",
+    "profileChecked": true,
+    "supply": 81,
+    "createdAt": "2023-08-12T01:41:44.583Z",
+    "updatedAt": "2023-09-05T19:46:27.764Z",
+    "cost": 0.45106875
+  },
+  {
+    "address": "0x63ce139ed34d2bb075841f88d1f5b4282f31f2d9",
+    "twitterUsername": "KeyboardMonkey3",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1600235674585686019/Em6jTVS8.jpg",
+    "profileChecked": true,
+    "supply": 80,
+    "createdAt": "2023-08-12T01:48:04.887Z",
+    "updatedAt": "2023-09-05T12:50:08.381Z",
+    "cost": 0.44000000000000006
+  },
+  {
+    "address": "0xe799194a766d0ec3ed72d09dcbf36e476fd977ce",
+    "twitterUsername": "tier10k",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1416723334683893767/HvpCjb43.jpg",
+    "profileChecked": true,
+    "supply": 80,
+    "createdAt": "2023-08-19T17:39:51.420Z",
+    "updatedAt": "2023-09-05T20:30:33.644Z",
+    "cost": 0.44000000000000006
+  },
+  {
+    "address": "0xc0c2e5c63f47c2c164a3ffa752f51727e7f4065c",
+    "twitterUsername": "Youcoinorg",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1686544755008946182/d41gtLz9.jpg",
+    "profileChecked": true,
+    "supply": 79,
+    "createdAt": "2023-08-14T04:03:28.742Z",
+    "updatedAt": "2023-08-14T19:24:10.968Z",
+    "cost": 0.42906875
+  },
+  {
+    "address": "0xdd2e9d5fa74e0f94681de85df09c7d197e5a1394",
+    "twitterUsername": "NorthRockLP",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1479599276741251072/HcqNt9ud.png",
+    "profileChecked": true,
+    "supply": 78,
+    "createdAt": "2023-08-19T19:51:38.922Z",
+    "updatedAt": "2023-09-05T18:57:19.368Z",
+    "cost": 0.41827499999999995
+  },
+  {
+    "address": "0x031b329ef376d1362a7a76be7ab0b358671c9d8c",
+    "twitterUsername": "toptickcrypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1558475187871522818/HPtPuC7P.jpg",
+    "profileChecked": true,
+    "supply": 77,
+    "createdAt": "2023-08-12T01:41:43.361Z",
+    "updatedAt": "2023-09-05T04:08:14.219Z",
+    "cost": 0.40761875000000003
+  },
+  {
+    "address": "0xc40883d8bbd7a625473f168c4dd9a00a05182b9d",
+    "twitterUsername": "iam4x",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1650863445858979842/cPXK21vn.png",
+    "profileChecked": true,
+    "supply": 77,
+    "createdAt": "2023-08-12T01:44:02.241Z",
+    "updatedAt": "2023-09-05T16:34:05.927Z",
+    "cost": 0.40761875000000003
+  },
+  {
+    "address": "0x567823b1f3e5f50ec45145189cdcbb2dd714b0c2",
+    "twitterUsername": "MoonOverlord",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1684921713983729666/XK8dD8Lc.jpg",
+    "profileChecked": true,
+    "supply": 77,
+    "createdAt": "2023-08-12T01:39:48.494Z",
+    "updatedAt": "2023-09-04T23:07:04.719Z",
+    "cost": 0.40761875000000003
+  },
+  {
+    "address": "0x2876a234b51cf7a8c2d64537aed02938b0d811b4",
+    "twitterUsername": "jebus911",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1493663247509209089/owi6u6KC.jpg",
+    "profileChecked": true,
+    "supply": 77,
+    "createdAt": "2023-08-12T01:38:20.545Z",
+    "updatedAt": "2023-09-05T12:55:59.461Z",
+    "cost": 0.40761875000000003
+  },
+  {
+    "address": "0x03d5a5ff92d2078ed2cbb67eecb72c15429b41f9",
+    "twitterUsername": "jessepollak",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1484575656759472128/4vLR6_4F.png",
+    "profileChecked": true,
+    "supply": 76,
+    "createdAt": "2023-08-12T01:40:35.874Z",
+    "updatedAt": "2023-09-04T18:11:14.981Z",
+    "cost": 0.3971
+  },
+  {
+    "address": "0x77c14a3b3c9b4153add58cce5e885a6202c7ec83",
+    "twitterUsername": "Teeznutz11",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1599930900988444674/Con7ylaY.jpg",
+    "profileChecked": true,
+    "supply": 76,
+    "createdAt": "2023-08-12T01:38:51.604Z",
+    "updatedAt": "2023-09-05T13:30:59.836Z",
+    "cost": 0.3971
+  },
+  {
+    "address": "0xaf313530c9073abdff90f3e7d744035bde70ea42",
+    "twitterUsername": "inversebrah",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1600659757047885825/DQAqpmuH.jpg",
+    "profileChecked": true,
+    "supply": 76,
+    "createdAt": "2023-08-18T05:06:01.279Z",
+    "updatedAt": "2023-09-05T17:09:12.885Z",
+    "cost": 0.3971
+  },
+  {
+    "address": "0xe8bd262df0d5b36bce6d23523698a63a80f46394",
+    "twitterUsername": "NoMoreLiquidity",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1685051044370243584/PfZ3o5hh.jpg",
+    "profileChecked": true,
+    "supply": 75,
+    "createdAt": "2023-08-12T01:39:13.602Z",
+    "updatedAt": "2023-09-05T20:43:59.208Z",
+    "cost": 0.38671875
+  },
+  {
+    "address": "0x8f48e07202afd1d0af1548edfc081563547e79eb",
+    "twitterUsername": "cryptojamie7",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1655860083983626241/imNs1znd.jpg",
+    "profileChecked": true,
+    "supply": 75,
+    "createdAt": "2023-08-12T01:38:41.863Z",
+    "updatedAt": "2023-09-05T17:20:25.415Z",
+    "cost": 0.38671875
+  },
+  {
+    "address": "0x8c9af3415ba26cc8ae1b4d73fb717aad196aa9ce",
+    "twitterUsername": "ethersole",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1638711530840788992/lXEXDyo2.jpg",
+    "profileChecked": true,
+    "supply": 75,
+    "createdAt": "2023-08-12T01:40:58.885Z",
+    "updatedAt": "2023-09-05T16:08:37.666Z",
+    "cost": 0.38671875
+  },
+  {
+    "address": "0x4a46efd42fabd236d1cb1a3e9361d81d1a6e6e24",
+    "twitterUsername": "0xWives",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1523109837005017088/5ZHrJHOl.png",
+    "profileChecked": true,
+    "supply": 75,
+    "createdAt": "2023-08-13T03:36:19.313Z",
+    "updatedAt": "2023-09-05T20:25:25.338Z",
+    "cost": 0.38671875
+  },
+  {
+    "address": "0x8d9bb9b327b6c5fe96c0ac5f5f09e69a21c0e9e1",
+    "twitterUsername": "Awawat_Trades",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1611005232619851776/2MJq19YA.jpg",
+    "profileChecked": true,
+    "supply": 74,
+    "createdAt": "2023-08-12T01:48:20.626Z",
+    "updatedAt": "2023-09-05T20:48:23.631Z",
+    "cost": 0.376475
+  },
+  {
+    "address": "0x58510a8fb0276fc1967a0057de14bb1ef819b94a",
+    "twitterUsername": "CryptoDonAlt",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1537478429506928645/eDnuy5e7.jpg",
+    "profileChecked": true,
+    "supply": 74,
+    "createdAt": "2023-08-12T05:06:13.403Z",
+    "updatedAt": "2023-09-04T13:04:49.932Z",
+    "cost": 0.376475
+  },
+  {
+    "address": "0x1d6dd86b2d11ad8ea4d2a6caeff326357fcb1d58",
+    "twitterUsername": "ScizRtrading",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1681694440258256897/LujusqwW.jpg",
+    "profileChecked": true,
+    "supply": 73,
+    "createdAt": "2023-08-17T20:03:39.016Z",
+    "updatedAt": "2023-09-05T03:22:43.590Z",
+    "cost": 0.36636874999999997
+  },
+  {
+    "address": "0x4d25454785ae3873755bc8b260e0b87463b2b2da",
+    "twitterUsername": "Watts3500",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1698420839392399360/EU99DuPM.jpg",
+    "profileChecked": true,
+    "supply": 73,
+    "createdAt": "2023-09-03T14:16:32.791Z",
+    "updatedAt": "2023-09-05T11:39:51.563Z",
+    "cost": 0.36636874999999997
+  },
+  {
+    "address": "0xb51672618c669a9e50758d2069a45f50be642045",
+    "twitterUsername": "knowerofmarkets",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1689040744873385984/0eTLFXy9.jpg",
+    "profileChecked": true,
+    "supply": 73,
+    "createdAt": "2023-08-12T01:46:27.792Z",
+    "updatedAt": "2023-09-05T18:58:21.905Z",
+    "cost": 0.36636874999999997
+  },
+  {
+    "address": "0xf70d8a5c563a486f3da53ee5a2ae922f1b611697",
+    "twitterUsername": "ThisMalaka",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1454661567883137025/N74AB_rv.jpg",
+    "profileChecked": true,
+    "supply": 72,
+    "createdAt": "2023-08-13T05:09:42.792Z",
+    "updatedAt": "2023-09-05T17:01:06.254Z",
+    "cost": 0.3564
+  },
+  {
+    "address": "0xca7dd87a864aeed7ebdfb7687e7baff1b83000c1",
+    "twitterUsername": "BrkEvnCap",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683657895777280001/gN444MDb.jpg",
+    "profileChecked": true,
+    "supply": 72,
+    "createdAt": "2023-08-12T01:38:36.445Z",
+    "updatedAt": "2023-09-05T20:41:41.048Z",
+    "cost": 0.3564
+  },
+  {
+    "address": "0x8c7fd9bf3a82e590762ec4855d43861e8b2fab7e",
+    "twitterUsername": "DaanCrypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1593241078035279874/7ousc-BT.jpg",
+    "profileChecked": true,
+    "supply": 72,
+    "createdAt": "2023-08-12T19:03:03.458Z",
+    "updatedAt": "2023-09-05T15:03:12.262Z",
+    "cost": 0.3564
+  },
+  {
+    "address": "0xcc3dbd4dbc9637e35ecf4f781eed12fae50388b8",
+    "twitterUsername": "Banks",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1595775782952894466/tRCDSxx8.jpg",
+    "profileChecked": true,
+    "supply": 71,
+    "createdAt": "2023-08-20T19:58:42.303Z",
+    "updatedAt": "2023-09-05T12:39:23.193Z",
+    "cost": 0.34656875000000004
+  },
+  {
+    "address": "0xbffe58602025d37aa24e07215fa4469edc21234a",
+    "twitterUsername": "screentimes",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1675025542209327104/ADArvInk.jpg",
+    "profileChecked": true,
+    "supply": 71,
+    "createdAt": "2023-08-12T01:45:45.974Z",
+    "updatedAt": "2023-09-05T20:30:16.978Z",
+    "cost": 0.34656875000000004
+  },
+  {
+    "address": "0xc2d56007289c28848fcce65859b3701ce5ab75d9",
+    "twitterUsername": "dingalingts",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1671535865145745410/DaM1zme1.jpg",
+    "profileChecked": true,
+    "supply": 71,
+    "createdAt": "2023-08-12T01:39:12.191Z",
+    "updatedAt": "2023-09-04T19:34:52.673Z",
+    "cost": 0.34656875000000004
+  },
+  {
+    "address": "0x9edf5a81ed34875b4bfd9a2be04b6bb04e8244c3",
+    "twitterUsername": "DtDcTr",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1691928456731172865/vNgT2dJ-.jpg",
+    "profileChecked": true,
+    "supply": 71,
+    "createdAt": "2023-08-17T21:28:59.158Z",
+    "updatedAt": "2023-09-05T16:44:08.302Z",
+    "cost": 0.34656875000000004
+  },
+  {
+    "address": "0xb62f0020d3b26f9e7b49126d03a6c6322d86dc7b",
+    "twitterUsername": "_zkmike",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1625917793982873619/RDyeswsA.jpg",
+    "profileChecked": true,
+    "supply": 71,
+    "createdAt": "2023-08-12T01:39:08.264Z",
+    "updatedAt": "2023-09-05T10:27:53.921Z",
+    "cost": 0.34656875000000004
+  },
+  {
+    "address": "0x6e6f2147201deed76557f10004333d73224d3434",
+    "twitterUsername": "CJCJCJCJ_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1605119061402083328/tMR1iA_w.jpg",
+    "profileChecked": true,
+    "supply": 70,
+    "createdAt": "2023-08-12T01:41:02.823Z",
+    "updatedAt": "2023-09-05T20:32:56.729Z",
+    "cost": 0.33687500000000004
+  },
+  {
+    "address": "0xa104a5af9f306569d3a5d0330558c74412a65736",
+    "twitterUsername": "chiefingza",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1614865213488070656/8OkAXZ6O.jpg",
+    "profileChecked": true,
+    "supply": 70,
+    "createdAt": "2023-08-12T01:38:18.495Z",
+    "updatedAt": "2023-09-05T17:23:56.222Z",
+    "cost": 0.33687500000000004
+  },
+  {
+    "address": "0x09ccaba84747e85972ca238b158739e493a7022c",
+    "twitterUsername": "AltcoinDailyio",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1477451940611035136/hQByG8MW.png",
+    "profileChecked": true,
+    "supply": 70,
+    "createdAt": "2023-08-15T04:02:40.104Z",
+    "updatedAt": "2023-09-05T11:36:25.696Z",
+    "cost": 0.33687500000000004
+  },
+  {
+    "address": "0xbf9c56b2adb7a94c027b4ba9578ec63558dd9154",
+    "twitterUsername": "yh_0x",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1611702769643319296/FFSVVnrW.jpg",
+    "profileChecked": true,
+    "supply": 69,
+    "createdAt": "2023-08-12T01:41:48.826Z",
+    "updatedAt": "2023-09-05T19:56:59.740Z",
+    "cost": 0.32731875
+  },
+  {
+    "address": "0x6ce952eb3f5be40fab6f228e273984847c8b6620",
+    "twitterUsername": "loomdart",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1669748351909212174/zHNKLiLe.jpg",
+    "profileChecked": true,
+    "supply": 67,
+    "createdAt": "2023-08-12T01:41:11.243Z",
+    "updatedAt": "2023-09-05T12:50:08.381Z",
+    "cost": 0.30861875
+  },
+  {
+    "address": "0xa7d31937a8a3f4580de63fef9dae93094f34f3b6",
+    "twitterUsername": "0xmasiwei",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1691440792509054976/615f68Sq.png",
+    "profileChecked": true,
+    "supply": 67,
+    "createdAt": "2023-08-19T09:26:29.330Z",
+    "updatedAt": "2023-09-05T11:15:04.788Z",
+    "cost": 0.30861875
+  },
+  {
+    "address": "0xb9e7fa5d61a8ba3aaf4d0db02a34039fd6554d37",
+    "twitterUsername": "hero_truck",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1612810393876930564/7toyk7Rp.jpg",
+    "profileChecked": true,
+    "supply": 67,
+    "createdAt": "2023-08-12T01:36:16.173Z",
+    "updatedAt": "2023-09-05T17:42:54.713Z",
+    "cost": 0.30861875
+  },
+  {
+    "address": "0x9a264d02ce1a504405307d85388219a0089c91f9",
+    "twitterUsername": "Pentosh1",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1681393223447760896/sV5elUdO.jpg",
+    "profileChecked": true,
+    "supply": 67,
+    "createdAt": "2023-08-19T14:52:25.382Z",
+    "updatedAt": "2023-09-05T17:02:56.748Z",
+    "cost": 0.30861875
+  },
+  {
+    "address": "0x59fdfff4b797f906bab9c56cec8e67a5676acffc",
+    "twitterUsername": "QuantMeta",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1657622277968613376/pY7ZtEu1.jpg",
+    "profileChecked": true,
+    "supply": 66,
+    "createdAt": "2023-08-12T01:40:16.636Z",
+    "updatedAt": "2023-09-04T15:02:33.256Z",
+    "cost": 0.299475
+  },
+  {
+    "address": "0x0d35731e675f5157f167ba3a5d7f4ea1e7ef2e10",
+    "twitterUsername": "0xjune_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1678891833978417152/-sAHsb6k.jpg",
+    "profileChecked": true,
+    "supply": 66,
+    "createdAt": "2023-08-12T01:37:56.923Z",
+    "updatedAt": "2023-09-05T19:35:00.730Z",
+    "cost": 0.299475
+  },
+  {
+    "address": "0x817427f0548dd2e07a92af985298e1c7075f0248",
+    "twitterUsername": "LiquidLizard_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1661789107255754754/p0Ou7BxP.jpg",
+    "profileChecked": true,
+    "supply": 65,
+    "createdAt": "2023-08-19T08:27:03.006Z",
+    "updatedAt": "2023-09-04T18:45:23.923Z",
+    "cost": 0.29046875
+  },
+  {
+    "address": "0x2f5b30012805698282bfbf917c622b218b73b830",
+    "twitterUsername": "AltcoinSherpa",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1646137604096524289/Q3lCoasv.jpg",
+    "profileChecked": true,
+    "supply": 65,
+    "createdAt": "2023-08-27T16:53:03.791Z",
+    "updatedAt": "2023-09-05T10:44:21.463Z",
+    "cost": 0.29046875
+  },
+  {
+    "address": "0x3d531481e65f31412495bedadb06efc8ea986581",
+    "twitterUsername": "zerobeta",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1582499439658377217/dHPnzNU1.jpg",
+    "profileChecked": true,
+    "supply": 65,
+    "createdAt": "2023-08-12T01:36:11.861Z",
+    "updatedAt": "2023-09-05T03:49:16.325Z",
+    "cost": 0.29046875
+  },
+  {
+    "address": "0x5b4309ec870e971cc3517e84ca8b78ebf69495ba",
+    "twitterUsername": "hoss_crypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1412554280737906694/XGcHzZFg.jpg",
+    "profileChecked": true,
+    "supply": 64,
+    "createdAt": "2023-08-12T01:49:14.775Z",
+    "updatedAt": "2023-09-05T15:07:47.740Z",
+    "cost": 0.2816
+  },
+  {
+    "address": "0x2ad645d2368ae8a9fa4fc861c2823f8702127c54",
+    "twitterUsername": "zeta_1729",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1618339624837091330/NDRn4gIU.jpg",
+    "profileChecked": true,
+    "supply": 64,
+    "createdAt": "2023-08-12T01:38:02.903Z",
+    "updatedAt": "2023-09-03T14:11:20.653Z",
+    "cost": 0.2816
+  },
+  {
+    "address": "0x66c0314af6a3399ed7d135b893777be0d657bd8a",
+    "twitterUsername": "MarioNawfal",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1670905743619268609/pYItlWat.jpg",
+    "profileChecked": true,
+    "supply": 64,
+    "createdAt": "2023-08-21T05:42:27.933Z",
+    "updatedAt": "2023-09-05T02:21:04.745Z",
+    "cost": 0.2816
+  },
+  {
+    "address": "0xad75fb2852ee32dd4b5b26a3d385756d71692714",
+    "twitterUsername": "friendtechetf",
+    "twitterPfpUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile.png",
+    "profileChecked": true,
+    "supply": 64,
+    "createdAt": "2023-08-19T23:24:48.955Z",
+    "updatedAt": "2023-09-05T16:43:57.359Z",
+    "cost": 0.2816
+  },
+  {
+    "address": "0x2c56d39b70281c04302caeea8d1b407ff28c009b",
+    "twitterUsername": "shiftinbits",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1498742537816731651/NHqgU_2R.jpg",
+    "profileChecked": true,
+    "supply": 64,
+    "createdAt": "2023-08-12T01:38:10.116Z",
+    "updatedAt": "2023-09-04T21:45:42.776Z",
+    "cost": 0.2816
+  },
+  {
+    "address": "0x150774c67bf8d10becae64eb02eeccf8cb840dbd",
+    "twitterUsername": "CryptoCred",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1444398863268339717/2jQUsbjB.jpg",
+    "profileChecked": true,
+    "supply": 63,
+    "createdAt": "2023-08-19T13:38:11.328Z",
+    "updatedAt": "2023-09-05T10:31:51.071Z",
+    "cost": 0.27286875
+  },
+  {
+    "address": "0x3237f69ed1791c59997b64c3538604f649dbc654",
+    "twitterUsername": "UniswapVillain",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1672283273798533126/QjG1NxLE.jpg",
+    "profileChecked": true,
+    "supply": 63,
+    "createdAt": "2023-08-19T16:38:21.088Z",
+    "updatedAt": "2023-09-05T20:28:15.319Z",
+    "cost": 0.27286875
+  },
+  {
+    "address": "0x22ef34b092afb0fdbe26aa51e6725a252a5fb38e",
+    "twitterUsername": "matthuang",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1510703458386468871/NaSbi2BY.jpg",
+    "profileChecked": true,
+    "supply": 63,
+    "createdAt": "2023-08-21T16:23:53.146Z",
+    "updatedAt": "2023-09-04T15:18:38.868Z",
+    "cost": 0.27286875
+  },
+  {
+    "address": "0x80d2984d6846a2635c3dfe47fb40a7b543a7ed44",
+    "twitterUsername": "ABdeVilliers17",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1496734873133924353/XcjkhMaj.jpg",
+    "profileChecked": true,
+    "supply": 63,
+    "createdAt": "2023-08-21T16:23:03.146Z",
+    "updatedAt": "2023-09-05T17:20:13.431Z",
+    "cost": 0.27286875
+  },
+  {
+    "address": "0x780138a58253dd337c019890e6054e0879723996",
+    "twitterUsername": "SCHIZO_FREQ",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1637939243921096711/8P8cMm9D.jpg",
+    "profileChecked": true,
+    "supply": 63,
+    "createdAt": "2023-08-12T01:40:17.902Z",
+    "updatedAt": "2023-09-05T16:18:15.641Z",
+    "cost": 0.27286875
+  },
+  {
+    "address": "0x0c2631f4161d2c30a4e949078e395b6619f78d47",
+    "twitterUsername": "OriginFi_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1695140293891244033/ZR3UzhwJ.jpg",
+    "profileChecked": true,
+    "supply": 63,
+    "createdAt": "2023-08-26T18:29:48.371Z",
+    "updatedAt": "2023-09-04T12:59:21.697Z",
+    "cost": 0.27286875
+  },
+  {
+    "address": "0x21cc2fc77d5eddac0e226442d88f818692af7a0f",
+    "twitterUsername": "AngeloBTC",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1598397545050357760/3uGQLWw4.jpg",
+    "profileChecked": true,
+    "supply": 63,
+    "createdAt": "2023-08-21T05:16:45.546Z",
+    "updatedAt": "2023-09-05T07:54:25.438Z",
+    "cost": 0.27286875
+  },
+  {
+    "address": "0x43c37b5a2b699752ef74bbd5609c769a5dac3ec2",
+    "twitterUsername": "IndexIndexFT",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1693950878573875200/ctr7ILuf.jpg",
+    "profileChecked": true,
+    "supply": 62,
+    "createdAt": "2023-08-22T12:14:16.090Z",
+    "updatedAt": "2023-09-05T15:05:24.120Z",
+    "cost": 0.264275
+  },
+  {
+    "address": "0xe05409ae4e1e3e3f5eca4b09cfc94bacc2f8b224",
+    "twitterUsername": "kazonomics",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1654427847203618819/lBBcCvHA.jpg",
+    "profileChecked": true,
+    "supply": 62,
+    "createdAt": "2023-08-21T11:59:35.479Z",
+    "updatedAt": "2023-09-05T15:41:55.196Z",
+    "cost": 0.264275
+  },
+  {
+    "address": "0x1bb88cd773df6c6d397c4a178ec54197b30b4cf4",
+    "twitterUsername": "bendoverxbt",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1624426188029534208/iN4BkN8x.jpg",
+    "profileChecked": true,
+    "supply": 62,
+    "createdAt": "2023-08-19T18:02:31.623Z",
+    "updatedAt": "2023-09-05T17:44:45.344Z",
+    "cost": 0.264275
+  },
+  {
+    "address": "0x9c21e082e828f8db4761239b14e789690a4ff42f",
+    "twitterUsername": "0xHorseGirl",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1638767088012763137/r-GJ4GN_.jpg",
+    "profileChecked": true,
+    "supply": 61,
+    "createdAt": "2023-08-12T01:34:36.154Z",
+    "updatedAt": "2023-09-05T20:42:52.934Z",
+    "cost": 0.25581875
+  },
+  {
+    "address": "0x12dddc6f2da32db9a0b043c10e78469f2a02c0ad",
+    "twitterUsername": "zxocw",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1491590602118492161/uJAKWCCU.jpg",
+    "profileChecked": true,
+    "supply": 61,
+    "createdAt": "2023-08-22T02:07:06.744Z",
+    "updatedAt": "2023-09-04T17:46:26.069Z",
+    "cost": 0.25581875
+  },
+  {
+    "address": "0xc388da02d07b85667706c450002dc531e1c90f9c",
+    "twitterUsername": null,
+    "twitterPfpUrl": null,
+    "profileChecked": false,
+    "supply": 61,
+    "createdAt": "2023-09-05T15:09:09.819Z",
+    "updatedAt": "2023-09-05T20:36:36.249Z",
+    "cost": 0.25581875
+  },
+  {
+    "address": "0xd431a1666f9ce076c184a3d7dd1d07fad2df44b2",
+    "twitterUsername": "buyingyourstops",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1689279550297985024/y0aLWTYb.jpg",
+    "profileChecked": true,
+    "supply": 61,
+    "createdAt": "2023-08-18T19:42:13.137Z",
+    "updatedAt": "2023-09-04T13:12:17.637Z",
+    "cost": 0.25581875
+  },
+  {
+    "address": "0xd916411427e88076e39c0fd98a128decfc65715c",
+    "twitterUsername": "CozomoMedici",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1685777081097932800/GbKYtFjF.jpg",
+    "profileChecked": true,
+    "supply": 61,
+    "createdAt": "2023-08-21T00:52:40.016Z",
+    "updatedAt": "2023-09-04T12:00:39.229Z",
+    "cost": 0.25581875
+  },
+  {
+    "address": "0x149e175b8ff95d8993eed4faebd6aab7c897941c",
+    "twitterUsername": "Defi_Maestro",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1642433207995105282/HPjqbYuu.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-20T15:03:05.085Z",
+    "updatedAt": "2023-09-05T20:45:37.718Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0xc308990e582cccb9deff03698fe2f052efdf2d04",
+    "twitterUsername": "AlfaFrensFT",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1695616179061006336/wKuWP5NG.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-30T06:53:11.440Z",
+    "updatedAt": "2023-09-05T14:34:06.223Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0x58036861b8621b4214f295ec7ecf34650f44617a",
+    "twitterUsername": "DextMoon",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1671823225569918977/bXQFtP2-.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-12T01:39:01.611Z",
+    "updatedAt": "2023-09-04T19:51:47.442Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0xc96c111fc49125e456226ab706a17a23f9169228",
+    "twitterUsername": "yourfriendSOMMI",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1678338732515270656/Y7vqGWON.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-21T00:48:24.123Z",
+    "updatedAt": "2023-09-02T23:31:42.997Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0xd8e1d8f932e7b50644e5a4c94e2fcf65a1aa25b9",
+    "twitterUsername": "valdeande",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/132474993/valdeande.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-22T18:11:28.923Z",
+    "updatedAt": "2023-09-05T13:49:37.705Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0xf9fa094adbbd766a627ee6a383d527f44d8e9c3e",
+    "twitterUsername": "alpha_pls",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1504139683751763971/YDAbI0Ay.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-12T01:42:42.010Z",
+    "updatedAt": "2023-09-05T20:35:03.619Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0x2a68481fc9121a1c67c74c658dcdcaaad255b420",
+    "twitterUsername": "CryptoJiji_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1687477613391126528/VdJOH-mh.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-26T10:38:36.988Z",
+    "updatedAt": "2023-09-05T16:11:03.101Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0xde41d9f82cb4f910604984b241ee23493b1fb28a",
+    "twitterUsername": "BigDickBull69",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1679573183601549312/zQqlGoch.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-12T01:38:13.567Z",
+    "updatedAt": "2023-09-02T20:24:42.633Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0xd7f8cb00281568bd05dbdfc7132d777cd3ea72fb",
+    "twitterUsername": "spvce_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1588993670459674624/_IGCHl1c.jpg",
+    "profileChecked": true,
+    "supply": 60,
+    "createdAt": "2023-08-13T13:26:47.431Z",
+    "updatedAt": "2023-09-05T15:41:32.299Z",
+    "cost": 0.2475
+  },
+  {
+    "address": "0xcacdd1f40bee140112f1fcb6fe779f7ebf17d18c",
+    "twitterUsername": "ByzGeneral",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1689367150387990530/ambEkheo.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-12T01:46:55.012Z",
+    "updatedAt": "2023-09-05T20:24:08.318Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0xa0a456b07adf2fd6bceed248baab6e7c5ab4fa5a",
+    "twitterUsername": "disclosure",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1679811518433460224/-jrgQhd1.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-20T23:51:46.638Z",
+    "updatedAt": "2023-09-05T17:00:05.433Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0x7a54491a5cd9a96e21720feac4393f34e3cd38bc",
+    "twitterUsername": "jconorgrogan",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1580022203235663872/XSyjlu1t.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-12T01:40:08.173Z",
+    "updatedAt": "2023-09-05T20:11:32.320Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0xb8b083968460612f7b78a0349b2ea339e9c3bc6c",
+    "twitterUsername": "PelionCap",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1664201014726066176/1jQLdG-V.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-24T19:09:58.281Z",
+    "updatedAt": "2023-09-05T18:39:58.191Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0xec3773dffbaa4ded5f9eaafffec425cbc9228e00",
+    "twitterUsername": "timothyronald22",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1659626591436312576/_r8GGIkZ.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-20T16:22:11.495Z",
+    "updatedAt": "2023-09-05T14:44:55.478Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0xe0e1f4a1a7add5f6570e88617d215c39a3d76bae",
+    "twitterUsername": "redphonecrypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1618778189815242755/gOyxW-Pv.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-12T01:40:13.242Z",
+    "updatedAt": "2023-09-05T02:23:04.831Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0x73ed8f049be45b1acbb744efdac5679a80cda08e",
+    "twitterUsername": "TrustlessState",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1665381109905891332/olkQFjRj.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-12T01:48:11.837Z",
+    "updatedAt": "2023-09-05T20:49:19.277Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0x22ff762c91db460abfc66f46dd6970b4da2455cb",
+    "twitterUsername": "KRMA_0",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1555613710852521984/Cb9Ob14P.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-16T21:10:31.737Z",
+    "updatedAt": "2023-09-05T18:25:39.323Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0xb1a969e015f7ccede627e7dc8b3aed9497145942",
+    "twitterUsername": "wagieeacc",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1668997014908985345/JScA3aHz.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-21T20:17:35.099Z",
+    "updatedAt": "2023-09-05T00:07:45.493Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0xe4013a7d778ce4aa4a7aea7f22d704031e0fd968",
+    "twitterUsername": "zzzzzzz88888888",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1554864327664058368/3wIN40NQ.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-12T01:43:21.717Z",
+    "updatedAt": "2023-09-02T22:48:00.035Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0x8adb97dffe8a96387012baf319bcb97eaa334a99",
+    "twitterUsername": "Zaziemuse",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1667888396214190083/GwC_Bt-W.jpg",
+    "profileChecked": true,
+    "supply": 59,
+    "createdAt": "2023-08-26T12:04:50.888Z",
+    "updatedAt": "2023-08-28T02:55:44.451Z",
+    "cost": 0.23931875
+  },
+  {
+    "address": "0x3784bb094b17aab289872322dcb41aa675bafa74",
+    "twitterUsername": "garrytan",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1692694978969907200/LNuVZYWj.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-21T00:25:45.497Z",
+    "updatedAt": "2023-09-04T11:27:04.191Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x51588474ff0d677ad9b1c2814aedd4eceab23e99",
+    "twitterUsername": "dotta",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1587449365014142979/y0p8yEp5.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-12T01:41:34.062Z",
+    "updatedAt": "2023-09-05T14:36:39.981Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x026556e8601e4527dd323ca4a3f774483eea40e4",
+    "twitterUsername": "zachxbt",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1656044798090854429/2v6CCeiE.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-20T17:47:07.828Z",
+    "updatedAt": "2023-09-05T18:52:26.107Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x23fde3b8b37c749287bc75edb8c06f6e77c0a5d2",
+    "twitterUsername": "ASvanevik",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1580189120063627265/DOQY0ygF.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-09-03T14:57:54.187Z",
+    "updatedAt": "2023-09-05T18:40:25.567Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x3b6b2a0cc5be24f04e9239e3340e2019c2b5af88",
+    "twitterUsername": "andy8052",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1598315272301170690/gNPMt4gN.png",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-12T01:37:38.953Z",
+    "updatedAt": "2023-09-05T17:03:24.320Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x9029a94e927476d18b5db943fc98666b9a1f4b17",
+    "twitterUsername": "satsdart",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1611003529916825604/qxZJyrDD.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-12T01:38:00.293Z",
+    "updatedAt": "2023-09-05T20:04:32.156Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0xb60f0af78c8f675b6ced5126660731b5f77253e1",
+    "twitterUsername": "twobitidiot",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1574392800963174402/mea0sjf2.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-21T17:59:12.620Z",
+    "updatedAt": "2023-09-05T20:48:51.362Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x43e02f3d25dc5f6154ccb1a8efd8aeb027a8691a",
+    "twitterUsername": "naniXBT",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1680286292301709315/fdv-JJN_.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-12T01:37:54.864Z",
+    "updatedAt": "2023-09-05T20:40:12.839Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x8ca6cb5984bc8d2a36b9ace20226de3ddc74de46",
+    "twitterUsername": "camel_drift",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1457035681377792002/UAPRP-Ee.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-30T06:53:06.335Z",
+    "updatedAt": "2023-08-30T23:26:59.510Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x92a0251df316f40f8d6a581d71ae2798292c8735",
+    "twitterUsername": "ReetikaTrades",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1599768509008969728/Xg1mzvOf.jpg",
+    "profileChecked": true,
+    "supply": 58,
+    "createdAt": "2023-08-12T01:44:47.832Z",
+    "updatedAt": "2023-09-05T17:03:46.593Z",
+    "cost": 0.231275
+  },
+  {
+    "address": "0x48010cfe5f9ae86f6ef445af2874ac4585f55d53",
+    "twitterUsername": "knlae_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1679301457328107520/pPG7-kMK.jpg",
+    "profileChecked": true,
+    "supply": 57,
+    "createdAt": "2023-08-12T01:41:30.381Z",
+    "updatedAt": "2023-09-04T18:06:04.652Z",
+    "cost": 0.22336875
+  },
+  {
+    "address": "0x7120198d96eb089062a5a82860e1bf8d8ad08f47",
+    "twitterUsername": "AvaxGems",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1687994868063477760/PWVnUcdC.jpg",
+    "profileChecked": true,
+    "supply": 57,
+    "createdAt": "2023-08-12T01:38:16.131Z",
+    "updatedAt": "2023-09-05T19:02:13.712Z",
+    "cost": 0.22336875
+  },
+  {
+    "address": "0x512557c92e98b1d5e8d0665c62c4352ef7ec323f",
+    "twitterUsername": "saorikiyomi",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1644229410802012160/DD-cudtN.jpg",
+    "profileChecked": true,
+    "supply": 57,
+    "createdAt": "2023-08-12T05:53:05.182Z",
+    "updatedAt": "2023-09-05T18:30:41.030Z",
+    "cost": 0.22336875
+  },
+  {
+    "address": "0x8c7fdc7d85c1bf106af6c0235e150bee3d686bf4",
+    "twitterUsername": "RodionBezukhov",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1476814957077487616/in_0Xz4q.jpg",
+    "profileChecked": true,
+    "supply": 57,
+    "createdAt": "2023-08-12T01:36:33.704Z",
+    "updatedAt": "2023-09-05T20:05:49.261Z",
+    "cost": 0.22336875
+  },
+  {
+    "address": "0xe676a4587e853c0b4166bdd53400fadf535799f6",
+    "twitterUsername": "misterblue2000",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1698562675331170304/oELFnWg5.jpg",
+    "profileChecked": true,
+    "supply": 57,
+    "createdAt": "2023-09-04T02:15:34.632Z",
+    "updatedAt": "2023-09-05T19:31:31.281Z",
+    "cost": 0.22336875
+  },
+  {
+    "address": "0xa84bd0e9646170b91c75a999332954a15e4969b3",
+    "twitterUsername": "0xBreadguy",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1689375761122156544/dZfnFshk.jpg",
+    "profileChecked": true,
+    "supply": 57,
+    "createdAt": "2023-08-12T01:41:04.081Z",
+    "updatedAt": "2023-09-05T20:24:24.822Z",
+    "cost": 0.22336875
+  },
+  {
+    "address": "0xe254cf0d13c31725005414218923a0c2f018b0e6",
+    "twitterUsername": "MaxBid24",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1657592762005618693/yrmInKPU.jpg",
+    "profileChecked": true,
+    "supply": 57,
+    "createdAt": "2023-08-20T11:14:42.053Z",
+    "updatedAt": "2023-09-05T15:35:48.759Z",
+    "cost": 0.22336875
+  },
+  {
+    "address": "0xfce69abfd86260658bf49cdd6bbc032582416036",
+    "twitterUsername": "Edward__Park",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1600161777936846851/41iZg5vo.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T01:42:51.060Z",
+    "updatedAt": "2023-09-05T01:44:58.074Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0x02a4f9988239e755d7b47f822391b1765dd9ce90",
+    "twitterUsername": "Cryptopathic",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1612097990633656321/d2o0oilD.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T01:38:49.149Z",
+    "updatedAt": "2023-09-05T19:07:19.590Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0x11aa1c63514d85b45ebb799a02d35d189ea986e5",
+    "twitterUsername": "flippen6485",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1685099555573108736/cvIEhFpx.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T01:37:51.853Z",
+    "updatedAt": "2023-09-05T19:21:18.199Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0xbf420521101b89c1cd53a5ee0f214f9801efc721",
+    "twitterUsername": "RaccoonHKG",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1508090725455458309/qyQh84s5.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T01:42:31.758Z",
+    "updatedAt": "2023-09-04T17:18:30.032Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0x645de6d9838a4c16d177ee26401ba4468e53524d",
+    "twitterUsername": "smileycapital",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683531768903680012/OlZIv8Fb.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T17:02:49.119Z",
+    "updatedAt": "2023-09-05T19:59:18.486Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0xf2c549b3ade73f5768274f3b5b7863ac052463c3",
+    "twitterUsername": "pacman_defence",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1661050390866018309/ZeWglSFF.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T01:48:36.913Z",
+    "updatedAt": "2023-09-04T17:47:26.751Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0x5c46673db2fa044f5afc56c5324ce02f5b74e809",
+    "twitterUsername": "MissionGains",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1641175385114124289/3nupNZ7v.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T01:39:42.897Z",
+    "updatedAt": "2023-09-05T17:21:48.775Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0x0d1e8d915c1a8d43634dde574e970ed2e2421a1e",
+    "twitterUsername": "d_gilz",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1566647913408712705/0EmeBAfJ.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T01:38:25.761Z",
+    "updatedAt": "2023-09-04T23:56:37.814Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0xbd92ea9f11c3be7972bac8a12425372a54b64fe5",
+    "twitterUsername": "Melt_Dem",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1671635673655197700/WD7nHhoG.jpg",
+    "profileChecked": true,
+    "supply": 56,
+    "createdAt": "2023-08-12T01:48:55.867Z",
+    "updatedAt": "2023-09-04T08:16:23.363Z",
+    "cost": 0.2156
+  },
+  {
+    "address": "0xfb7ce7b78cc7356664d42c43216ebb6c7e49b627",
+    "twitterUsername": "rarepangolin",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1670479353694633984/Rl5K8oiw.jpg",
+    "profileChecked": true,
+    "supply": 55,
+    "createdAt": "2023-08-12T01:38:51.604Z",
+    "updatedAt": "2023-09-04T23:40:27.640Z",
+    "cost": 0.20796874999999998
+  },
+  {
+    "address": "0xf543921b724555294fab334e6e6ead770d09c327",
+    "twitterUsername": "0xMerp",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1671518541432987648/T76C9epC.jpg",
+    "profileChecked": true,
+    "supply": 55,
+    "createdAt": "2023-08-12T01:37:48.322Z",
+    "updatedAt": "2023-09-05T20:06:16.935Z",
+    "cost": 0.20796874999999998
+  },
+  {
+    "address": "0x1aa81884d5924d590386913f6a9c9349a93c0a2b",
+    "twitterUsername": "tarunchitra",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1587539091444432897/Z6_nmrCB.jpg",
+    "profileChecked": true,
+    "supply": 55,
+    "createdAt": "2023-08-16T22:55:17.152Z",
+    "updatedAt": "2023-09-05T16:44:52.301Z",
+    "cost": 0.20796874999999998
+  },
+  {
+    "address": "0xe65cfa3064353f89786dea0c90daa177d73ad22c",
+    "twitterUsername": "anildelphi",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1370543852575191051/nJIq6p_o.jpg",
+    "profileChecked": true,
+    "supply": 55,
+    "createdAt": "2023-08-12T01:46:19.058Z",
+    "updatedAt": "2023-09-04T22:24:17.034Z",
+    "cost": 0.20796874999999998
+  },
+  {
+    "address": "0x5735a1558f7386afbe8cb6e00f0fa2a1123e809e",
+    "twitterUsername": "0xfoobar",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1666111368255119360/_iRTslhF.jpg",
+    "profileChecked": true,
+    "supply": 55,
+    "createdAt": "2023-08-12T01:39:02.989Z",
+    "updatedAt": "2023-09-04T06:44:04.823Z",
+    "cost": 0.20796874999999998
+  },
+  {
+    "address": "0x0f1bb4641c279f99e5191fafbf203e971a1c2e6e",
+    "twitterUsername": "Brentsketit",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1688309179398885376/KUp9Bai9.jpg",
+    "profileChecked": true,
+    "supply": 55,
+    "createdAt": "2023-08-12T01:38:16.131Z",
+    "updatedAt": "2023-09-05T04:47:33.631Z",
+    "cost": 0.20796874999999998
+  },
+  {
+    "address": "0xad8da830ff380a79dd7d1c10418cff37fae7c7e5",
+    "twitterUsername": "sungjae_han",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1509941444429103110/Zc73gRJt.jpg",
+    "profileChecked": true,
+    "supply": 55,
+    "createdAt": "2023-08-12T01:38:10.116Z",
+    "updatedAt": "2023-09-04T04:59:28.045Z",
+    "cost": 0.20796874999999998
+  },
+  {
+    "address": "0x9ca9295575866b5b3104f82e65af870dabb0ead0",
+    "twitterUsername": "0xAnima",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1676661753998876672/dIpRvXGe.jpg",
+    "profileChecked": true,
+    "supply": 55,
+    "createdAt": "2023-08-19T04:39:25.659Z",
+    "updatedAt": "2023-09-05T06:16:09.777Z",
+    "cost": 0.20796874999999998
+  },
+  {
+    "address": "0x5b4ca2c44a89b77e159baae3a1792303cee0c8c9",
+    "twitterUsername": "okx",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1603448806879772672/Pa4h6HHS.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-21T10:45:21.841Z",
+    "updatedAt": "2023-09-04T11:16:12.985Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0xa2219fbcbe83c64db116b94b7afa7a41eadbefd0",
+    "twitterUsername": "jonitzler",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1679991948080295936/JcX4t5ev.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-12T01:37:49.535Z",
+    "updatedAt": "2023-09-05T17:27:45.023Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0x0aaee359ed487d2d9fa93b2b5e598160555c98fb",
+    "twitterUsername": "resdegen",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1516732994102435841/e3esFQ94.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-20T08:49:04.920Z",
+    "updatedAt": "2023-09-05T14:22:47.562Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0xfb8fef47aece7316b61fcd55f34ef2c3ab29106f",
+    "twitterUsername": "ZoomerOracle",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1688166237954564096/WXR8tj32.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-12T01:39:53.754Z",
+    "updatedAt": "2023-09-05T18:19:00.570Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0x8b8ec6a3fd0fb4778b3f432ad95b69e977d35363",
+    "twitterUsername": "defipeasant",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1684385180599853056/zSfFuoee.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-25T20:29:49.636Z",
+    "updatedAt": "2023-09-05T04:57:18.039Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0x590cadf127e66a7785b0918efeaa25b4e750ca36",
+    "twitterUsername": "SolvingFrank",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1686212929237200896/EU8eZDCm.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-12T01:45:43.106Z",
+    "updatedAt": "2023-09-05T20:39:39.840Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0xfdd0e07c2e4f25b8caa1f95bf355ee785d7cc5d3",
+    "twitterUsername": "Fiskantes",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1688394035193663488/YbrFvhx0.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-23T05:36:31.598Z",
+    "updatedAt": "2023-09-05T10:36:10.233Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0x359d5e08bb6c67644de3bc8b036bfa4b664eab32",
+    "twitterUsername": "gabrielhaines",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1684331571795443713/5S3Ocdxm.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-12T01:38:34.949Z",
+    "updatedAt": "2023-09-05T13:31:49.189Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0x55f2f3f4a099804dc8c01e48bec7970e1b89caa1",
+    "twitterUsername": "cryptoWZRD_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1477678202436964352/qWHYnJBp.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-19T14:57:36.114Z",
+    "updatedAt": "2023-09-01T21:33:28.079Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0xcf3d696477fcbb3dc9247446085b4d05fe2dadc2",
+    "twitterUsername": "schmosby_xbt",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1478556122319671302/X4BvYvqQ.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-27T17:21:13.816Z",
+    "updatedAt": "2023-09-05T20:49:24.919Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0x4df6a695845f601a8b34ef050f5edd66485d763f",
+    "twitterUsername": "metatron_0x",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1650977023550971906/oUS0g2Du.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-12T01:38:47.496Z",
+    "updatedAt": "2023-09-05T10:17:15.887Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0xdd9ede9eb3c7b4acef2fe5facbf2f43a98ed17ba",
+    "twitterUsername": "cryptoalle",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1526683836851052545/AIwpdKfZ.jpg",
+    "profileChecked": true,
+    "supply": 54,
+    "createdAt": "2023-08-17T13:30:40.066Z",
+    "updatedAt": "2023-09-04T18:46:18.675Z",
+    "cost": 0.200475
+  },
+  {
+    "address": "0xd59bc0f817a345e47bc18ac999e0042f802529d4",
+    "twitterUsername": "RektProof",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1342164358290292736/TIADIvFp.jpg",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-08-31T04:23:43.096Z",
+    "updatedAt": "2023-09-05T19:02:59.294Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0x4699d6e8b2afaa69fcd01806d8b2f426d1385bca",
+    "twitterUsername": "Bluntz_Capital",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1523796246796054528/_MTIAduk.jpg",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-08-20T03:21:40.527Z",
+    "updatedAt": "2023-09-05T16:41:05.488Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0x5610b146978c4864d603a855fdea54e6a2c1c803",
+    "twitterUsername": "will__price",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1569563984264679424/m8u-7erv.jpg",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-08-12T01:38:40.441Z",
+    "updatedAt": "2023-09-05T02:03:33.334Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0x11d308e7542d2f618c71561b98995991b11fe48a",
+    "twitterUsername": "B02951416",
+    "twitterPfpUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile.png",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-09-01T13:42:38.347Z",
+    "updatedAt": "2023-09-05T11:39:51.750Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0x62409f26546847f43bd986252557ff1808a3c5ff",
+    "twitterUsername": "CC2Ventures",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1667850448743682048/IgP-Fcok.jpg",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-08-12T01:39:39.882Z",
+    "updatedAt": "2023-09-04T15:42:34.089Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0xdb5b00fa67086047c5b9bad310c15d7794ff9422",
+    "twitterUsername": "0x_Prototype",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1688945803908255744/fAZdN5IX.jpg",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-08-12T01:39:42.897Z",
+    "updatedAt": "2023-09-05T20:42:19.443Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0x486dc6ee117557acf8ca222a83343983bdc005f1",
+    "twitterUsername": "TheNFTAsian",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1604661292265979910/WzflmPgV.jpg",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-08-12T01:42:09.836Z",
+    "updatedAt": "2023-09-03T13:42:13.013Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0x486985cd4a9b86fd24de26d68c54af2b472303e8",
+    "twitterUsername": "therealdinoshi",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1675119142251159552/8fEpm7GQ.png",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-08-12T09:42:13.195Z",
+    "updatedAt": "2023-09-05T08:30:13.582Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0xa27c2bd8f7adcb71c2df366b354e821c7c2c77d4",
+    "twitterUsername": "izebel_eth",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683563039147139072/HIXxbj6W.jpg",
+    "profileChecked": true,
+    "supply": 53,
+    "createdAt": "2023-08-12T01:38:34.949Z",
+    "updatedAt": "2023-09-05T19:44:26.039Z",
+    "cost": 0.19311875
+  },
+  {
+    "address": "0xcc5563fca9fdff3404e9b7cdf7b8f129291fd8c0",
+    "twitterUsername": "veH0rny",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1688574398914084864/ZGSYvozJ.jpg",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-12T01:47:03.697Z",
+    "updatedAt": "2023-09-05T07:32:24.953Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0xe498169006c8e34e3856c8cda8883f7b0a5b3e2d",
+    "twitterUsername": "TaikiMaeda2",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1681431804434153476/PuTSFblP.jpg",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-12T01:37:59.278Z",
+    "updatedAt": "2023-09-05T14:04:08.429Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0x6dbfadaaf58b3dacf0ac4a37ad5a8bcd19dac0be",
+    "twitterUsername": "hosseeb",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1674936536629121025/sEvVJuZs.jpg",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-21T17:17:09.377Z",
+    "updatedAt": "2023-09-05T16:34:50.195Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0x1f6199af0d25e22ec7c53fddfab9bc79a5d716de",
+    "twitterUsername": "kevinrose",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683537760135819265/cTCfSJW7.png",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-17T21:19:23.772Z",
+    "updatedAt": "2023-09-05T18:01:03.607Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0xcf4b1343179ff53c7b3b6937736e4d26795ec4fd",
+    "twitterUsername": "crypto_linn",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1654487711653265410/9Fzvqbhr.jpg",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-19T11:31:25.466Z",
+    "updatedAt": "2023-09-05T16:56:51.328Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0x2cc0db4fe81d5f76efc97be038f8967ac6468123",
+    "twitterUsername": "nick_emmons",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1638758712356618240/T2WLmkJe.jpg",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-12T01:46:53.357Z",
+    "updatedAt": "2023-08-31T23:48:47.340Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0xb6055b5203656a3e7a3cdf2b26cd71862907fd86",
+    "twitterUsername": "3LAU",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1675050517779861504/ih1S4Yc7.jpg",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-18T07:41:58.121Z",
+    "updatedAt": "2023-09-05T14:55:45.765Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0xc7c1448ea75b6aff5f25a4e5737979ae169c10e5",
+    "twitterUsername": "zeydcarey",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1663136177614987268/LPdC8Yj_.jpg",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-21T01:19:07.024Z",
+    "updatedAt": "2023-09-04T09:16:11.360Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0x981ee6dff0431117da83145b048300bfdc8faf57",
+    "twitterUsername": "jimtalbot",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1608010793341124609/ET6fJPMp.jpg",
+    "profileChecked": true,
+    "supply": 52,
+    "createdAt": "2023-08-19T19:16:33.512Z",
+    "updatedAt": "2023-09-05T18:52:09.453Z",
+    "cost": 0.1859
+  },
+  {
+    "address": "0x4eefea3b69f7568775a5a89fa2528d6c6feaa453",
+    "twitterUsername": "BillyM2k",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1641186477563600897/Yx-bMv18.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T15:01:13.442Z",
+    "updatedAt": "2023-09-04T07:43:57.689Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x40c7f70b643020ed30eb64254e10ade81c36f8be",
+    "twitterUsername": "tervoooo",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1665839977148579840/vwBJfnwE.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T01:36:04.239Z",
+    "updatedAt": "2023-09-05T20:06:05.682Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x51e9928f7f17c26b95a903fb0e19f9a3476165bd",
+    "twitterUsername": "floppingblue",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1617023845046841345/Dde6IXPa.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T01:40:38.251Z",
+    "updatedAt": "2023-09-05T16:30:01.671Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x003d5dd12befdde6ba84387eb6f3119c4349107e",
+    "twitterUsername": "woody82343978",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1594374378472734720/qQTjbwH5.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T01:42:56.829Z",
+    "updatedAt": "2023-09-05T01:23:45.859Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0xa4a8640fa24b2132ef3a6b86ad62af6d1e3b849d",
+    "twitterUsername": "swm",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1417488347946266626/GpQDQb_c.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T01:39:12.191Z",
+    "updatedAt": "2023-09-05T06:07:31.576Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x7c22d2257943e920082e518a98588faaa7f45a18",
+    "twitterUsername": "Xsharesio",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1693542734211264512/XxQktyyw.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-09-01T06:08:59.805Z",
+    "updatedAt": "2023-09-05T19:19:44.987Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0xdf07df206e16e3e0f08016be16130a1a6214efd4",
+    "twitterUsername": "_charlienoyes",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1396905292265181184/6xVeO1dM.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-15T19:43:51.892Z",
+    "updatedAt": "2023-09-03T10:31:21.519Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x89b228e581d7d88befe11fb4c87d16345b48a90b",
+    "twitterUsername": "bai_ti_ganio",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1470791353445531649/n7upH7be.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T01:45:34.224Z",
+    "updatedAt": "2023-09-05T12:51:58.012Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x9bfeb05da58510a0f5d0cdf2ded915717be991ef",
+    "twitterUsername": "mbaril010",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1572786024476020736/AJ0lm-cY.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T01:39:28.134Z",
+    "updatedAt": "2023-09-05T19:11:50.371Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0xbb8463fa1dfa5a5995b7ccd84b567a21284c3f7f",
+    "twitterUsername": "GwartyGwart",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1473994630953844741/WEpVLX0g.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T01:38:41.863Z",
+    "updatedAt": "2023-09-04T17:06:58.261Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x07c0b56a151b6a6c8191fde8bc9aaf25133998a6",
+    "twitterUsername": "Gogogonum",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1626975783230267393/Yk3Ia6sy.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-12T01:40:42.019Z",
+    "updatedAt": "2023-09-04T11:13:24.715Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x17a4f2fcfa89d76dcc658912cd7b7353060c9cfc",
+    "twitterUsername": "maid_crypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1657049785290100736/242zqT6z.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-09-05T07:31:03.432Z",
+    "updatedAt": "2023-09-05T19:09:03.669Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x37c641310d737919ae051516a6931d0ee35fb0f1",
+    "twitterUsername": "midasdn",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1502737397477482504/dPhGY54t.jpg",
+    "profileChecked": true,
+    "supply": 51,
+    "createdAt": "2023-08-20T17:43:15.907Z",
+    "updatedAt": "2023-09-04T23:13:22.643Z",
+    "cost": 0.17881875
+  },
+  {
+    "address": "0x95d2c76e1fa12efa4021df253ef9f98f5a77a5fd",
+    "twitterUsername": "DeeZe",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1600176789384470529/Ov473Rmm.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-12T01:39:20.063Z",
+    "updatedAt": "2023-09-05T16:30:46.087Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x386ece50ef2f6a39ba0105c59191fe2930fbbddd",
+    "twitterUsername": "TraderTR1",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1636750136935084033/acj8y_bN.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-12T01:37:54.864Z",
+    "updatedAt": "2023-09-05T18:07:51.576Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x2165d35d4760c1d4765681d71fa502b473d1e2e1",
+    "twitterUsername": "drboblax",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683673225484435456/an3DTKEn.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-20T10:18:42.931Z",
+    "updatedAt": "2023-09-05T14:22:13.494Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x528af4bd230c06031e14bdbb41912234ad7ac022",
+    "twitterUsername": "koreanjewcrypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1685076451303796736/CknnUm-W.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-19T18:02:02.603Z",
+    "updatedAt": "2023-09-04T21:56:25.813Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x7d45dad1d8017bb8097ec2208091bbd4ad9f0566",
+    "twitterUsername": "kyoungrok_jang",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/2177176458/image.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-17T01:06:02.213Z",
+    "updatedAt": "2023-09-05T15:25:30.314Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x990b870d5d1120b502c27f1f2a4d02e0db17ac77",
+    "twitterUsername": "mugentrader",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1673442067920371719/rAp-ahBK.png",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-15T14:18:25.051Z",
+    "updatedAt": "2023-09-03T14:06:01.169Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x965030aeac98c44d58e7fe88b80a5d5c3ff7c68a",
+    "twitterUsername": "AviFelman",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1626258977867587584/u8tCO2al.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-12T01:46:57.678Z",
+    "updatedAt": "2023-09-05T10:01:45.614Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x6ed1987a1a73dfa032a2ce995e0439764c669098",
+    "twitterUsername": "art_xbt",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1596937469525565440/14QzvEsy.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-19T05:01:19.121Z",
+    "updatedAt": "2023-09-05T19:59:43.043Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x95da343b0bc738fa095dc2a02cc62609ed1234af",
+    "twitterUsername": "inmortalcrypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1623149338741379074/RGmfMugt.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-20T15:30:29.130Z",
+    "updatedAt": "2023-09-05T10:54:40.983Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x74878ed1e15d40095a18490dc0139af75227b698",
+    "twitterUsername": "SplitCapital",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1686898626155413504/_82CuXKq.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-20T23:49:16.815Z",
+    "updatedAt": "2023-09-05T18:33:43.496Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x9ab9469f32147d3d85764998d1e4a8defc83a5f2",
+    "twitterUsername": "danrobinson",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1377598520149082113/autwFh23.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-22T00:09:15.567Z",
+    "updatedAt": "2023-09-05T16:00:48.248Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0x4aefbcc05c72a0e4bc6bdfc735bced6c0b852a76",
+    "twitterUsername": "fyhfyhio",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1568872358840246272/EIk9GTJL.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-12T01:44:42.187Z",
+    "updatedAt": "2023-09-05T20:24:35.823Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0xda14c216de266d52548ad8dd565e1be726851cb7",
+    "twitterUsername": "0xOrli",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683040718695137281/I7cZegNA.jpg",
+    "profileChecked": true,
+    "supply": 50,
+    "createdAt": "2023-08-18T18:27:13.574Z",
+    "updatedAt": "2023-09-05T13:14:28.466Z",
+    "cost": 0.171875
+  },
+  {
+    "address": "0xf8127b6effab650ac287c54e7c02879049449b8c",
+    "twitterUsername": "neofriendsgame",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1695424651202367488/5dztd7oM.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-26T14:15:45.155Z",
+    "updatedAt": "2023-09-05T03:36:17.510Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0xe02dc15f02eb21bee5cf1f72866ab00edf3eaebd",
+    "twitterUsername": "lilclearpill",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1674612040021823489/e2bO0W1q.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-12T01:48:38.164Z",
+    "updatedAt": "2023-09-02T07:16:53.063Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0x9850c31d1e13aad33ec2c3370b44dd6d6affb6b8",
+    "twitterUsername": "FriendTechArena",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1697255259696234496/UOXtSyTd.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-31T23:06:59.385Z",
+    "updatedAt": "2023-09-05T14:46:29.000Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0xa39d384c3123c9f7f91681d0494ef215b4fcb3c5",
+    "twitterUsername": "alenaxbt",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1680676926598402050/vAIe0S7r.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-20T06:44:24.282Z",
+    "updatedAt": "2023-09-04T22:22:06.213Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0xd09d227c8ae00ff4f461763d7cb210f75d373da9",
+    "twitterUsername": "StarryNightDAO",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1686820326976651264/_Pt_eWf8.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-19T20:08:01.634Z",
+    "updatedAt": "2023-09-05T19:37:24.763Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0x989f7b623a4167274da5a2173585778629faaa79",
+    "twitterUsername": "diamondhandjs",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1684671490841796610/qzX2PNlA.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-12T01:40:54.343Z",
+    "updatedAt": "2023-09-05T16:57:57.705Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0x2bf3227d10b177b6e12c2397498145dd028bd676",
+    "twitterUsername": "tynypyssy",
+    "twitterPfpUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile.png",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-22T11:38:29.539Z",
+    "updatedAt": "2023-09-01T10:03:38.581Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0xe93c98e141f7f1458887974ab195ee91e3bfc27b",
+    "twitterUsername": "ThePortugueseT1",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1678491714661543940/sAVCy01h.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-21T00:21:26.241Z",
+    "updatedAt": "2023-09-05T20:01:40.342Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0xf4c3e88b2d0dd109c83e5f90f15316cad930331e",
+    "twitterUsername": "stoicsavage",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1678753545422798848/Cyep9lv9.png",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-12T01:38:41.863Z",
+    "updatedAt": "2023-09-05T18:39:03.191Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0x7764173a15cea441122b67f83bc0a8ea143a99c5",
+    "twitterUsername": "coinmamba",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1649491408397520922/18lN5FmJ.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-12T01:44:26.530Z",
+    "updatedAt": "2023-08-31T16:39:06.296Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0x4d5ebac312c4024f42599092ab4cb740e3555a7f",
+    "twitterUsername": "spreekaway",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1165436442069393409/Q3kSVDNr.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-12T01:40:15.573Z",
+    "updatedAt": "2023-09-02T10:53:21.893Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0x1f1a8b49c59bc730bc679805a597ccacc73835ec",
+    "twitterUsername": "0xzuberg",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1487381354803130372/WacIa43D.jpg",
+    "profileChecked": true,
+    "supply": 49,
+    "createdAt": "2023-08-12T05:16:10.638Z",
+    "updatedAt": "2023-09-05T16:46:20.758Z",
+    "cost": 0.16506875
+  },
+  {
+    "address": "0x21ceedf05ec6dd6c77f0831140e3814d8e41c627",
+    "twitterUsername": "fejau_inc",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1637609576257187840/4Y-l-lw6.jpg",
+    "profileChecked": true,
+    "supply": 48,
+    "createdAt": "2023-08-12T01:46:29.218Z",
+    "updatedAt": "2023-09-05T17:44:17.885Z",
+    "cost": 0.15839999999999999
+  },
+  {
+    "address": "0x01a1211294f95e36adcc7f1bccf0950f86d2fc51",
+    "twitterUsername": "tomkysar",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1659659161624256548/O2_1XrFc.jpg",
+    "profileChecked": true,
+    "supply": 48,
+    "createdAt": "2023-08-12T01:39:17.704Z",
+    "updatedAt": "2023-09-05T02:43:24.748Z",
+    "cost": 0.15839999999999999
+  },
+  {
+    "address": "0x93effc1fc6bc4dfc69ace876a3dec8e2a35f82c9",
+    "twitterUsername": "MartiniGuyYT",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1658569919754129440/TeYKOhvr.jpg",
+    "profileChecked": true,
+    "supply": 48,
+    "createdAt": "2023-08-21T11:04:13.253Z",
+    "updatedAt": "2023-09-03T15:18:41.135Z",
+    "cost": 0.15839999999999999
+  },
+  {
+    "address": "0x0f3245b0a3020ff661aa9ca80ad0487749d2446c",
+    "twitterUsername": "sassal0x",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1508435673757347843/pBh41JoL.jpg",
+    "profileChecked": true,
+    "supply": 48,
+    "createdAt": "2023-08-12T01:40:16.636Z",
+    "updatedAt": "2023-09-04T06:41:44.141Z",
+    "cost": 0.15839999999999999
+  },
+  {
+    "address": "0x5b38233eda4fbe08686e89c3a925640a332daff4",
+    "twitterUsername": "kimyg002",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1654374192824066048/9v-fzeZk.jpg",
+    "profileChecked": true,
+    "supply": 48,
+    "createdAt": "2023-08-12T01:44:26.530Z",
+    "updatedAt": "2023-09-05T04:30:03.807Z",
+    "cost": 0.15839999999999999
+  },
+  {
+    "address": "0x21c7f335cefad85c12171a93f71aa439123647bf",
+    "twitterUsername": "rektmando",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1593307551457738752/xT7UmPH0.jpg",
+    "profileChecked": true,
+    "supply": 48,
+    "createdAt": "2023-08-19T11:20:21.501Z",
+    "updatedAt": "2023-09-03T15:44:08.024Z",
+    "cost": 0.15839999999999999
+  },
+  {
+    "address": "0xf1ce79b10f380c45ec99b5bec28bb307406f40fa",
+    "twitterUsername": "Thatjpeg_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1658169266095497216/Z0qj3XYl.jpg",
+    "profileChecked": true,
+    "supply": 48,
+    "createdAt": "2023-08-12T01:37:04.709Z",
+    "updatedAt": "2023-09-04T23:17:32.115Z",
+    "cost": 0.15839999999999999
+  },
+  {
+    "address": "0xb407ee81ea5ff4aff58ebea2b09163dd6203a70b",
+    "twitterUsername": "0xUnihax0r",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1678358000073940993/lU6OtXYk.jpg",
+    "profileChecked": true,
+    "supply": 48,
+    "createdAt": "2023-08-19T06:57:13.647Z",
+    "updatedAt": "2023-09-05T12:52:20.046Z",
+    "cost": 0.15839999999999999
+  },
+  {
+    "address": "0x038d6559ad7eaaa2056da4c6a5abb079e046269f",
+    "twitterUsername": "caitlinxyz",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1666202293795168257/1XKLIR6T.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:39:38.467Z",
+    "updatedAt": "2023-09-04T00:21:06.320Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0xb80ee93e1d49349c8f76f4c824d99ef1cb1ced7a",
+    "twitterUsername": "_tolks",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1623522997192609793/yC2rgGe6.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:36:13.751Z",
+    "updatedAt": "2023-09-05T17:45:29.430Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0x8a5bc5423d9362f59d92d4611e27177ebd616f11",
+    "twitterUsername": "boldleonidas",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1645062889852768256/J_TIYnMz.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:36:33.704Z",
+    "updatedAt": "2023-09-05T11:13:00.725Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0x4918d0648e6f9f0408bbb377fd6a90e950d61975",
+    "twitterUsername": "0xdasha",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1686825148928741376/bJMq5BBx.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:37:17.437Z",
+    "updatedAt": "2023-09-05T18:51:09.467Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0x5d44407d307dacec41c918458059858e8c3cb43d",
+    "twitterUsername": "Crypto_McKenna",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1674435280667803648/Iq9Fts6f.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:47:51.910Z",
+    "updatedAt": "2023-09-05T16:12:27.677Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0x3caadcfdc17abed279cc41e1f9cfb3e7ed4e414b",
+    "twitterUsername": "BussyFiller69",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1660075322476199946/KaVZ7lqK.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-18T20:07:53.643Z",
+    "updatedAt": "2023-09-04T23:24:59.415Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0xff293f4c29645b95dbacbe13942a19eea3fae37a",
+    "twitterUsername": "crypto_seer",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/880840029097963520/ymurtDOb.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-21T16:24:10.328Z",
+    "updatedAt": "2023-09-05T15:07:14.915Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0xdf9afe4fbf5b5c4d59c39034131867991823fed9",
+    "twitterUsername": "ZKasino_io",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1541069030827720704/GFKYRSH6.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:46:52.115Z",
+    "updatedAt": "2023-09-05T20:34:19.673Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0x80739354b63af0e1187cb066907280f1590efe08",
+    "twitterUsername": "Rager",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1675172069082890246/r4_jSNsv.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:38:18.495Z",
+    "updatedAt": "2023-09-05T20:37:58.233Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0x85d5efdd8cc0b90895965842b12d0353d661db8b",
+    "twitterUsername": "Bitcoin_Sage",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1512144461593255938/vPmhLvKo.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-19T11:26:35.275Z",
+    "updatedAt": "2023-09-05T17:59:24.729Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0x3b1cf91628e888dd5c531d1e0c2fe29fe608d380",
+    "twitterUsername": "0xShual",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1577943329651757056/D2JNAqEf.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-21T00:18:09.386Z",
+    "updatedAt": "2023-09-05T07:32:35.728Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0xb6ec165d0688859021df7504a3e2fc60324c014a",
+    "twitterUsername": "Cooopahtroopa",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1567991595630489600/3zRSMk5h.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:40:46.787Z",
+    "updatedAt": "2023-08-31T09:53:07.991Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0xf56457b3bc3c651e16bf987f7ebbdc03adbc1300",
+    "twitterUsername": "Rationalape1",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1649420463456518144/tvA0cMMj.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T06:05:51.123Z",
+    "updatedAt": "2023-09-05T10:25:17.861Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0xf0a6710c837757b91a1cd21f61ee75ff7a2ff969",
+    "twitterUsername": "bryptokenneth3",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1660577571182985216/qb1j4NzZ.jpg",
+    "profileChecked": true,
+    "supply": 47,
+    "createdAt": "2023-08-12T01:38:40.441Z",
+    "updatedAt": "2023-09-05T04:31:19.756Z",
+    "cost": 0.15186875
+  },
+  {
+    "address": "0x2475296db4f54b5daa63aaae8167332c50485b5c",
+    "twitterUsername": "0xAlan_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1442861440843407360/EpPF-8NN.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-18T18:23:19.914Z",
+    "updatedAt": "2023-09-05T13:36:12.594Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0x84962b5905731cd44ac1592c3e776c9f6439c914",
+    "twitterUsername": "based16z",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683043364768215041/fPMiGaMm.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-20T22:55:13.071Z",
+    "updatedAt": "2023-09-05T16:01:44.182Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0xee3f27a3f183ef54e3ffbb75af6dcf827f45948d",
+    "twitterUsername": "0xBumps",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1691830505950298113/J6fFT1TD.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-19T04:39:47.461Z",
+    "updatedAt": "2023-09-05T13:08:28.390Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0x0e8335193864533b28ed88608ac559e17f9b4988",
+    "twitterUsername": "functi0nZer0",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1679262771697926145/r3qk5Ycf.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-12T01:39:04.252Z",
+    "updatedAt": "2023-09-05T15:09:43.032Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0x4792560eb534cca0458a5cdfad58e9f92385a588",
+    "twitterUsername": "0xmons",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1468457051030319104/UE1EbYaf.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-12T01:47:47.048Z",
+    "updatedAt": "2023-09-05T13:53:56.171Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0xf5aef83aa7ab048349f286562ed1f093f80de924",
+    "twitterUsername": "AlgodTrading",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1636690509392490497/tT4ijNv3.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-19T23:49:11.032Z",
+    "updatedAt": "2023-09-05T16:10:34.963Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0xb81ca326fc5f9b8ad4b0e3c0aa56a855f18cc266",
+    "twitterUsername": "DegenCryptoInfo",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1478848303915839490/hNEc2cdw.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-19T18:33:57.498Z",
+    "updatedAt": "2023-09-05T14:38:57.030Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0x9edfaa7440c298bc999623d2b0aec02c12e88c57",
+    "twitterUsername": "kv4rl",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1686787642749337621/FyPV9MO2.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-12T01:38:10.116Z",
+    "updatedAt": "2023-09-05T00:27:51.153Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0x1840edbb95338cc6665a023f2bba75016fa63923",
+    "twitterUsername": "Tszunami1",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1591920945605779458/DicBGCFv.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-21T14:49:43.094Z",
+    "updatedAt": "2023-09-05T11:30:22.123Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0x4618bdba4253ac2a97055ad0e3db73706d789a98",
+    "twitterUsername": "Sicarious_",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1686063664955363328/CtQUiM6w.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-12T01:45:57.671Z",
+    "updatedAt": "2023-09-05T20:31:56.360Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0xec50593848b6fc0e6579444bf5775d3e1535720d",
+    "twitterUsername": "Alvin0617",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1672559384524898304/Bqtza8bi.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-12T01:42:48.385Z",
+    "updatedAt": "2023-09-05T16:22:06.082Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0x244828e3b8f499d9ea29e0025ffb7bdd45b1b2eb",
+    "twitterUsername": "MacnBTC",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1460037090649989122/G3WKOVxb.png",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-19T20:39:53.318Z",
+    "updatedAt": "2023-09-05T17:31:32.410Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0xb1305aef1cc4750431d0a11ae66e2dd28b2eb656",
+    "twitterUsername": "adamscochran",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1686016773986852866/rCZrICep.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-12T01:39:02.989Z",
+    "updatedAt": "2023-09-05T13:36:01.800Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0xf1756fe3ec5b45223d09bcbc838607f4061a3a36",
+    "twitterUsername": "MacroCRG",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1542160086495383554/8gRx15ts.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-20T09:13:50.133Z",
+    "updatedAt": "2023-09-05T07:32:51.938Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0xd2bccaae5207669e1b46b62836c0443f8878bcc7",
+    "twitterUsername": "DeFi_Brian",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1644222988773117952/2dVcQZhA.jpg",
+    "profileChecked": true,
+    "supply": 46,
+    "createdAt": "2023-08-12T01:40:08.173Z",
+    "updatedAt": "2023-09-05T05:45:25.421Z",
+    "cost": 0.14547500000000002
+  },
+  {
+    "address": "0xa08f96c5a007e581914583ec24148598772f265c",
+    "twitterUsername": "zjbrenner",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1684254417279647744/ioXp-2yk.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-12T01:45:41.872Z",
+    "updatedAt": "2023-09-05T18:29:19.066Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x20a7b0ca128f6ce366edd9fa26c537a3f64c9607",
+    "twitterUsername": "simiao_li",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1578005851805196288/ACvnwkaQ.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-21T04:45:01.638Z",
+    "updatedAt": "2023-09-05T12:08:37.829Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x4fd8c8e81c8c621a53156f05da5e2a901df0da3a",
+    "twitterUsername": "luvllilyy",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1572044612973514755/bePM9Iaa.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-25T02:16:09.770Z",
+    "updatedAt": "2023-09-05T20:19:57.217Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x1a45846c7c04e704f2483861b0758514ba30e87a",
+    "twitterUsername": "BitCloutCat",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1680426873489358848/WQnwTgt_.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-12T01:38:43.743Z",
+    "updatedAt": "2023-08-30T07:04:11.921Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x05eef6904ebf2bfc3ac4c2dcf7afa4526a438a95",
+    "twitterUsername": "ManifestorDAO",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1692936759909187587/64mZw149.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-19T19:35:35.758Z",
+    "updatedAt": "2023-09-01T01:00:05.596Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x7e72971b1f61dcb0ce6a8fac6746a097e2138ce1",
+    "twitterUsername": "dennis_qian",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1559306367831134209/za7i8m0-.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-19T04:39:33.669Z",
+    "updatedAt": "2023-09-05T07:23:38.054Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x73edc98ca41f425b5eab06d2263564944a34a8d4",
+    "twitterUsername": "ercwl",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1676946756494323712/l_5vDUPy.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-12T03:19:34.195Z",
+    "updatedAt": "2023-09-02T17:19:36.182Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x5b9ac1852ee00f4e33218d6f094271b26d28dd3c",
+    "twitterUsername": "maybectrlfreak",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1685525357603000320/bUQFqTCu.png",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-12T01:40:24.291Z",
+    "updatedAt": "2023-09-02T21:40:15.261Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x786d511834b06cd158cc996d5a7471940703dadd",
+    "twitterUsername": "mrblocktw",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1654698010864123904/6rw4TKWO.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-12T07:31:52.397Z",
+    "updatedAt": "2023-09-05T04:42:39.118Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x396c68d939708563a41f15ce8effa75db20c8068",
+    "twitterUsername": "EricCryptoman",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1683478673234558977/aBpFpP7h.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-21T06:02:52.495Z",
+    "updatedAt": "2023-09-05T20:37:20.092Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0xeb3ea470c2f6b942fcc1515e5979d289ff2f24fd",
+    "twitterUsername": "nyaxeth",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1658257290854531074/NsBkn4BR.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-19T08:27:38.095Z",
+    "updatedAt": "2023-09-05T14:18:33.902Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x56a42bdc26bcce2405e8053cf397a12e718d7a2b",
+    "twitterUsername": "AKon14496207",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1489287704940621833/eQ6riVlU.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-19T12:29:30.794Z",
+    "updatedAt": "2023-09-05T00:10:24.230Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x8de549e4579ac4cd46546d51b51110a62a34b87d",
+    "twitterUsername": "marenaltman",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1666669628557492224/ltaT9wap.jpg",
+    "profileChecked": true,
+    "supply": 45,
+    "createdAt": "2023-08-12T01:48:42.944Z",
+    "updatedAt": "2023-09-04T17:45:58.674Z",
+    "cost": 0.13921875
+  },
+  {
+    "address": "0x6f98d1bfdc9dc16a64a645f6d9dcc2c20b27bfe4",
+    "twitterUsername": "milesdeutscher",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1562714461613740032/ff1eYOra.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-20T18:58:47.499Z",
+    "updatedAt": "2023-09-02T15:15:40.506Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0xf2d45d992a4fd629c1c718fefcc6e65f4f1f9977",
+    "twitterUsername": "Evans_Crypto",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1373953373037342723/OZfrtnCb.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-25T10:39:35.297Z",
+    "updatedAt": "2023-08-28T02:57:23.805Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0xd82332419c2a7d7cef3f56204332def2ffd277df",
+    "twitterUsername": "pranksy",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1649849548099952640/yLmPqXqQ.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-21T00:29:30.812Z",
+    "updatedAt": "2023-09-05T05:50:01.871Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0xb6e776cc84e4c0b915598f34343b35068941ae90",
+    "twitterUsername": "benroy__",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1577591390284156928/KfNocMR-.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-12T01:40:56.585Z",
+    "updatedAt": "2023-09-05T08:53:12.077Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x364cefb1439d3e1ef43864ba96216206e105c145",
+    "twitterUsername": "MetakeysDAO",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1695818150397231104/6vkvE8d6.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-27T22:00:55.188Z",
+    "updatedAt": "2023-09-05T20:42:19.443Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x11f383f1f7a7b36364646b216785d7a851c3bc3d",
+    "twitterUsername": "PopcornKirby",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1609881885400010753/vfvOStjB.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-18T23:45:21.629Z",
+    "updatedAt": "2023-09-05T04:04:47.963Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x80befdbd173b0f39a5d777af2c8bf2f4603c7d27",
+    "twitterUsername": "udiWertheimer",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1626057395909566464/kOZ_TzhC.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-12T01:39:12.191Z",
+    "updatedAt": "2023-09-04T00:39:21.086Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x9123b244612ca01d08bdb9042fd98025dc86448b",
+    "twitterUsername": "0xPajke",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1687262362720477184/-Pv1mYZ1.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-19T21:41:03.242Z",
+    "updatedAt": "2023-09-05T20:42:13.913Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x670c57aa863ef32dad01ca19d9b11908e3294af8",
+    "twitterUsername": "pussyrrriot",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1561102883998683137/9mN2f9Jx.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-12T01:39:35.005Z",
+    "updatedAt": "2023-09-05T16:46:09.641Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x3545f5ad6c3a84700e4328814b665af75bd610c5",
+    "twitterUsername": "hepara384503",
+    "twitterPfpUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile.png",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-12T01:39:14.998Z",
+    "updatedAt": "2023-09-05T13:44:31.036Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x4107d70a2dad9ec93df1e4533c587c85296c3cae",
+    "twitterUsername": "LadyofCrypto1",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1610223637826609166/hG_-msH8.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-21T10:38:57.598Z",
+    "updatedAt": "2023-09-05T17:15:54.783Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x45c1eb5b30090bd284d7f55d74bea70bbefa593d",
+    "twitterUsername": "The_Bogfather",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1659495596720377856/oTKa6YKp.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-19T17:49:27.039Z",
+    "updatedAt": "2023-09-05T16:26:08.407Z",
+    "cost": 0.1331
+  },
+  {
+    "address": "0x03c26ea837f2a4dab1d29b3a380a8f72902cffa5",
+    "twitterUsername": "Milady_Sonoro",
+    "twitterPfpUrl": "https://pbs.twimg.com/profile_images/1664093078389682176/yNO6j9I2.jpg",
+    "profileChecked": true,
+    "supply": 44,
+    "createdAt": "2023-08-30T22:18:12.320Z",
+    "updatedAt": "2023-09-05T20:43:53.576Z",
+    "cost": 0.1331
+  }
+]
