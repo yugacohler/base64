@@ -12,7 +12,9 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 // --private-key <private-key> \
 // --verifier etherscan \
 // --verifier-url "https://api-goerli.basescan.org/api" \
-// --etherscan-api-key <etherscan-api-key>
+// --etherscan-api-key <etherscan-api-key> \
+// --sig "run(string)" \
+// <file>
 contract DeployCompetitors is Script {
     // A struct for the input data.
     struct InputData {
@@ -20,9 +22,9 @@ contract DeployCompetitors is Script {
         string[] uris;
     }
 
-    function run() public {
+    function run(string memory file) public {
         string memory root = vm.projectRoot();
-        string memory path = string.concat(root, "/", "data/friendtech_parsed.data");
+        string memory path = string.concat(root, "/", file);
         string memory json = vm.readFile(path);
         bytes memory data = vm.parseJson(json);
 
