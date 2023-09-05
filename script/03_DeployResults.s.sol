@@ -11,11 +11,12 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 // --private-key <private-key> \
 // --verifier etherscan \
 // --verifier-url "https://api-goerli.basescan.org/api" \
-// --etherscan-api-key <etherscan-api-key>
+// --etherscan-api-key <etherscan-api-key> \
+// --sig "run(address)" \
+// <owner>
 contract DeployResults is Script {
-    function run() public {
-        // TODO: This should be the address that corresponds to your private key.
-        address owner = address(0x0);
+    function run(address a) public {
+        address owner = a;
 
         vm.startBroadcast();
 
