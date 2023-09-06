@@ -11,13 +11,12 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 // randomly.
 // Usage: forge script ./script/05_FetchAndAdvanceBracket.s.sol:FetchAndAdvanceBracket \
 // --broadcast --rpc-url "https://goerli.base.org/" \
-// --private-key <private-key>
+// --private-key <private-key> \
+// --sig "run(address,address)" \
+// <tournament> <result-provider>
 contract FetchAndAdvanceBracket is Script {
-    function run() public {
-        address tAddr = 0x6DE9cF0947a539Ac38CC7a8821955ED43715c305;
-        address oAddr = 0x50F809a2cEDEEBe99728d5Ca45CC15a39FE59ca3;
-
-        StaticOracleTournament t = StaticOracleTournament(tAddr);
+    function run(address t, address o) public {
+        StaticOracleTournament t = StaticOracleTournament(t);
 
         uint256[][] memory bracket = t.getBracket();
 
@@ -59,7 +58,7 @@ contract FetchAndAdvanceBracket is Script {
 
         vm.startBroadcast();
 
-        OracleResultProvider o = OracleResultProvider(oAddr);
+        OracleResultProvider o = OracleResultProvider(o);
         o.writeResults(winners, losers, metadata);
         t.advance();
         vm.stopBroadcast();
