@@ -31,9 +31,9 @@ Coming soon!
 ## Live Contract Addresses
 On Base Goerli:
 
-- [StaticOracleTournament](https://goerli.basescan.org/address/0xC09DF9Cb1A95835e49861e2a40711f7483978656)
-- [StaticCompetitorProvider](https://goerli.basescan.org/address/0x50F809a2cEDEEBe99728d5Ca45CC15a39FE59ca3)
-- [OracleResultProvider](https://goerli.basescan.org/address/0x6DE9cF0947a539Ac38CC7a8821955ED43715c305)
+- [StaticOracleTournament](https://goerli.basescan.org/address/0xd1d9eB6b0eE9B06979f0989A6eb998d3D0566058)
+- [StaticCompetitorProvider](https://goerli.basescan.org/address/0x3b7c292A1ec5B440b2fD913D430ABfC9785d9838)
+- [OracleResultProvider](https://goerli.basescan.org/address/0xC9E588781658b71D271435E70C849D6914608eb2)
 
 ## Build
 
