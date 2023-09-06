@@ -15,8 +15,8 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 // --sig "run(address,address)" \
 // <tournament> <result-provider>
 contract FetchAndAdvanceBracket is Script {
-    function run(address t, address o) public {
-        StaticOracleTournament t = StaticOracleTournament(t);
+    function run(address tAddr, address oAddr) public {
+        StaticOracleTournament t = StaticOracleTournament(tAddr);
 
         uint256[][] memory bracket = t.getBracket();
 
@@ -58,7 +58,7 @@ contract FetchAndAdvanceBracket is Script {
 
         vm.startBroadcast();
 
-        OracleResultProvider o = OracleResultProvider(o);
+        OracleResultProvider o = OracleResultProvider(oAddr);
         o.writeResults(winners, losers, metadata);
         t.advance();
         vm.stopBroadcast();
