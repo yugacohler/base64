@@ -8,7 +8,7 @@ import {StaticOracleTournament} from "../src/tournaments/StaticOracleTournament.
 // Usage: forge script ./script/05_AdvanceBracket.s.sol:AdvanceBracket \
 // --broadcast --rpc-url "https://goerli.base.org/" \
 // --private-key <private-key> \
-// --sig "run(address,address)" \
+// --sig "run(address)" \
 // <tournament>
 contract AdvanceBracket is Script {
     function run(address tAddr) public {
