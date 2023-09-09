@@ -196,7 +196,7 @@ contract StaticRandomTournamentTest is Test {
     function testAdvanceRound() public {
         // Advance the round so no more submissions.
         _t.advance();
-        
+
         _t.advance();
 
         assertTrue(_t.getState() == Tournament.State.InProgress);

@@ -47,8 +47,8 @@ abstract contract Tournament is Owned {
 
     // An enum representing the state of the Tournament prediction market.
     enum State
+    // The Tournament prediction market is accepting entries.
     {
-        // The Tournament prediction market is accepting entries.
         AcceptingEntries,
         // The Tournament prediction market is no longer accepting entries.
         NotAcceptingEntries,

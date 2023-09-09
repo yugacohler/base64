@@ -15,13 +15,13 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 // --sig "run(address,address,string)" \
 // <tournament> <result-provider> <results-file>
 contract AdvanceBracketWithResults is Script {
-  // A struct for the results data.
+    // A struct for the results data.
     struct ResultData {
         uint256[] winners;
         uint256[] losers;
     }
 
-    function run(address tAddr, string memory resultsFile) public {
+    function run(address tAddr, address oAddr, string memory resultsFile) public {
         string memory root = vm.projectRoot();
         string memory path = string.concat(root, "/", resultsFile);
         string memory json = vm.readFile(path);
@@ -38,42 +38,50 @@ contract AdvanceBracketWithResults is Script {
             curRound++;
         }
 
-        // string[] memory metadata = new string[](bracket[curRound - 1].length / 2);
+        string[] memory metadata = new string[](bracket[curRound - 1].length / 2);
 
         console2.log("Current round", curRound);
 
         for (uint256 i = 0; i < bracket[curRound - 1].length; i += 2) {
-          uint256 winner = resultData.winners[i / 2];
-          uint256 loser = resultData.losers[i / 2];
-          if (winner == loser) {
-            console2.log("ERROR: Winner and loser are the same", resultData.winners[i / 2]);
-            return;
-          }
+            uint256 winner = resultData.winners[i / 2];
+            uint256 loser = resultData.losers[i / 2];
+            if (winner == loser) {
+                console2.log("ERROR: Winner and loser are the same", resultData.winners[i / 2]);
+                return;
+            }
 
-          uint256 competitor1 = bracket[curRound - 1][i];
-          uint256 competitor2 = bracket[curRound - 1][i + 1];
-          
-          if (winner != competitor1 && winner != competitor2) {
-            console2.log("ERROR: Winner is not a competitor", winner, competitor1, competitor2);
-            return;
-          }
+            uint256 competitor1 = bracket[curRound - 1][i];
+            uint256 competitor2 = bracket[curRound - 1][i + 1];
 
-          if (loser != competitor1 && loser != competitor2) {
-            console2.log("ERROR: Loser is not a competitor", loser, competitor1, competitor2);
-            return;
-          }
+            if (winner != competitor1 && winner != competitor2) {
+                console2.log("ERROR: Winner is not a competitor", winner, competitor1, competitor2);
+                return;
+            }
 
-          console2.log("Winner of Match", i / 2, winner);
-          console2.log("Loser of Match", i / 2, loser);
+            if (loser != competitor1 && loser != competitor2) {
+                console2.log("ERROR: Loser is not a competitor", loser, competitor1, competitor2);
+                return;
+            }
+
+            console2.log("Winner of Match", i / 2, winner);
+            console2.log("Loser of Match", i / 2, loser);
+
+            metadata[i / 2] = "";
         }
 
         console2.log("Results validated!");
 
-        // vm.startBroadcast();
+        vm.startBroadcast();
 
-        // OracleResultProvider o = OracleResultProvider(oAddr);
-        // o.writeResults(winners, losers, metadata);
-        // t.advance();
-        // vm.stopBroadcast();
+        OracleResultProvider o = OracleResultProvider(oAddr);
+        o.writeResults(resultData.winners, resultData.losers, metadata);
+
+        console2.log("Results written to oracle");
+
+        t.advance();
+
+        console2.log("Tournament advanced to round ", curRound);
+
+        vm.stopBroadcast();
     }
 }
