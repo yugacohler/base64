@@ -17,8 +17,8 @@ import {console2} from "../lib/forge-std/src/console2.sol";
 contract AdvanceBracketWithResults is Script {
     // A struct for the results data.
     struct ResultData {
-        uint256[] winners;
         uint256[] losers;
+        uint256[] winners;
     }
 
     function run(address tAddr, address oAddr, string memory resultsFile) public {
